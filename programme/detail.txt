@@ -1,0 +1,20 @@
+------------- Projet extranet s4 -------------
+
+__12 février__
+installer le dll pour utiliser les connexions bdd avec mysql
+activer la dll pour utiliser les fichiers de configuration (System.conf)
+création du fichier cs pour le login
+création de la méthode pour hasher le mot de passe que vient de rentrer la personne
+ajout des valeurs de la chaine de connexion vers la BDD dans le fichier de configuration pour ne pas à avoir à recompiler à chaque fois que la chaine change
+ajout méthode pour créer un salt
+ajout de la méthode pour récupérer un salt correspond à un user 
+ajout méthode pour hasher un mot de passe avec son salt
+------- PENSER A CHANGER LE FICHIER DE CONF AVEC MDP ET USER FAIRE MANUEL DE MAINTENANCE --------------------------------------------------------
+__19 février__
+création de la fontion connect dans login 
+design de la page de connexion (avec * à la place du mdp par exemple)
+test avec un nouvel utilisateur car les anciens ne pouvaient pas marcher (jeanBonbeur mdr je suis trop marrante)
+
+__22 février___
+ajout de la fenetre Choix entre admin et élève
+liaison avec la fenetre de login 
