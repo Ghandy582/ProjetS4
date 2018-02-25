@@ -18,3 +18,10 @@ test avec un nouvel utilisateur car les anciens ne pouvaient pas marcher (jeanBo
 __22 février___
 ajout de la fenetre Choix entre admin et élève
 liaison avec la fenetre de login 
+
+__25 février ____
+création du menu pour la fenêtre des élèves
+création de la classe pour les taches
+ajout de la dll de sqllite
+quand j'appuie sur le menu gestion de tache, ça ouvre la fn^tre des tâches
+commencer à mettre les élements dans la fenetre de gestion des tâches16:07 25/02/2018

@@ -28,5 +28,23 @@ namespace extranet_projet_s4
         {
             form_login.Close();
         }
+
+        private void eleve_menu_gestion_taches_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_gestion_tache form_gestion_tache = new Form_gestion_tache(form_login);
+            form_gestion_tache.Show();
+
+        }
+
+        private void eleve_menu_acces_rapide_taches_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bientôt disponible");
+        }
+
+        private void eleve_menu_nouvelle_tache_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bientôt disponible");
+        }
     }
 }

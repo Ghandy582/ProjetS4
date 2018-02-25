@@ -28,24 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.eleve_menu = new System.Windows.Forms.MenuStrip();
+            this.eleve_menu_taches = new System.Windows.Forms.ToolStripMenuItem();
+            this.eleve_menu_gestion_taches = new System.Windows.Forms.ToolStripMenuItem();
+            this.eleve_menu_acces_rapide_taches = new System.Windows.Forms.ToolStripMenuItem();
+            this.eleve_menu_nouvelle_tache = new System.Windows.Forms.ToolStripMenuItem();
+            this.eleve_menu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // eleve_menu
+            // 
+            this.eleve_menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.eleve_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eleve_menu_taches});
+            this.eleve_menu.Location = new System.Drawing.Point(0, 0);
+            this.eleve_menu.Name = "eleve_menu";
+            this.eleve_menu.Size = new System.Drawing.Size(1599, 33);
+            this.eleve_menu.TabIndex = 0;
+            this.eleve_menu.Text = "menuStrip1";
+            // 
+            // eleve_menu_taches
+            // 
+            this.eleve_menu_taches.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eleve_menu_gestion_taches,
+            this.eleve_menu_acces_rapide_taches,
+            this.eleve_menu_nouvelle_tache});
+            this.eleve_menu_taches.Name = "eleve_menu_taches";
+            this.eleve_menu_taches.Size = new System.Drawing.Size(75, 29);
+            this.eleve_menu_taches.Text = "Tâches";
+            // 
+            // eleve_menu_gestion_taches
+            // 
+            this.eleve_menu_gestion_taches.Name = "eleve_menu_gestion_taches";
+            this.eleve_menu_gestion_taches.Size = new System.Drawing.Size(244, 30);
+            this.eleve_menu_gestion_taches.Text = "Gestion des tâches";
+            this.eleve_menu_gestion_taches.Click += new System.EventHandler(this.eleve_menu_gestion_taches_Click);
+            // 
+            // eleve_menu_acces_rapide_taches
+            // 
+            this.eleve_menu_acces_rapide_taches.Name = "eleve_menu_acces_rapide_taches";
+            this.eleve_menu_acces_rapide_taches.Size = new System.Drawing.Size(244, 30);
+            this.eleve_menu_acces_rapide_taches.Text = "Accès rapide";
+            this.eleve_menu_acces_rapide_taches.Click += new System.EventHandler(this.eleve_menu_acces_rapide_taches_Click);
+            // 
+            // eleve_menu_nouvelle_tache
+            // 
+            this.eleve_menu_nouvelle_tache.Name = "eleve_menu_nouvelle_tache";
+            this.eleve_menu_nouvelle_tache.Size = new System.Drawing.Size(244, 30);
+            this.eleve_menu_nouvelle_tache.Text = "Nouvelle tâche";
+            this.eleve_menu_nouvelle_tache.Click += new System.EventHandler(this.eleve_menu_nouvelle_tache_Click);
             // 
             // Form_eleve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 498);
+            this.ClientSize = new System.Drawing.Size(1599, 892);
+            this.Controls.Add(this.eleve_menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.eleve_menu;
             this.Name = "Form_eleve";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Page d\'acceuil";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_eleve_FormClosed);
             this.Load += new System.EventHandler(this.Form_eleve_Load);
+            this.eleve_menu.ResumeLayout(false);
+            this.eleve_menu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip eleve_menu;
+        private System.Windows.Forms.ToolStripMenuItem eleve_menu_taches;
+        private System.Windows.Forms.ToolStripMenuItem eleve_menu_gestion_taches;
+        private System.Windows.Forms.ToolStripMenuItem eleve_menu_acces_rapide_taches;
+        private System.Windows.Forms.ToolStripMenuItem eleve_menu_nouvelle_tache;
     }
 }

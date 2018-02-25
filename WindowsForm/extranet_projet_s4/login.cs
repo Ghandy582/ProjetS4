@@ -168,7 +168,6 @@ namespace extranet_projet_s4
                 // __________ POUR ELEVE (1) ___________
                 else if (count == 1 && role_tentative_co == 1)
                 {
-                    MessageBox.Show("ID Correct ! Vous etes un élève");
                     form_login.Hide();
                     Form_eleve form_eleve = new Form_eleve(form_login);
                     form_eleve.Show();
