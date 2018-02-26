@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-01-15" view-index="0" gantt-divider-location="486" resource-divider-location="300" version="2.8.6" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-01-15" view-index="0" gantt-divider-location="627" resource-divider-location="300" version="2.8.6" locale="fr">
     <description/>
     <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="260" order="0"/>
-        <field id="tpd4" name="Date de début" width="96" order="1"/>
-        <field id="tpd5" name="Date de fin" width="126" order="2"/>
+        <field id="tpd3" name="Nom" width="307" order="0"/>
+        <field id="tpd4" name="Date de début" width="143" order="1"/>
+        <field id="tpd5" name="Date de fin" width="173" order="2"/>
         <option id="color.recent"><![CDATA[#ccffff #ff9999 #cc0033]]></option>
     </view>
     <view id="resource-table">
