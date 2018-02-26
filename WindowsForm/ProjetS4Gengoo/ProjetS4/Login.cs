@@ -29,7 +29,7 @@ namespace ProjetS4
         {
 
             
-            MySqlCommand recupereSalt = new MySqlCommand("select salt from utilisateurs where User = '" + User_Box.Text+ "'", connexion);
+            MySqlCommand recupereSalt = new MySqlCommand("select salt from membre where User = '" + User_Box.Text+ "'", connexion);
             i = 0;
             
             try
