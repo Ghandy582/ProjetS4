@@ -18,7 +18,7 @@ namespace ProjetS4
         Login lg;
         private MySqlDataAdapter mySqlDataAdapter;
         int id_user;
-        MySqlConnection BDD = new MySqlConnection("SERVER=localhost;" + "DATABASE=projets4;" + "UID=root;" + "PASSWORD=;");
+        public MySqlConnection BDD = new MySqlConnection("SERVER=localhost;" + "DATABASE=projet4;" + "UID=root;" + "PASSWORD=;");
         public Main(Login lg, int id_user)
         {
             InitializeComponent();
@@ -29,46 +29,36 @@ namespace ProjetS4
 
         private void Menu_User_Delete_Click(object sender, EventArgs e)
         {
-            Panel_Ajouter.Visible = false;
-            Panel_Liste.Visible = false;
-            Panel_Supprimer.Visible = true;
         }
 
         private void Menu_User_Add_Click(object sender, EventArgs e)
         {
-            Panel_Supprimer.Visible = false;
-            Panel_Liste.Visible = false;
-            Panel_Ajouter.Visible = true;
         }
-
+        /*
         private void Add_Valider_Click(object sender, EventArgs e)
         {
-            /*------ Pour le salt and hash des passewords -------*/
+            /*------ Pour le salt and hash des passewords -------*//*
             string salt=CreateSalt(4);
             string pwd = MD5Hash(Add_Password_TB.Text, salt);
 
-            /*---------------------------------------------------*/
+            *//*---------------------------------------------------*//*
             MessageBox.Show(pwd);
             MySqlCommand cmd = BDD.CreateCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "INSERT utilisateurs ( Nom,Prenom,User,Password,Rank,salt) VALUES ('"+Add_Nom_TB.Text+"','"+Add_Prenom_TB.Text+"','"+Add_User_TB.Text+"','"+pwd+"','"+Add_Rank_TB.Text+ "','" + salt + "')";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Ajouter !");
-        }
+        }*/
 
-        private void Delete_Button_Click(object sender, EventArgs e)
+        /*private void Delete_Button_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = BDD.CreateCommand();
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = "delete from utilisateurs where nom = '" + Delete_Nom_TB.Text + "'and prenom = '"+ Delete_Prenom_TB.Text +"'; ";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Supprimer !");
-        }
+        }*/
 
-        private void Delete_Prenom_TB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         /*------ Pour le salt and hash des passewords -------*/
 
         // créé une chaine de caratère à ajouter au mot de passe
@@ -112,38 +102,10 @@ namespace ProjetS4
             lg.Close();
         }
 
-        private void personnalisationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Menu_User_Gestion_Click(object sender, EventArgs e)
         {
-            if (Personalisation_DialogBox.ShowDialog() == DialogResult.OK)
-            {
-                
-                Panel_Ajouter.BackColor = Personalisation_DialogBox.Color;
-                Panel_Supprimer.BackColor = Personalisation_DialogBox.Color;
-                Panel_Liste.BackColor = Personalisation_DialogBox.Color;
-                Liste_DataGrid.BackgroundColor = Personalisation_DialogBox.Color;
-            }
-        }
-
-        private void Menu_User_Liste_Click(object sender, EventArgs e)
-        {
-            Panel_Liste.Visible = true;
-            mySqlDataAdapter = new MySqlDataAdapter("select * from utilisateurs", BDD);
-            DataSet DS = new DataSet();
-            mySqlDataAdapter.Fill(DS);
-            Liste_DataGrid.DataSource = DS.Tables[0];
-        }
-
-        private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            DataTable changes = ((DataTable)Liste_DataGrid.DataSource).GetChanges();
-
-            if (changes != null)
-            {
-                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
-                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
-                mySqlDataAdapter.Update(changes);
-                ((DataTable)Liste_DataGrid.DataSource).AcceptChanges();
-            }
+            Gestion Gestion_Page = new Gestion(BDD);
+            Gestion_Page.Show();
         }
     }
 }

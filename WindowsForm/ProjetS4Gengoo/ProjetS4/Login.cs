@@ -29,7 +29,7 @@ namespace ProjetS4
         {
 
             
-            MySqlCommand recupereSalt = new MySqlCommand("select salt from membre where User = '" + User_Box.Text+ "'", connexion);
+            MySqlCommand recupereSalt = new MySqlCommand("select Salt_Membre from membre where User_Membre = '" + User_Box.Text+ "'", connexion);
             i = 0;
             
             try
@@ -51,7 +51,7 @@ namespace ProjetS4
                 myReader.Close();
                string mdpCompare = Main.MD5Hash(mdp,salt);
                 /*-----------------------------------------*/
-                MySqlCommand cmd = new MySqlCommand("select * from utilisateurs where User = '" + User_Box.Text + "' and Password = '" + mdpCompare + "'", connexion);
+                MySqlCommand cmd = new MySqlCommand("select * from membre where User_Membre = '" + User_Box.Text + "' and MotdePasse_Membre = '" + mdpCompare + "'", connexion);
                 myReader = cmd.ExecuteReader();
                 count = 0;
                 int role_tentative_co = 4;    //4 ne correspond à rien
@@ -60,11 +60,11 @@ namespace ProjetS4
                 while (myReader.Read())
                 {
                     count = count + 1;
-                    role_tentative_co = myReader.GetInt16(5);
+                    role_tentative_co = myReader.GetInt16(1);
                     id_user = myReader.GetInt16(0);
                 }
                 // Si c'est un admin
-                if (count == 1 && role_tentative_co == 1)
+                if (count == 1 && role_tentative_co == 5)
                 {
                     MessageBox.Show("ID Correct !");
                     this.Hide();
@@ -82,6 +82,7 @@ namespace ProjetS4
                 else
                 {
                     MessageBox.Show("Les ID sont Incorrect !");
+                    MessageBox.Show(mdpCompare + id_user);
                     connexion.Close();
                 }
             }

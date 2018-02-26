@@ -34,3 +34,4 @@ C:\Users\kingc\Documents\GitHub\ProjetS4\WindowsForm\ProjetS4Gengoo\ProjetS4\obj
 C:\Users\kingc\Documents\GitHub\ProjetS4\WindowsForm\ProjetS4Gengoo\ProjetS4\obj\Debug\ProjetS4.csproj.CoreCompileInputs.cache
 C:\Users\kingc\Documents\GitHub\ProjetS4\WindowsForm\ProjetS4Gengoo\ProjetS4\obj\Debug\ProjetS4.exe
 C:\Users\kingc\Documents\GitHub\ProjetS4\WindowsForm\ProjetS4Gengoo\ProjetS4\obj\Debug\ProjetS4.pdb
+C:\Users\kingc\Documents\GitHub\ProjetS4\WindowsForm\ProjetS4Gengoo\ProjetS4\obj\Debug\ProjetS4.Gestion.resources
