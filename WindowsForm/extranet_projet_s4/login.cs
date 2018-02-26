@@ -100,7 +100,7 @@ namespace extranet_projet_s4
             i = 0;
             // On va chercher le salt correspondant au user que la personne a rentré
             // Pour l'ajouter au mdp qu'elle vient de taper
-            MySqlCommand recupereSalt = new MySqlCommand("select salt from utilisateurs where User = '" + user + "'", connexion);
+            MySqlCommand recupereSalt = new MySqlCommand("select Salt_Membre from membre where User_Membre = '" + user + "'", connexion);
             try
             {
 
@@ -135,22 +135,35 @@ namespace extranet_projet_s4
             string user = user_connexion;
             string mdp = mdp_connexion;
             form_login login = form_login;
+
+            // Pour créer l'obet utilidateur si la connexion est bonne
+            //---------
+            string prenom_membre="";
+            string nom_membre="";
+            int premiere_co_membre=999;
+            int id_groupe_membre=999;
+            //---------
+
             try
             {
                 //On commence par la méthode de récup du salt enregistré pour créer le mdp à comparer
                 string mdp_compare = recup_salt_bdd_and_hash_pwd(mdp, user);
 
                 MySqlDataReader myReader;
-                MySqlCommand cmd_login = new MySqlCommand("select * from utilisateurs where User = '" + user + "' and Password = '" + mdp_compare + "'", connexion);
+                MySqlCommand cmd_login = new MySqlCommand("select * from membre where User_Membre = '" + user + "' and MotdePasse_Membre = '" + mdp_compare + "'", connexion);
                 connexion.Open();
                 myReader = cmd_login.ExecuteReader();
                 int count = 0;
-                // On vérifie si la personne est connu et unique dans la bdd
+                // On vérifie si la personne est connu et unique dans la bdd + on récupère les infos
                 while (myReader.Read())
                 {
                     count = count + 1;
-                    role_tentative_co = myReader.GetInt16(5);
+                    role_tentative_co = myReader.GetInt16(1);
                     id_user = myReader.GetInt16(0);
+                    prenom_membre = myReader.GetString(5);
+                    nom_membre= myReader.GetString(6);
+                    premiere_co_membre = myReader.GetInt16(7);
+                    id_groupe_membre = myReader.GetInt16(8);
                 }
                 // __________ POUR ADMIN (4) ___________
                 if (count == 1 && role_tentative_co == 4)
@@ -168,8 +181,9 @@ namespace extranet_projet_s4
                 // __________ POUR ELEVE (1) ___________
                 else if (count == 1 && role_tentative_co == 1)
                 {
+                    Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);
                     form_login.Hide();
-                    Form_eleve form_eleve = new Form_eleve(form_login);
+                    Form_eleve form_eleve = new Form_eleve(form_login, utilisateur);
                     form_eleve.Show();
 
                 }
@@ -182,8 +196,9 @@ namespace extranet_projet_s4
                 // __________ POUR ADMIN + ELEVE (5) ___________
                 else if (count == 1 && role_tentative_co == 5)
                 {
+                    Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);
                     form_login.Hide();
-                    Form_choix_admin_eleve choix_admin_eleve = new Form_choix_admin_eleve(form_login);
+                    Form_choix_admin_eleve choix_admin_eleve = new Form_choix_admin_eleve(form_login,utilisateur);
                     choix_admin_eleve.Show();
                 }
                 // __________ Si plusieurs mêmes utilisateurs ______

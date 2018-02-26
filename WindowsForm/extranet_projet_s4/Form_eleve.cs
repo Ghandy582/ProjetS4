@@ -13,15 +13,19 @@ namespace extranet_projet_s4
     public partial class Form_eleve : Form
     {
         form_login form_login;
-        public Form_eleve(form_login lg)
+        Utilisateur utilisateur;
+        //Taches taches = new Taches();
+        Sqlite sqlite = new Sqlite();
+        public Form_eleve(form_login lg, Utilisateur u)
         {
             InitializeComponent();
             this.form_login = lg;
-        }
+            this.utilisateur = u;
+            sqlite.Verification(utilisateur);        }
 
         private void Form_eleve_Load(object sender, EventArgs e)
         {
-
+            this.Text = utilisateur.Prenom_Membre + " " + utilisateur.Nom_Membre;
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)
