@@ -155,7 +155,7 @@ namespace extranet_projet_s4
             MessageBox.Show(pwd);
             MySqlCommand cmd = BDD.CreateCommand();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + Role_CB. + "','" + Add_Prenom_TB.Text + "','" + Add_User_TB.Text + "','" + pwd + "','" + Add_Rank_TB.Text + "','" + salt + "')";
+           // cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + Role_CB. + "','" + Add_Prenom_TB.Text + "','" + Add_User_TB.Text + "','" + pwd + "','" + Add_Rank_TB.Text + "','" + salt + "')";
             cmd.ExecuteNonQuery();
             MessageBox.Show("Ajouter !");
         }
