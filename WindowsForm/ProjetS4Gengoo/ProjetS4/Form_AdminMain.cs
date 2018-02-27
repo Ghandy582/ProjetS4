@@ -8,18 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Security.Cryptography;
+
 
 
 namespace ProjetS4
 {
-    public partial class Main : Form
+    public partial class Form_AdminMain : Form
     {
         Login lg;
-        private MySqlDataAdapter mySqlDataAdapter;
         int id_user;
         public MySqlConnection BDD = new MySqlConnection("SERVER=localhost;" + "DATABASE=projet4;" + "UID=root;" + "PASSWORD=;");
-        public Main(Login lg, int id_user)
+        public Form_AdminMain(Login lg, int id_user)
         {
             InitializeComponent();
             BDD.Open();
@@ -59,43 +58,7 @@ namespace ProjetS4
             MessageBox.Show("Supprimer !");
         }*/
 
-        /*------ Pour le salt and hash des passewords -------*/
 
-        // créé une chaine de caratère à ajouter au mot de passe
-        private static string CreateSalt(int size)
-        {
-            //Generate a cryptographic random number.
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-            byte[] buff = new byte[size];
-            rng.GetBytes(buff);
-
-            // Return a Base64 string representation of the random number.
-            return Convert.ToBase64String(buff);
-        }
-
-
-        // Hasl le mot de passe avec la chaine de caratète ajoutée
-        public static string MD5Hash(string pwd, string salt)
-        {
-            string saltAndPwd = String.Concat(pwd, salt);
-            MD5 md5 = new MD5CryptoServiceProvider();
-
-            //compute hash from the bytes of text
-            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(pwd));
-
-            //get hash result after compute it
-            byte[] result = md5.Hash;
-
-            StringBuilder strBuilder = new StringBuilder();
-            for (int i = 0; i < result.Length; i++)
-            {
-                //change it into 2 hexadecimal digits
-                //for each byte
-                strBuilder.Append(result[i].ToString("x2"));
-            }
-
-            return strBuilder.ToString();
-        }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {

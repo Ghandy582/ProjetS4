@@ -49,7 +49,7 @@ namespace ProjetS4
                     salt = myReader.GetString(0);
                 }
                 myReader.Close();
-               string mdpCompare = Main.MD5Hash(mdp,salt);
+               string mdpCompare = Gestion.MD5Hash(mdp,salt);
                 /*-----------------------------------------*/
                 MySqlCommand cmd = new MySqlCommand("select * from membre where User_Membre = '" + User_Box.Text + "' and MotdePasse_Membre = '" + mdpCompare + "'", connexion);
                 myReader = cmd.ExecuteReader();
@@ -68,7 +68,7 @@ namespace ProjetS4
                 {
                     MessageBox.Show("ID Correct !");
                     this.Hide();
-                    Main Main_Page = new Main(this,id_user);
+                    Form_AdminMain Main_Page = new Form_AdminMain(this,id_user);
                     Main_Page.Show();
                 }
                 else if (count == 1 && role_tentative_co == 0)

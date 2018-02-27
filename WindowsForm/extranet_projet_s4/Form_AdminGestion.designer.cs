@@ -39,14 +39,10 @@
             this.SQL_Label = new System.Windows.Forms.Label();
             this.SQLpwd_TB = new System.Windows.Forms.TextBox();
             this.SQLentrer_Button = new System.Windows.Forms.Button();
-            this.PanelAdd = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.PanelGestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            this.PanelAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelGestion
@@ -139,44 +135,20 @@
             this.SQLentrer_Button.UseVisualStyleBackColor = true;
             this.SQLentrer_Button.Click += new System.EventHandler(this.SQLentrer_Button_Click);
             // 
-            // PanelAdd
+            // splitter1
             // 
-            this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.PanelAdd.Controls.Add(this.textBox3);
-            this.PanelAdd.Controls.Add(this.textBox2);
-            this.PanelAdd.Controls.Add(this.textBox1);
-            this.PanelAdd.Location = new System.Drawing.Point(477, 281);
-            this.PanelAdd.Name = "PanelAdd";
-            this.PanelAdd.Size = new System.Drawing.Size(718, 354);
-            this.PanelAdd.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(512, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(512, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(512, 56);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 20);
-            this.textBox3.TabIndex = 2;
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(10, 647);
+            this.splitter1.TabIndex = 7;
+            this.splitter1.TabStop = false;
             // 
             // Gestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 647);
-            this.Controls.Add(this.PanelAdd);
+            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SQLpwd_TB);
             this.Controls.Add(this.SQL_Label);
@@ -189,8 +161,6 @@
             this.PanelGestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.PanelAdd.ResumeLayout(false);
-            this.PanelAdd.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,9 +178,6 @@
         private System.Windows.Forms.Label SQL_Label;
         private System.Windows.Forms.TextBox SQLpwd_TB;
         private System.Windows.Forms.Button SQLentrer_Button;
-        private System.Windows.Forms.Panel PanelAdd;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }

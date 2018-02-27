@@ -31,7 +31,7 @@ namespace extranet_projet_s4
         }
         private void choix_admineleve_admin_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Accès à l'interface Administrateur");
+            this.Hide();
         }
 
         private void Form_choix_admin_eleve_Load(object sender, EventArgs e)

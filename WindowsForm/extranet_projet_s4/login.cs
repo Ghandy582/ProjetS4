@@ -69,7 +69,7 @@ namespace extranet_projet_s4
                 MD5 md5 = new MD5CryptoServiceProvider();
 
                 //compute hash from the bytes of text
-                md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(saltAndPwd));
+                md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(pwd));
 
                 //get hash result after compute it
                 byte[] result = md5.Hash;
