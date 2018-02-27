@@ -7,23 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Pour utiliser le fichier de configuration
+using System.Configuration;
 using MySql.Data.MySqlClient;
 
 
 
-namespace ProjetS4
+namespace extranet_projet_s4
 {
-    public partial class Main : Form
+    public partial class Form_AdminMain : Form
     {
-        Login lg;
-        int id_user;
-        public MySqlConnection BDD = new MySqlConnection("SERVER=localhost;" + "DATABASE=projet4;" + "UID=root;" + "PASSWORD=;");
-        public Main(Login lg, int id_user)
+        form_login lg;
+        Utilisateur utilisateur;
+        /*---------------------------- PROPRIETES ---------------------------*/
+
+        /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
+        static string serveur = ConfigurationManager.AppSettings["serveur"];
+        static string database = ConfigurationManager.AppSettings["database"];
+        /*_____________________________________________*/
+
+        // On créé la chaine de connextion avec les valeurs dans le fichier de conf
+        MySqlConnection BDD = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
+        public Form_AdminMain(form_login lg, Utilisateur utilisateur)
         {
             InitializeComponent();
             BDD.Open();
             this.lg = lg;
-            this.id_user = id_user;
         }
 
         private void Menu_User_Delete_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 
-namespace ProjetS4
+namespace extranet_projet_s4
 {
     public partial class Gestion : Form
     {

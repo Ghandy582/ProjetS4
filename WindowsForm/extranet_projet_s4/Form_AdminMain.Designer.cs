@@ -1,6 +1,6 @@
-﻿namespace ProjetS4
+﻿namespace extranet_projet_s4
 {
-    partial class Main
+    partial class Form_AdminMain
     {
         /// <summary>
         /// Required designer variable.

@@ -1,4 +1,4 @@
-﻿namespace ProjetS4
+﻿namespace extranet_projet_s4
 {
     partial class Gestion
     {
@@ -40,9 +40,12 @@
             this.SQLpwd_TB = new System.Windows.Forms.TextBox();
             this.SQLentrer_Button = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.PanelAdd = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelGestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.PanelAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelGestion
@@ -143,11 +146,30 @@
             this.splitter1.TabIndex = 7;
             this.splitter1.TabStop = false;
             // 
+            // PanelAdd
+            // 
+            this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelAdd.Controls.Add(this.button1);
+            this.PanelAdd.Location = new System.Drawing.Point(509, 282);
+            this.PanelAdd.Name = "PanelAdd";
+            this.PanelAdd.Size = new System.Drawing.Size(686, 353);
+            this.PanelAdd.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(523, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 41);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Entrer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Gestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 647);
+            this.Controls.Add(this.PanelAdd);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SQLpwd_TB);
@@ -161,6 +183,7 @@
             this.PanelGestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.PanelAdd.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +202,7 @@
         private System.Windows.Forms.TextBox SQLpwd_TB;
         private System.Windows.Forms.Button SQLentrer_Button;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel PanelAdd;
+        private System.Windows.Forms.Button button1;
     }
 }

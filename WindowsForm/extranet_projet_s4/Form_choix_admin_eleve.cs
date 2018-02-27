@@ -32,6 +32,8 @@ namespace extranet_projet_s4
         private void choix_admineleve_admin_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Form_AdminMain form_AdminMain = new Form_AdminMain(form_login, utilisateur);
+            form_AdminMain.Show();
         }
 
         private void Form_choix_admin_eleve_Load(object sender, EventArgs e)
