@@ -145,6 +145,19 @@ namespace extranet_projet_s4
             SQL_TB.Text = "DELETE FROM `projet4`.`membre` WHERE `membre`.`ID_membre` = ;";
         }
 
+        private void Enter_Button_Click(object sender, EventArgs e)
+        {
+            //------ Pour le salt and hash des passwords -------
+            string salt = CreateSalt(4);
+            string pwd = MD5Hash(PWD_Box.Text, salt);
 
+            //---------------------------------------------------
+            MessageBox.Show(pwd);
+            MySqlCommand cmd = BDD.CreateCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + Role_CB. + "','" + Add_Prenom_TB.Text + "','" + Add_User_TB.Text + "','" + pwd + "','" + Add_Rank_TB.Text + "','" + salt + "')";
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Ajouter !");
+        }
     }
 }

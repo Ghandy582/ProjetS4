@@ -41,6 +41,11 @@
             this.SQLentrer_Button = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.PanelAdd = new System.Windows.Forms.Panel();
+            this.Groupe_CB = new System.Windows.Forms.ComboBox();
+            this.Nom_Box = new System.Windows.Forms.TextBox();
+            this.Prenom_Box = new System.Windows.Forms.TextBox();
+            this.PWD_Box = new System.Windows.Forms.TextBox();
+            this.Identity_Box = new System.Windows.Forms.TextBox();
             this.Role_CB = new System.Windows.Forms.ComboBox();
             this.Groupe_Label = new System.Windows.Forms.Label();
             this.Nom_Label = new System.Windows.Forms.Label();
@@ -48,12 +53,7 @@
             this.PWD_Label = new System.Windows.Forms.Label();
             this.Identity_Label = new System.Windows.Forms.Label();
             this.Role_Label = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Identity_Box = new System.Windows.Forms.TextBox();
-            this.PWD_Box = new System.Windows.Forms.TextBox();
-            this.Prenom_Box = new System.Windows.Forms.TextBox();
-            this.Nom_Box = new System.Windows.Forms.TextBox();
-            this.Groupe_CB = new System.Windows.Forms.ComboBox();
+            this.Enter_Button = new System.Windows.Forms.Button();
             this.PanelGestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -173,11 +173,47 @@
             this.PanelAdd.Controls.Add(this.PWD_Label);
             this.PanelAdd.Controls.Add(this.Identity_Label);
             this.PanelAdd.Controls.Add(this.Role_Label);
-            this.PanelAdd.Controls.Add(this.button1);
+            this.PanelAdd.Controls.Add(this.Enter_Button);
             this.PanelAdd.Location = new System.Drawing.Point(509, 282);
             this.PanelAdd.Name = "PanelAdd";
             this.PanelAdd.Size = new System.Drawing.Size(686, 353);
             this.PanelAdd.TabIndex = 8;
+            // 
+            // Groupe_CB
+            // 
+            this.Groupe_CB.FormattingEnabled = true;
+            this.Groupe_CB.Location = new System.Drawing.Point(172, 210);
+            this.Groupe_CB.Name = "Groupe_CB";
+            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
+            this.Groupe_CB.TabIndex = 19;
+            // 
+            // Nom_Box
+            // 
+            this.Nom_Box.Location = new System.Drawing.Point(172, 170);
+            this.Nom_Box.Name = "Nom_Box";
+            this.Nom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Nom_Box.TabIndex = 18;
+            // 
+            // Prenom_Box
+            // 
+            this.Prenom_Box.Location = new System.Drawing.Point(172, 130);
+            this.Prenom_Box.Name = "Prenom_Box";
+            this.Prenom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Prenom_Box.TabIndex = 17;
+            // 
+            // PWD_Box
+            // 
+            this.PWD_Box.Location = new System.Drawing.Point(172, 90);
+            this.PWD_Box.Name = "PWD_Box";
+            this.PWD_Box.Size = new System.Drawing.Size(264, 20);
+            this.PWD_Box.TabIndex = 16;
+            // 
+            // Identity_Box
+            // 
+            this.Identity_Box.Location = new System.Drawing.Point(172, 50);
+            this.Identity_Box.Name = "Identity_Box";
+            this.Identity_Box.Size = new System.Drawing.Size(264, 20);
+            this.Identity_Box.TabIndex = 15;
             // 
             // Role_CB
             // 
@@ -241,50 +277,15 @@
             this.Role_Label.TabIndex = 8;
             this.Role_Label.Text = "Role de l\'utilisateur :";
             // 
-            // button1
+            // Enter_Button
             // 
-            this.button1.Location = new System.Drawing.Point(523, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 41);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Entrer";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Identity_Box
-            // 
-            this.Identity_Box.Location = new System.Drawing.Point(172, 50);
-            this.Identity_Box.Name = "Identity_Box";
-            this.Identity_Box.Size = new System.Drawing.Size(264, 20);
-            this.Identity_Box.TabIndex = 15;
-            // 
-            // PWD_Box
-            // 
-            this.PWD_Box.Location = new System.Drawing.Point(172, 90);
-            this.PWD_Box.Name = "PWD_Box";
-            this.PWD_Box.Size = new System.Drawing.Size(264, 20);
-            this.PWD_Box.TabIndex = 16;
-            // 
-            // Prenom_Box
-            // 
-            this.Prenom_Box.Location = new System.Drawing.Point(172, 130);
-            this.Prenom_Box.Name = "Prenom_Box";
-            this.Prenom_Box.Size = new System.Drawing.Size(264, 20);
-            this.Prenom_Box.TabIndex = 17;
-            // 
-            // Nom_Box
-            // 
-            this.Nom_Box.Location = new System.Drawing.Point(172, 170);
-            this.Nom_Box.Name = "Nom_Box";
-            this.Nom_Box.Size = new System.Drawing.Size(264, 20);
-            this.Nom_Box.TabIndex = 18;
-            // 
-            // Groupe_CB
-            // 
-            this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 210);
-            this.Groupe_CB.Name = "Groupe_CB";
-            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
-            this.Groupe_CB.TabIndex = 19;
+            this.Enter_Button.Location = new System.Drawing.Point(523, 297);
+            this.Enter_Button.Name = "Enter_Button";
+            this.Enter_Button.Size = new System.Drawing.Size(149, 41);
+            this.Enter_Button.TabIndex = 7;
+            this.Enter_Button.Text = "Entrer";
+            this.Enter_Button.UseVisualStyleBackColor = true;
+            this.Enter_Button.Click += new System.EventHandler(this.Enter_Button_Click);
             // 
             // Gestion
             // 
@@ -326,7 +327,7 @@
         private System.Windows.Forms.Button SQLentrer_Button;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel PanelAdd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Enter_Button;
         private System.Windows.Forms.Label Nom_Label;
         private System.Windows.Forms.Label Prenom_Label;
         private System.Windows.Forms.Label PWD_Label;
