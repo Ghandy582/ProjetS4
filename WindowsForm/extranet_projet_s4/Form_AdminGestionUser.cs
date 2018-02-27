@@ -28,6 +28,20 @@ namespace extranet_projet_s4
             //remplissage du tableau aves les données recuperées
             mySqlDataAdapter.Fill(DS);
             Gestion_GridView.DataSource = DS.Tables[0];
+            Role_CB.Items.Add("Eleve");
+            Role_CB.Items.Add("Professeur");
+            Role_CB.Items.Add("Administrateur");
+            Role_CB.Items.Add("Super Eleve");
+            Role_CB.Items.Add("Super Professeur");
+            //remplir le combobox avec les données de la BDD
+            string selectQuery = "SELECT * FROM groupe";
+            MySqlCommand command = new MySqlCommand(selectQuery, BDD);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Groupe_CB.Items.Add(reader.GetString("Libelle_Groupe"));
+            }
+        
         }
         //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
         private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
@@ -130,5 +144,7 @@ namespace extranet_projet_s4
         {
             SQL_TB.Text = "DELETE FROM `projet4`.`membre` WHERE `membre`.`ID_membre` = ;";
         }
+
+
     }
 }
