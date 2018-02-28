@@ -30,3 +30,11 @@ lien de l'appli avec la nuvelle base de donnée
 création de la clase utilisateur qui possède les donnée de membre dans la bdd
 la fenètre de l'élève porte maintenant le nom de l'èlève en question
 mise en place de la vérification de si c'est la première co ou non pour créer le fichier sqllite pout stocker les taches et les chemins d'acces des dossiers
+__ 28 février_____
+création fenètre nouvelle tache
+création fentre acces rapide tache
+relié menu avec ces fenetres 
+ajout des taches dans le fichier sqllite sans date butoire
+avec un timmer pour voir les nouvelles tâches 
+ajout des taches dans le fichier sqllite avec une date butoire
+

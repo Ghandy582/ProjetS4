@@ -115,7 +115,7 @@ namespace extranet_projet_s4
 
     //________________________________________________________________________________
 
-    class Taches
+     public class Taches
     {
         /*---------------------------- PROPRIETES ---------------------------*/
 
@@ -127,39 +127,87 @@ namespace extranet_projet_s4
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
 
+
+        SQLiteConnection ajouter_tache;          // Database Connection Object
+        SQLiteCommand sqlite_cmd;             // Database Command Object
+        SQLiteDataReader sqlite_datareader;  // Data Reader Object
+
+
+
         /*---------------------------------- METHODES -------------------------------*/
 
-        //rechercher les tâches déjà créées
-        private void lecture()
+        //rechercher les tâches déjà créées pour acces rapide 
+        public void affiche_taches_liste_acces_rapide( CheckedListBox c)
         {
-            SQLiteConnection crea_table;          // Database Connection Object
+            SQLiteConnection affiche_taches;          // Database Connection Object
             SQLiteCommand sqlite_cmd;             // Database Command Object
             SQLiteDataReader sqlite_datareader;  // Data Reader Object
 
-            crea_table = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+            affiche_taches = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
 
-            crea_table.Open();
+            affiche_taches.Open();
 
-            sqlite_cmd = crea_table.CreateCommand();
+            sqlite_cmd = affiche_taches.CreateCommand();
 
-            sqlite_cmd.CommandText = "SELECT * FROM taches";
+            sqlite_cmd.CommandText = "SELECT intitule FROM taches";
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
 
             // The SQLiteDataReader allows us to run through each row per loop
             while (sqlite_datareader.Read()) // Read() returns true if there is still a result line to read
             {
-                // Print out the content of the text field:
-                // System.Console.WriteLine("DEBUG Output: '" + sqlite_datareader["text"] + "'");
+                string textReader = sqlite_datareader.GetString(0);
+               
+                c.Items.Add(textReader);
+            }
+            affiche_taches.Close();
+        }
 
-                object idReader = sqlite_datareader.GetValue(0);
-                string textReader = sqlite_datareader.GetString(1);
-                string dateReader = sqlite_datareader.GetString(3);
+        //______________________________________________________________________
+        // Ajouter une nouvelle tâche si pas de date butoire
+        public void Ajout_Tache_Sans_Date(int id_utilisateur, string intitule, string date)
+        {
+            try
+            {
+                /*-------- INSERTION DANS LE FICHIER SQLITE ---------*/
 
-                //OutputTextBox.Text += idReader + " '" + textReader + "' " + "\n";
+                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                ajouter_tache.Open();
+                sqlite_cmd = ajouter_tache.CreateCommand();
+                sqlite_cmd.CommandText = "INSERT INTO taches (id_membre,intitule,date_creation, date_butoire) VALUES ('" + id_utilisateur + "','" + intitule + "','" + date+ "', 'NULL');";
+                sqlite_datareader = sqlite_cmd.ExecuteReader();
+                ajouter_tache.Close();
+                /*---------------------------------------------------*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode d'ajout de tache sans date butoire" + ex.ToString());
+            }
+
+        }
+        //______________________________________________________________________
+        // Ajouter une nouvelle tâche si une date butoire
+
+        public void Ajout_Tache_Avec_Date(int id_utilisateur, string intitule, string fin_tache,string date_ajout)
+        {
+            try
+            {
+                /*-------- INSERTION DANS LE FICHIER SQLITE ---------*/
+
+                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                ajouter_tache.Open();
+                sqlite_cmd = ajouter_tache.CreateCommand();
+                sqlite_cmd.CommandText = "INSERT INTO taches (id_membre,intitule,date_creation, date_butoire) VALUES ('" + id_utilisateur + "','" + intitule + "','" + date_ajout + "', '"+fin_tache+"');";
+                sqlite_datareader = sqlite_cmd.ExecuteReader();
+                ajouter_tache.Close();
+                /*---------------------------------------------------*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode d'ajout de tache avec date butoire" + ex.ToString());
             }
         }
     }
 
-    
+
 }

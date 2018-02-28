@@ -66,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="emploi_temps.cs" />
+    <Compile Include="Form_acces_rapide_taches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_acces_rapide_taches.Designer.cs">
+      <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +108,20 @@
     <Compile Include="Form_AdminGestionUser.designer.cs">
       <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_nouvelle_tache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_nouvelle_tache.Designer.cs">
+      <DependentUpon>Form_nouvelle_tache.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="taches.cs" />
     <Compile Include="utilisateur.cs" />
+    <EmbeddedResource Include="Form_acces_rapide_taches.resx">
+      <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminMain.resx">
       <DependentUpon>Form_AdminMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminGestionUser.resx">
       <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_nouvelle_tache.resx">
+      <DependentUpon>Form_nouvelle_tache.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
