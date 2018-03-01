@@ -31,10 +31,11 @@
             this.Menu_Gestion = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Gestion_User = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Gestion_Groupe = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Gestion_Cours = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main = new System.Windows.Forms.MenuStrip();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.PhpMyAdmin = new System.Windows.Forms.WebBrowser();
-            this.Menu_Gestion_Cours = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Gestion_Sceance = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,8 @@
             this.Menu_Gestion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_Gestion_User,
             this.Menu_Gestion_Groupe,
-            this.Menu_Gestion_Cours});
+            this.Menu_Gestion_Cours,
+            this.Menu_Gestion_Sceance});
             this.Menu_Gestion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Menu_Gestion.Name = "Menu_Gestion";
             this.Menu_Gestion.Size = new System.Drawing.Size(59, 20);
@@ -62,6 +64,13 @@
             this.Menu_Gestion_Groupe.Size = new System.Drawing.Size(179, 22);
             this.Menu_Gestion_Groupe.Text = "Gérer les groupes";
             this.Menu_Gestion_Groupe.Click += new System.EventHandler(this.Menu_Gestion_Groupe_Click);
+            // 
+            // Menu_Gestion_Cours
+            // 
+            this.Menu_Gestion_Cours.Name = "Menu_Gestion_Cours";
+            this.Menu_Gestion_Cours.Size = new System.Drawing.Size(179, 22);
+            this.Menu_Gestion_Cours.Text = "Gérer les cours";
+            this.Menu_Gestion_Cours.Click += new System.EventHandler(this.Menu_Gestion_Cours_Click);
             // 
             // Menu_Main
             // 
@@ -86,12 +95,12 @@
             this.PhpMyAdmin.Url = new System.Uri("http://localhost/phpmyadmin/#PMAURL-1:db_structure.php?db=projet4&table=&server=1" +
         "&target=&token=70d891510a56ec46ba98001cb80807be", System.UriKind.Absolute);
             // 
-            // Menu_Gestion_Cours
+            // Menu_Gestion_Sceance
             // 
-            this.Menu_Gestion_Cours.Name = "Menu_Gestion_Cours";
-            this.Menu_Gestion_Cours.Size = new System.Drawing.Size(179, 22);
-            this.Menu_Gestion_Cours.Text = "Gérer les cours";
-            this.Menu_Gestion_Cours.Click += new System.EventHandler(this.Menu_Gestion_Cours_Click);
+            this.Menu_Gestion_Sceance.Name = "Menu_Gestion_Sceance";
+            this.Menu_Gestion_Sceance.Size = new System.Drawing.Size(179, 22);
+            this.Menu_Gestion_Sceance.Text = "Gérer les séances";
+            this.Menu_Gestion_Sceance.Click += new System.EventHandler(this.Menu_Gestion_Sceance_Click);
             // 
             // Form_AdminMain
             // 
@@ -121,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_User;
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Groupe;
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Cours;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Sceance;
     }
 }

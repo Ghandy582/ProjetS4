@@ -84,6 +84,12 @@
     <Compile Include="Form_AdminGestionGroupe.Designer.cs">
       <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AdminGestionSeance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionSeance.Designer.cs">
+      <DependentUpon>Form_AdminGestionSeance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminGestionGroupe.resx">
       <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionSeance.resx">
+      <DependentUpon>Form_AdminGestionSeance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminMain.resx">
       <DependentUpon>Form_AdminMain.cs</DependentUpon>

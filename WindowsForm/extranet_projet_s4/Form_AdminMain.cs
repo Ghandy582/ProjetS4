@@ -91,5 +91,10 @@ namespace extranet_projet_s4
             Form_AdminGestionCours Gestion_Page = new Form_AdminGestionCours(BDD);
             Gestion_Page.Show();
         }
+
+        private void Menu_Gestion_Sceance_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
