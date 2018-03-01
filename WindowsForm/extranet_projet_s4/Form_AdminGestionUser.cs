@@ -12,15 +12,27 @@ using System.Security.Cryptography;
 
 namespace extranet_projet_s4
 {
-    public partial class Gestion : Form
+    public partial class GestionUser : Form
     {
         private MySqlDataAdapter mySqlDataAdapter;
         public MySqlConnection BDD;
+
         private int rowIndex = 0;
-        public Gestion(MySqlConnection SQL)
+        public GestionUser(MySqlConnection SQL)
         {
             InitializeComponent();
             this.BDD = SQL;
+            UpdateGrid(BDD);
+            Role_CB.Items.Insert(0,"Eleve");
+            Role_CB.Items.Insert(1,"Professeur");
+            Role_CB.Items.Insert(2,"Administrateur");
+            Role_CB.Items.Insert(3,"Super Eleve");
+            Role_CB.Items.Insert(4,"Super Professeur");
+            //remplir le combobox avec les données de la BDD
+            ComboFill(BDD);
+        }
+        private void UpdateGrid(MySqlConnection SQL)
+        {
             //recup de donnée
             mySqlDataAdapter = new MySqlDataAdapter("select * from membre", BDD);
             //le tableau 
@@ -28,21 +40,22 @@ namespace extranet_projet_s4
             //remplissage du tableau aves les données recuperées
             mySqlDataAdapter.Fill(DS);
             Gestion_GridView.DataSource = DS.Tables[0];
-            Role_CB.Items.Add("Eleve");
-            Role_CB.Items.Add("Professeur");
-            Role_CB.Items.Add("Administrateur");
-            Role_CB.Items.Add("Super Eleve");
-            Role_CB.Items.Add("Super Professeur");
-            //remplir le combobox avec les données de la BDD
-            string selectQuery = "SELECT * FROM groupe";
-            MySqlCommand command = new MySqlCommand(selectQuery, BDD);
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                Groupe_CB.Items.Add(reader.GetString("Libelle_Groupe"));
-            }
-        
         }
+        private void ComboFill(MySqlConnection SQL)
+        {
+         
+            string query = "SELECT * FROM groupe";
+            MySqlCommand cmd = new MySqlCommand(query, SQL);
+
+            using (MySqlDataReader Reader = cmd.ExecuteReader())
+            {
+                while (Reader.Read())
+                { 
+                    Groupe_CB.Items.Add(Reader.GetString("ID_Groupe"));
+                }
+            }
+        }
+
         //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
         private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
         {
@@ -98,7 +111,7 @@ namespace extranet_projet_s4
             MD5 md5 = new MD5CryptoServiceProvider();
 
             //compute hash from the bytes of text
-            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(pwd));
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(saltAndPwd));
 
             //get hash result after compute it
             byte[] result = md5.Hash;
@@ -142,22 +155,35 @@ namespace extranet_projet_s4
 
         private void SupprimerButton_Click(object sender, EventArgs e)
         {
-            SQL_TB.Text = "DELETE FROM `projet4`.`membre` WHERE `membre`.`ID_membre` = ;";
+            SQL_TB.Text = "DELETE FROM `extranet`.`membre` WHERE `membre`.`ID_membre` = ;";
         }
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            //------ Pour le salt and hash des passwords -------
-            string salt = CreateSalt(4);
-            string pwd = MD5Hash(PWD_Box.Text, salt);
+            if(Prenom_Box.Text == "" || Nom_Box.Text == "" || Identity_Box.Text == "" || PWD_Box.Text == "")
+            {
+                MessageBox.Show("Erreur !");
+            }
+            else { //------ Pour le salt and hash des passwords -------
+                string salt = CreateSalt(4);
+                string pwd = MD5Hash(PWD_Box.Text, salt);
 
-            //---------------------------------------------------
-            MessageBox.Show(pwd);
-            MySqlCommand cmd = BDD.CreateCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-           // cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + Role_CB. + "','" + Add_Prenom_TB.Text + "','" + Add_User_TB.Text + "','" + pwd + "','" + Add_Rank_TB.Text + "','" + salt + "')";
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Ajouter !");
+                //---------------------------------------------------
+                //MessageBox.Show(pwd);
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + (Role_CB.SelectedIndex + 1) + "','" + Identity_Box.Text + "','" + pwd + "','" + salt + "','" + Prenom_Box.Text + "','" + Nom_Box.Text + "','" + Groupe_CB.Text + "')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Ajouter !");
+                Role_CB.Text = "";
+                Prenom_Box.Text = "";
+                Nom_Box.Text = "";
+                Groupe_CB.Text = "";
+                Identity_Box.Text = "";
+                PWD_Box.Text = "";
+                UpdateGrid(BDD);
+            }
+           
         }
     }
 }

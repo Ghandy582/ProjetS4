@@ -1,6 +1,6 @@
 ﻿namespace extranet_projet_s4
 {
-    partial class Gestion
+    partial class GestionUser
     {
         /// <summary>
         /// Required designer variable.

@@ -72,6 +72,12 @@
     <Compile Include="Form_acces_rapide_taches.Designer.cs">
       <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AdminGestionGroupe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionGroupe.Designer.cs">
+      <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="utilisateur.cs" />
     <EmbeddedResource Include="Form_acces_rapide_taches.resx">
       <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionGroupe.resx">
+      <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminMain.resx">
       <DependentUpon>Form_AdminMain.cs</DependentUpon>

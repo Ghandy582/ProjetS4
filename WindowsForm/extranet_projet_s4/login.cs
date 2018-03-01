@@ -166,7 +166,7 @@ namespace extranet_projet_s4
                     id_groupe_membre = myReader.GetInt16(8);
                 }
                 // __________ POUR ADMIN (4) ___________
-                if (count == 1 && role_tentative_co == 4)
+                if (count == 1 && role_tentative_co == 3)
                 {
                     MessageBox.Show("ID Correct ! Vous etes un admin");
                    // login.Hide();
@@ -188,13 +188,13 @@ namespace extranet_projet_s4
 
                 }
                 // __________ POUR ADMIN + PROF (6) ___________
-                else if (count == 1 && role_tentative_co == 6)
+                else if (count == 1 && role_tentative_co == 5)
                 {
                     MessageBox.Show("VID Correct ! Vous etes un admin et un professeur");
 
                 }
                 // __________ POUR ADMIN + ELEVE (5) ___________
-                else if (count == 1 && role_tentative_co == 5)
+                else if (count == 1 && role_tentative_co == 4)
                 {
                     Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);
                     form_login.Hide();

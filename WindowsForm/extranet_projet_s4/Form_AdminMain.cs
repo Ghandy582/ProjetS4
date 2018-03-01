@@ -76,7 +76,13 @@ namespace extranet_projet_s4
 
         private void Menu_User_Gestion_Click(object sender, EventArgs e)
         {
-            Gestion Gestion_Page = new Gestion(BDD);
+            GestionUser Gestion_Page = new GestionUser(BDD);
+            Gestion_Page.Show();
+        }
+
+        private void gérerLesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_AdminGestionGroupe Gestion_Page = new Form_AdminGestionGroupe(BDD);
             Gestion_Page.Show();
         }
     }

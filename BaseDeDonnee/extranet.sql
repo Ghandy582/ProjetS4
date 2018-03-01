@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- version 4.1.14
+-- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 27 Février 2018 à 16:57
--- Version du serveur :  5.7.14
--- Version de PHP :  7.0.10
+-- Généré le :  Jeu 01 Mars 2018 à 15:11
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `extranet`
@@ -26,12 +26,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `cours`
 --
 
-CREATE TABLE `cours` (
-  `ID_Cours` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `cours` (
+  `ID_Cours` int(11) NOT NULL AUTO_INCREMENT,
   `Libelle_Cours` varchar(250) NOT NULL,
   `Coefficient_Cours` int(11) NOT NULL,
-  `Couleur_Cours` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Couleur_Cours` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Cours`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -39,9 +40,11 @@ CREATE TABLE `cours` (
 -- Structure de la table `cours_membre`
 --
 
-CREATE TABLE `cours_membre` (
+CREATE TABLE IF NOT EXISTS `cours_membre` (
   `ID_Cours` int(11) NOT NULL,
-  `ID_membre` int(11) NOT NULL
+  `ID_membre` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Cours`,`ID_membre`),
+  KEY `FK_Cours_Membre_ID_membre` (`ID_membre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -50,10 +53,11 @@ CREATE TABLE `cours_membre` (
 -- Structure de la table `emploiedutemps`
 --
 
-CREATE TABLE `emploiedutemps` (
-  `ID_EDT` int(11) NOT NULL,
-  `Libelle` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `emploiedutemps` (
+  `ID_EDT` int(11) NOT NULL AUTO_INCREMENT,
+  `Libelle` varchar(25) NOT NULL,
+  PRIMARY KEY (`ID_EDT`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -61,9 +65,11 @@ CREATE TABLE `emploiedutemps` (
 -- Structure de la table `emploiedutemps_seance`
 --
 
-CREATE TABLE `emploiedutemps_seance` (
+CREATE TABLE IF NOT EXISTS `emploiedutemps_seance` (
   `ID_Seance` int(11) NOT NULL,
-  `ID_EDT` int(11) NOT NULL
+  `ID_EDT` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Seance`,`ID_EDT`),
+  KEY `FK_EmploieDuTemps_Seance_ID_EDT` (`ID_EDT`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,10 +78,11 @@ CREATE TABLE `emploiedutemps_seance` (
 -- Structure de la table `groupe`
 --
 
-CREATE TABLE `groupe` (
-  `ID_Groupe` int(11) NOT NULL,
-  `Libelle_Groupe` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `groupe` (
+  `ID_Groupe` int(11) NOT NULL AUTO_INCREMENT,
+  `Libelle_Groupe` varchar(250) NOT NULL,
+  PRIMARY KEY (`ID_Groupe`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `groupe`
@@ -83,7 +90,9 @@ CREATE TABLE `groupe` (
 
 INSERT INTO `groupe` (`ID_Groupe`, `Libelle_Groupe`) VALUES
 (1, 'Professeurs'),
-(2, 'Formation21C');
+(2, 'Formation21C'),
+(3, 'Formation21A'),
+(4, '');
 
 -- --------------------------------------------------------
 
@@ -91,9 +100,11 @@ INSERT INTO `groupe` (`ID_Groupe`, `Libelle_Groupe`) VALUES
 -- Structure de la table `groupe_seance`
 --
 
-CREATE TABLE `groupe_seance` (
+CREATE TABLE IF NOT EXISTS `groupe_seance` (
   `ID_Seance` int(11) NOT NULL,
-  `ID_Groupe` int(11) NOT NULL
+  `ID_Groupe` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Seance`,`ID_Groupe`),
+  KEY `FK_Groupe_Seance_ID_Groupe` (`ID_Groupe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -102,8 +113,8 @@ CREATE TABLE `groupe_seance` (
 -- Structure de la table `membre`
 --
 
-CREATE TABLE `membre` (
-  `ID_membre` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `membre` (
+  `ID_membre` int(11) NOT NULL AUTO_INCREMENT,
   `Role_Membre` int(11) NOT NULL,
   `User_Membre` varchar(25) NOT NULL,
   `MotdePasse_Membre` varchar(255) NOT NULL,
@@ -111,16 +122,22 @@ CREATE TABLE `membre` (
   `Prenom_Membre` varchar(25) NOT NULL,
   `Nom_Membre` varchar(25) NOT NULL,
   `PremiereCo_Membre` tinyint(1) NOT NULL,
-  `ID_Groupe` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ID_Groupe` int(11) NOT NULL,
+  PRIMARY KEY (`ID_membre`),
+  KEY `FK_Membre_ID_Groupe` (`ID_Groupe`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `membre`
 --
 
 INSERT INTO `membre` (`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES
-(1, 5, 'cgengoo', '81dc9bdb52d04dc20036dbd8313ed055', '1o67vw==', 'Christopher', 'Gengoo', 0, 2),
-(2, 5, 'user2', 'f133d09e1ab9ac0bca7f48432314317f', 'NM16DQ==', 'Jean', 'Bonbeur', 1, 2);
+(2, 4, 'user2', 'f133d09e1ab9ac0bca7f48432314317f', 'NM16DQ==', 'Jean', 'Bonbeur', 1, 2),
+(7, 4, 'cgengoo', '2dd939790934c0a9c5666e6812a7b4c4', 'wpBcpA==', 'Christopher', 'Gengoo', 0, 2),
+(9, 5, 'srobbe', 'c4a27dad5b71986c63d9cb25c279ff24', 'hqdj+w==', 'Stephane', 'Robbe', 0, 1),
+(10, 4, 'mjacob', 'b64ecd6691e25eabfc2655af357aca7d', 'tSdZEg==', 'Marine', 'Jacob', 0, 2),
+(11, 1, 'acampos', 'e4e93f2bd100898440326cda26afd0ea', 'cVvBzw==', 'Alex', 'Campos', 0, 2),
+(12, 2, 'ecabret', '2b738f22b45285382ef6111a5058d4fe', 'Y2M/MQ==', 'Eric', 'Cabret', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -128,13 +145,16 @@ INSERT INTO `membre` (`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Mem
 -- Structure de la table `note`
 --
 
-CREATE TABLE `note` (
-  `ID_Note` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `note` (
+  `ID_Note` int(11) NOT NULL AUTO_INCREMENT,
   `Note` int(11) NOT NULL,
   `Libelle_Note` varchar(250) NOT NULL,
   `ID_membre` int(11) NOT NULL,
-  `ID_Cours` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ID_Cours` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Note`),
+  KEY `FK_Note_ID_Cours` (`ID_Cours`),
+  KEY `FK_Note_ID_membre` (`ID_membre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -142,14 +162,16 @@ CREATE TABLE `note` (
 -- Structure de la table `seance`
 --
 
-CREATE TABLE `seance` (
-  `ID_Seance` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `seance` (
+  `ID_Seance` int(11) NOT NULL AUTO_INCREMENT,
   `Date_Seance` date NOT NULL,
   `Debut_Seance` tinyint(1) NOT NULL,
   `Note_Seance` varchar(250) DEFAULT NULL,
   `NotePersonnel_Seance` varchar(250) DEFAULT NULL,
-  `ID_Cours` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ID_Cours` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Seance`),
+  KEY `FK_Seance_ID_Cours` (`ID_Cours`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -157,126 +179,17 @@ CREATE TABLE `seance` (
 -- Structure de la table `travauxpratique`
 --
 
-CREATE TABLE `travauxpratique` (
-  `ID_TP` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `travauxpratique` (
+  `ID_TP` int(11) NOT NULL AUTO_INCREMENT,
   `Libelle_TP` varchar(250) NOT NULL,
   `Date_TP` date NOT NULL,
   `ID_Cours` int(11) NOT NULL,
-  `ID_Groupe` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ID_Groupe` int(11) NOT NULL,
+  PRIMARY KEY (`ID_TP`),
+  KEY `FK_TravauxPratique_ID_Cours` (`ID_Cours`),
+  KEY `FK_TravauxPratique_ID_Groupe` (`ID_Groupe`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `cours`
---
-ALTER TABLE `cours`
-  ADD PRIMARY KEY (`ID_Cours`);
-
---
--- Index pour la table `cours_membre`
---
-ALTER TABLE `cours_membre`
-  ADD PRIMARY KEY (`ID_Cours`,`ID_membre`),
-  ADD KEY `FK_Cours_Membre_ID_membre` (`ID_membre`);
-
---
--- Index pour la table `emploiedutemps`
---
-ALTER TABLE `emploiedutemps`
-  ADD PRIMARY KEY (`ID_EDT`);
-
---
--- Index pour la table `emploiedutemps_seance`
---
-ALTER TABLE `emploiedutemps_seance`
-  ADD PRIMARY KEY (`ID_Seance`,`ID_EDT`),
-  ADD KEY `FK_EmploieDuTemps_Seance_ID_EDT` (`ID_EDT`);
-
---
--- Index pour la table `groupe`
---
-ALTER TABLE `groupe`
-  ADD PRIMARY KEY (`ID_Groupe`);
-
---
--- Index pour la table `groupe_seance`
---
-ALTER TABLE `groupe_seance`
-  ADD PRIMARY KEY (`ID_Seance`,`ID_Groupe`),
-  ADD KEY `FK_Groupe_Seance_ID_Groupe` (`ID_Groupe`);
-
---
--- Index pour la table `membre`
---
-ALTER TABLE `membre`
-  ADD PRIMARY KEY (`ID_membre`),
-  ADD KEY `FK_Membre_ID_Groupe` (`ID_Groupe`);
-
---
--- Index pour la table `note`
---
-ALTER TABLE `note`
-  ADD PRIMARY KEY (`ID_Note`),
-  ADD KEY `FK_Note_ID_membre` (`ID_membre`),
-  ADD KEY `FK_Note_ID_Cours` (`ID_Cours`);
-
---
--- Index pour la table `seance`
---
-ALTER TABLE `seance`
-  ADD PRIMARY KEY (`ID_Seance`),
-  ADD KEY `FK_Seance_ID_Cours` (`ID_Cours`);
-
---
--- Index pour la table `travauxpratique`
---
-ALTER TABLE `travauxpratique`
-  ADD PRIMARY KEY (`ID_TP`),
-  ADD KEY `FK_TravauxPratique_ID_Cours` (`ID_Cours`),
-  ADD KEY `FK_TravauxPratique_ID_Groupe` (`ID_Groupe`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `cours`
---
-ALTER TABLE `cours`
-  MODIFY `ID_Cours` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `emploiedutemps`
---
-ALTER TABLE `emploiedutemps`
-  MODIFY `ID_EDT` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `groupe`
---
-ALTER TABLE `groupe`
-  MODIFY `ID_Groupe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `membre`
---
-ALTER TABLE `membre`
-  MODIFY `ID_membre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `note`
---
-ALTER TABLE `note`
-  MODIFY `ID_Note` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `seance`
---
-ALTER TABLE `seance`
-  MODIFY `ID_Seance` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `travauxpratique`
---
-ALTER TABLE `travauxpratique`
-  MODIFY `ID_TP` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
 --
