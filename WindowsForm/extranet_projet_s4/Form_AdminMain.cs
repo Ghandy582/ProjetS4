@@ -80,9 +80,15 @@ namespace extranet_projet_s4
             Gestion_Page.Show();
         }
 
-        private void gérerLesGroupesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Menu_Gestion_Groupe_Click(object sender, EventArgs e)
         {
             Form_AdminGestionGroupe Gestion_Page = new Form_AdminGestionGroupe(BDD);
+            Gestion_Page.Show();
+        }
+
+        private void Menu_Gestion_Cours_Click(object sender, EventArgs e)
+        {
+            Form_AdminGestionCours Gestion_Page = new Form_AdminGestionCours(BDD);
             Gestion_Page.Show();
         }
     }

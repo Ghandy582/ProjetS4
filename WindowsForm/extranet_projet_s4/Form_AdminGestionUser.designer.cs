@@ -39,7 +39,6 @@
             this.SQL_Label = new System.Windows.Forms.Label();
             this.SQLpwd_TB = new System.Windows.Forms.TextBox();
             this.SQLentrer_Button = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.PanelAdd = new System.Windows.Forms.Panel();
             this.Groupe_CB = new System.Windows.Forms.ComboBox();
             this.Nom_Box = new System.Windows.Forms.TextBox();
@@ -149,14 +148,6 @@
             this.SQLentrer_Button.Text = "Entrer";
             this.SQLentrer_Button.UseVisualStyleBackColor = true;
             this.SQLentrer_Button.Click += new System.EventHandler(this.SQLentrer_Button_Click);
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(10, 647);
-            this.splitter1.TabIndex = 7;
-            this.splitter1.TabStop = false;
             // 
             // PanelAdd
             // 
@@ -287,13 +278,12 @@
             this.Enter_Button.UseVisualStyleBackColor = true;
             this.Enter_Button.Click += new System.EventHandler(this.Enter_Button_Click);
             // 
-            // Gestion
+            // GestionUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 647);
             this.Controls.Add(this.PanelAdd);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SQLpwd_TB);
             this.Controls.Add(this.SQL_Label);
@@ -301,7 +291,7 @@
             this.Controls.Add(this.AjouterButton);
             this.Controls.Add(this.SQL_TB);
             this.Controls.Add(this.PanelGestion);
-            this.Name = "Gestion";
+            this.Name = "GestionUser";
             this.Text = "Gestion des utilisateurs";
             this.PanelGestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).EndInit();
@@ -325,7 +315,6 @@
         private System.Windows.Forms.Label SQL_Label;
         private System.Windows.Forms.TextBox SQLpwd_TB;
         private System.Windows.Forms.Button SQLentrer_Button;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel PanelAdd;
         private System.Windows.Forms.Button Enter_Button;
         private System.Windows.Forms.Label Nom_Label;
