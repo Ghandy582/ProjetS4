@@ -47,9 +47,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
-            this.PanelGestion = new System.Windows.Forms.Panel();
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
             this.Groupe_CB = new System.Windows.Forms.ComboBox();
+            this.PanelGestion = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -58,16 +58,18 @@
             // 
             // Nom_Box
             // 
-            this.Nom_Box.Location = new System.Drawing.Point(172, 130);
+            this.Nom_Box.Location = new System.Drawing.Point(172, 184);
+            this.Nom_Box.Multiline = true;
             this.Nom_Box.Name = "Nom_Box";
-            this.Nom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Nom_Box.Size = new System.Drawing.Size(264, 74);
             this.Nom_Box.TabIndex = 18;
             // 
             // Prenom_Box
             // 
             this.Prenom_Box.Location = new System.Drawing.Point(172, 90);
+            this.Prenom_Box.Multiline = true;
             this.Prenom_Box.Name = "Prenom_Box";
-            this.Prenom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Prenom_Box.Size = new System.Drawing.Size(264, 79);
             this.Prenom_Box.TabIndex = 17;
             // 
             // PWD_Box
@@ -87,7 +89,7 @@
             // Cours_Label
             // 
             this.Cours_Label.AutoSize = true;
-            this.Cours_Label.Location = new System.Drawing.Point(12, 173);
+            this.Cours_Label.Location = new System.Drawing.Point(12, 280);
             this.Cours_Label.Name = "Cours_Label";
             this.Cours_Label.Size = new System.Drawing.Size(104, 13);
             this.Cours_Label.TabIndex = 12;
@@ -96,7 +98,7 @@
             // NoteP_Label
             // 
             this.NoteP_Label.AutoSize = true;
-            this.NoteP_Label.Location = new System.Drawing.Point(12, 133);
+            this.NoteP_Label.Location = new System.Drawing.Point(12, 184);
             this.NoteP_Label.Name = "NoteP_Label";
             this.NoteP_Label.Size = new System.Drawing.Size(129, 13);
             this.NoteP_Label.TabIndex = 11;
@@ -105,7 +107,7 @@
             // Note_Label
             // 
             this.Note_Label.AutoSize = true;
-            this.Note_Label.Location = new System.Drawing.Point(12, 93);
+            this.Note_Label.Location = new System.Drawing.Point(12, 90);
             this.Note_Label.Name = "Note_Label";
             this.Note_Label.Size = new System.Drawing.Size(80, 13);
             this.Note_Label.TabIndex = 10;
@@ -131,7 +133,7 @@
             // 
             // Enter_Button
             // 
-            this.Enter_Button.Location = new System.Drawing.Point(539, 280);
+            this.Enter_Button.Location = new System.Drawing.Point(531, 280);
             this.Enter_Button.Name = "Enter_Button";
             this.Enter_Button.Size = new System.Drawing.Size(149, 41);
             this.Enter_Button.TabIndex = 7;
@@ -155,6 +157,7 @@
             this.SupprimerButton.TabIndex = 12;
             this.SupprimerButton.Text = "Supprimer";
             this.SupprimerButton.UseVisualStyleBackColor = true;
+            this.SupprimerButton.Click += new System.EventHandler(this.SupprimerButton_Click);
             // 
             // AjouterButton
             // 
@@ -164,6 +167,7 @@
             this.AjouterButton.TabIndex = 11;
             this.AjouterButton.Text = "Ajouter";
             this.AjouterButton.UseVisualStyleBackColor = true;
+            this.AjouterButton.Click += new System.EventHandler(this.AjouterButton_Click);
             // 
             // SQL_TB
             // 
@@ -213,10 +217,24 @@
             this.PanelAdd.Controls.Add(this.DateF_Label);
             this.PanelAdd.Controls.Add(this.DateD_Label);
             this.PanelAdd.Controls.Add(this.Enter_Button);
-            this.PanelAdd.Location = new System.Drawing.Point(340, 285);
+            this.PanelAdd.Location = new System.Drawing.Point(351, 285);
             this.PanelAdd.Name = "PanelAdd";
-            this.PanelAdd.Size = new System.Drawing.Size(701, 353);
+            this.PanelAdd.Size = new System.Drawing.Size(690, 353);
             this.PanelAdd.TabIndex = 16;
+            // 
+            // Calendrier
+            // 
+            this.Calendrier.Location = new System.Drawing.Point(453, 50);
+            this.Calendrier.Name = "Calendrier";
+            this.Calendrier.TabIndex = 20;
+            // 
+            // Groupe_CB
+            // 
+            this.Groupe_CB.FormattingEnabled = true;
+            this.Groupe_CB.Location = new System.Drawing.Point(172, 277);
+            this.Groupe_CB.Name = "Groupe_CB";
+            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
+            this.Groupe_CB.TabIndex = 19;
             // 
             // PanelGestion
             // 
@@ -225,20 +243,6 @@
             this.PanelGestion.Name = "PanelGestion";
             this.PanelGestion.Size = new System.Drawing.Size(1040, 270);
             this.PanelGestion.TabIndex = 9;
-            // 
-            // Calendrier
-            // 
-            this.Calendrier.Location = new System.Drawing.Point(461, 10);
-            this.Calendrier.Name = "Calendrier";
-            this.Calendrier.TabIndex = 20;
-            // 
-            // Groupe_CB
-            // 
-            this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 170);
-            this.Groupe_CB.Name = "Groupe_CB";
-            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
-            this.Groupe_CB.TabIndex = 19;
             // 
             // Form_AdminGestionSeance
             // 
