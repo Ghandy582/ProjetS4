@@ -78,7 +78,7 @@ namespace extranet_projet_s4
 
         private void Supprimer_Button_Click(object sender, EventArgs e)
         {
-            SQL_Box.Text = "DELETE FROM `groupe` WHERE ";
+            SQL_Box.Text = "DELETE FROM `groupe` WHERE `groupe`.`ID_Groupe` =  ";
         }
 
         private void SQLEntrer_Button_Click(object sender, EventArgs e)

@@ -35,10 +35,10 @@
             this.Ajouter_Button = new System.Windows.Forms.Button();
             this.Supprimer_Button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Libelle_Box = new System.Windows.Forms.TextBox();
             this.Entrer_Button = new System.Windows.Forms.Button();
             this.Libelle_Label = new System.Windows.Forms.Label();
             this.SQLEntrer_Button = new System.Windows.Forms.Button();
-            this.Libelle_Box = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ClicDroitSupprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_GridView.SuspendLayout();
@@ -66,6 +66,7 @@
             this.Gestion_GridView.Name = "Gestion_GridView";
             this.Gestion_GridView.Size = new System.Drawing.Size(423, 226);
             this.Gestion_GridView.TabIndex = 0;
+            this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
             // 
             // SQL_Box
             // 
@@ -106,6 +107,13 @@
             this.panel1.Size = new System.Drawing.Size(397, 99);
             this.panel1.TabIndex = 4;
             // 
+            // Libelle_Box
+            // 
+            this.Libelle_Box.Location = new System.Drawing.Point(145, 12);
+            this.Libelle_Box.Name = "Libelle_Box";
+            this.Libelle_Box.Size = new System.Drawing.Size(249, 20);
+            this.Libelle_Box.TabIndex = 7;
+            // 
             // Entrer_Button
             // 
             this.Entrer_Button.Location = new System.Drawing.Point(257, 59);
@@ -135,13 +143,6 @@
             this.SQLEntrer_Button.UseVisualStyleBackColor = true;
             this.SQLEntrer_Button.Click += new System.EventHandler(this.SQLEntrer_Button_Click);
             // 
-            // Libelle_Box
-            // 
-            this.Libelle_Box.Location = new System.Drawing.Point(145, 12);
-            this.Libelle_Box.Name = "Libelle_Box";
-            this.Libelle_Box.Size = new System.Drawing.Size(249, 20);
-            this.Libelle_Box.TabIndex = 7;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -152,7 +153,7 @@
             // ClicDroitSupprimer
             // 
             this.ClicDroitSupprimer.Name = "ClicDroitSupprimer";
-            this.ClicDroitSupprimer.Size = new System.Drawing.Size(152, 22);
+            this.ClicDroitSupprimer.Size = new System.Drawing.Size(129, 22);
             this.ClicDroitSupprimer.Text = "Supprimer";
             this.ClicDroitSupprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 
