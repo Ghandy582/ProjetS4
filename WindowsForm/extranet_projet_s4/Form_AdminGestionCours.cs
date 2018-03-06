@@ -16,6 +16,7 @@ namespace extranet_projet_s4
         public MySqlConnection BDD;
         private MySqlDataAdapter mySqlDataAdapter;
         ColorDialog col = new ColorDialog();
+        private int rowIndex = 0;
         public Form_AdminGestionCours(MySqlConnection SQL)
         {
             this.BDD = SQL;
@@ -31,6 +32,26 @@ namespace extranet_projet_s4
             //remplissage du tableau aves les données recuperées
             mySqlDataAdapter.Fill(DS);
             Gestion_GridView.DataSource = DS.Tables[0];
+        }
+        /*clic droit sur le grid*/
+        private void GestionCellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.Gestion_GridView.Rows[e.RowIndex].Selected = true;
+                this.rowIndex = e.RowIndex;
+                this.Gestion_GridView.CurrentCell = this.Gestion_GridView.Rows[e.RowIndex].Cells[1];
+                this.contextMenuStrip1.Show(this.Gestion_GridView, e.Location);
+                contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+
+        private void ClicDroitSupprimer_Click(object sender, EventArgs e)
+        {
+            if (!this.Gestion_GridView.Rows[this.rowIndex].IsNewRow)
+            {
+                this.Gestion_GridView.Rows.RemoveAt(this.rowIndex);
+            }
         }
         private void Couleur_Button_Click(object sender, EventArgs e)
         {
