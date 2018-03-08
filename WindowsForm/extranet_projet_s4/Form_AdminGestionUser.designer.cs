@@ -63,8 +63,9 @@
             // 
             this.PanelGestion.Controls.Add(this.Gestion_GridView);
             this.PanelGestion.Location = new System.Drawing.Point(0, 0);
+            this.PanelGestion.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.PanelGestion.Name = "PanelGestion";
-            this.PanelGestion.Size = new System.Drawing.Size(1206, 270);
+            this.PanelGestion.Size = new System.Drawing.Size(3819, 768);
             this.PanelGestion.TabIndex = 0;
             // 
             // Gestion_GridView
@@ -75,39 +76,43 @@
             this.Gestion_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gestion_GridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gestion_GridView.Location = new System.Drawing.Point(0, 0);
+            this.Gestion_GridView.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Gestion_GridView.Name = "Gestion_GridView";
-            this.Gestion_GridView.Size = new System.Drawing.Size(1206, 270);
+            this.Gestion_GridView.Size = new System.Drawing.Size(3819, 768);
             this.Gestion_GridView.TabIndex = 0;
             this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
             this.Gestion_GridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_DataGrid_RowValidated);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClicDroitSupprimer});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(267, 56);
             // 
             // ClicDroitSupprimer
             // 
             this.ClicDroitSupprimer.Name = "ClicDroitSupprimer";
-            this.ClicDroitSupprimer.Size = new System.Drawing.Size(129, 22);
+            this.ClicDroitSupprimer.Size = new System.Drawing.Size(266, 52);
             this.ClicDroitSupprimer.Text = "Supprimer";
             this.ClicDroitSupprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 
             // SQL_TB
             // 
-            this.SQL_TB.Location = new System.Drawing.Point(12, 311);
+            this.SQL_TB.Location = new System.Drawing.Point(38, 885);
+            this.SQL_TB.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.SQL_TB.Multiline = true;
             this.SQL_TB.Name = "SQL_TB";
-            this.SQL_TB.Size = new System.Drawing.Size(459, 229);
+            this.SQL_TB.Size = new System.Drawing.Size(1445, 644);
             this.SQL_TB.TabIndex = 1;
             // 
             // AjouterButton
             // 
-            this.AjouterButton.Location = new System.Drawing.Point(13, 282);
+            this.AjouterButton.Location = new System.Drawing.Point(41, 803);
+            this.AjouterButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.AjouterButton.Name = "AjouterButton";
-            this.AjouterButton.Size = new System.Drawing.Size(219, 23);
+            this.AjouterButton.Size = new System.Drawing.Size(694, 65);
             this.AjouterButton.TabIndex = 2;
             this.AjouterButton.Text = "Ajouter";
             this.AjouterButton.UseVisualStyleBackColor = true;
@@ -115,9 +120,10 @@
             // 
             // SupprimerButton
             // 
-            this.SupprimerButton.Location = new System.Drawing.Point(238, 281);
+            this.SupprimerButton.Location = new System.Drawing.Point(754, 800);
+            this.SupprimerButton.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.SupprimerButton.Name = "SupprimerButton";
-            this.SupprimerButton.Size = new System.Drawing.Size(232, 23);
+            this.SupprimerButton.Size = new System.Drawing.Size(735, 65);
             this.SupprimerButton.TabIndex = 3;
             this.SupprimerButton.Text = "Supprimer";
             this.SupprimerButton.UseVisualStyleBackColor = true;
@@ -126,24 +132,27 @@
             // SQL_Label
             // 
             this.SQL_Label.AutoSize = true;
-            this.SQL_Label.Location = new System.Drawing.Point(10, 560);
+            this.SQL_Label.Location = new System.Drawing.Point(32, 1594);
+            this.SQL_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.SQL_Label.Name = "SQL_Label";
-            this.SQL_Label.Size = new System.Drawing.Size(78, 13);
+            this.SQL_Label.Size = new System.Drawing.Size(229, 37);
             this.SQL_Label.TabIndex = 4;
             this.SQL_Label.Text = "Mot de Passe :";
             // 
             // SQLpwd_TB
             // 
-            this.SQLpwd_TB.Location = new System.Drawing.Point(120, 557);
+            this.SQLpwd_TB.Location = new System.Drawing.Point(380, 1585);
+            this.SQLpwd_TB.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.SQLpwd_TB.Name = "SQLpwd_TB";
-            this.SQLpwd_TB.Size = new System.Drawing.Size(350, 20);
+            this.SQLpwd_TB.Size = new System.Drawing.Size(1100, 44);
             this.SQLpwd_TB.TabIndex = 5;
             // 
             // SQLentrer_Button
             // 
-            this.SQLentrer_Button.Location = new System.Drawing.Point(321, 594);
+            this.SQLentrer_Button.Location = new System.Drawing.Point(1017, 1691);
+            this.SQLentrer_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.SQLentrer_Button.Name = "SQLentrer_Button";
-            this.SQLentrer_Button.Size = new System.Drawing.Size(149, 41);
+            this.SQLentrer_Button.Size = new System.Drawing.Size(472, 117);
             this.SQLentrer_Button.TabIndex = 6;
             this.SQLentrer_Button.Text = "Entrer";
             this.SQLentrer_Button.UseVisualStyleBackColor = true;
@@ -165,114 +174,128 @@
             this.PanelAdd.Controls.Add(this.Identity_Label);
             this.PanelAdd.Controls.Add(this.Role_Label);
             this.PanelAdd.Controls.Add(this.Enter_Button);
-            this.PanelAdd.Location = new System.Drawing.Point(509, 282);
+            this.PanelAdd.Location = new System.Drawing.Point(1612, 803);
+            this.PanelAdd.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.PanelAdd.Name = "PanelAdd";
-            this.PanelAdd.Size = new System.Drawing.Size(686, 353);
+            this.PanelAdd.Size = new System.Drawing.Size(2172, 1005);
             this.PanelAdd.TabIndex = 8;
             // 
             // Groupe_CB
             // 
             this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 210);
+            this.Groupe_CB.Location = new System.Drawing.Point(545, 598);
+            this.Groupe_CB.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Groupe_CB.Name = "Groupe_CB";
-            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
+            this.Groupe_CB.Size = new System.Drawing.Size(827, 45);
             this.Groupe_CB.TabIndex = 19;
             // 
             // Nom_Box
             // 
-            this.Nom_Box.Location = new System.Drawing.Point(172, 170);
+            this.Nom_Box.Location = new System.Drawing.Point(545, 484);
+            this.Nom_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Nom_Box.Name = "Nom_Box";
-            this.Nom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Nom_Box.Size = new System.Drawing.Size(827, 44);
             this.Nom_Box.TabIndex = 18;
             // 
             // Prenom_Box
             // 
-            this.Prenom_Box.Location = new System.Drawing.Point(172, 130);
+            this.Prenom_Box.Location = new System.Drawing.Point(545, 370);
+            this.Prenom_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Prenom_Box.Name = "Prenom_Box";
-            this.Prenom_Box.Size = new System.Drawing.Size(264, 20);
+            this.Prenom_Box.Size = new System.Drawing.Size(827, 44);
             this.Prenom_Box.TabIndex = 17;
             // 
             // PWD_Box
             // 
-            this.PWD_Box.Location = new System.Drawing.Point(172, 90);
+            this.PWD_Box.Location = new System.Drawing.Point(545, 256);
+            this.PWD_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.PWD_Box.Name = "PWD_Box";
-            this.PWD_Box.Size = new System.Drawing.Size(264, 20);
+            this.PWD_Box.Size = new System.Drawing.Size(827, 44);
             this.PWD_Box.TabIndex = 16;
             // 
             // Identity_Box
             // 
-            this.Identity_Box.Location = new System.Drawing.Point(172, 50);
+            this.Identity_Box.Location = new System.Drawing.Point(545, 142);
+            this.Identity_Box.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Identity_Box.Name = "Identity_Box";
-            this.Identity_Box.Size = new System.Drawing.Size(264, 20);
+            this.Identity_Box.Size = new System.Drawing.Size(827, 44);
             this.Identity_Box.TabIndex = 15;
             // 
             // Role_CB
             // 
             this.Role_CB.FormattingEnabled = true;
-            this.Role_CB.Location = new System.Drawing.Point(172, 7);
+            this.Role_CB.Location = new System.Drawing.Point(545, 20);
+            this.Role_CB.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Role_CB.Name = "Role_CB";
-            this.Role_CB.Size = new System.Drawing.Size(264, 21);
+            this.Role_CB.Size = new System.Drawing.Size(827, 45);
             this.Role_CB.TabIndex = 14;
             // 
             // Groupe_Label
             // 
             this.Groupe_Label.AutoSize = true;
-            this.Groupe_Label.Location = new System.Drawing.Point(12, 210);
+            this.Groupe_Label.Location = new System.Drawing.Point(38, 598);
+            this.Groupe_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Groupe_Label.Name = "Groupe_Label";
-            this.Groupe_Label.Size = new System.Drawing.Size(114, 13);
+            this.Groupe_Label.Size = new System.Drawing.Size(346, 37);
             this.Groupe_Label.TabIndex = 13;
             this.Groupe_Label.Text = "Groupe de l\'utilisateur :";
             // 
             // Nom_Label
             // 
             this.Nom_Label.AutoSize = true;
-            this.Nom_Label.Location = new System.Drawing.Point(12, 170);
+            this.Nom_Label.Location = new System.Drawing.Point(38, 484);
+            this.Nom_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Nom_Label.Name = "Nom_Label";
-            this.Nom_Label.Size = new System.Drawing.Size(101, 13);
+            this.Nom_Label.Size = new System.Drawing.Size(308, 37);
             this.Nom_Label.TabIndex = 12;
             this.Nom_Label.Text = "Nom de l\'utilisateur :";
             // 
             // Prenom_Label
             // 
             this.Prenom_Label.AutoSize = true;
-            this.Prenom_Label.Location = new System.Drawing.Point(12, 130);
+            this.Prenom_Label.Location = new System.Drawing.Point(38, 370);
+            this.Prenom_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Prenom_Label.Name = "Prenom_Label";
-            this.Prenom_Label.Size = new System.Drawing.Size(115, 13);
+            this.Prenom_Label.Size = new System.Drawing.Size(351, 37);
             this.Prenom_Label.TabIndex = 11;
             this.Prenom_Label.Text = "Prénom de l\'utilisateur :";
             // 
             // PWD_Label
             // 
             this.PWD_Label.AutoSize = true;
-            this.PWD_Label.Location = new System.Drawing.Point(12, 90);
+            this.PWD_Label.Location = new System.Drawing.Point(38, 256);
+            this.PWD_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.PWD_Label.Name = "PWD_Label";
-            this.PWD_Label.Size = new System.Drawing.Size(77, 13);
+            this.PWD_Label.Size = new System.Drawing.Size(226, 37);
             this.PWD_Label.TabIndex = 10;
             this.PWD_Label.Text = "Mot de passe :";
             // 
             // Identity_Label
             // 
             this.Identity_Label.AutoSize = true;
-            this.Identity_Label.Location = new System.Drawing.Point(12, 50);
+            this.Identity_Label.Location = new System.Drawing.Point(38, 142);
+            this.Identity_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Identity_Label.Name = "Identity_Label";
-            this.Identity_Label.Size = new System.Drawing.Size(119, 13);
+            this.Identity_Label.Size = new System.Drawing.Size(346, 37);
             this.Identity_Label.TabIndex = 9;
             this.Identity_Label.Text = "Identité de connection :";
             // 
             // Role_Label
             // 
             this.Role_Label.AutoSize = true;
-            this.Role_Label.Location = new System.Drawing.Point(12, 10);
+            this.Role_Label.Location = new System.Drawing.Point(38, 28);
+            this.Role_Label.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.Role_Label.Name = "Role_Label";
-            this.Role_Label.Size = new System.Drawing.Size(101, 13);
+            this.Role_Label.Size = new System.Drawing.Size(303, 37);
             this.Role_Label.TabIndex = 8;
             this.Role_Label.Text = "Role de l\'utilisateur :";
             // 
             // Enter_Button
             // 
-            this.Enter_Button.Location = new System.Drawing.Point(523, 297);
+            this.Enter_Button.Location = new System.Drawing.Point(1656, 845);
+            this.Enter_Button.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Enter_Button.Name = "Enter_Button";
-            this.Enter_Button.Size = new System.Drawing.Size(149, 41);
+            this.Enter_Button.Size = new System.Drawing.Size(472, 117);
             this.Enter_Button.TabIndex = 7;
             this.Enter_Button.Text = "Entrer";
             this.Enter_Button.UseVisualStyleBackColor = true;
@@ -280,9 +303,9 @@
             // 
             // GestionUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1207, 647);
+            this.ClientSize = new System.Drawing.Size(3822, 1841);
             this.Controls.Add(this.PanelAdd);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SQLpwd_TB);
@@ -291,7 +314,9 @@
             this.Controls.Add(this.AjouterButton);
             this.Controls.Add(this.SQL_TB);
             this.Controls.Add(this.PanelGestion);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "GestionUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion des utilisateurs";
             this.PanelGestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).EndInit();

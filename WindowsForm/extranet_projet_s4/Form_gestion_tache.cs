@@ -13,10 +13,15 @@ namespace extranet_projet_s4
     public partial class Form_gestion_tache : Form
     {
         form_login form_login;
-        public Form_gestion_tache(form_login lg)
+        Utilisateur utilisateur;
+        Taches taches;
+        public Form_gestion_tache(form_login lg, Utilisateur u,Taches t)
         {
             InitializeComponent();
             this.form_login = lg;
+            this.utilisateur = u;
+            this.taches = t;
+
         }
 
         private void Form_gestion_tache_Load(object sender, EventArgs e)
@@ -31,12 +36,14 @@ namespace extranet_projet_s4
 
         private void gestion_tache_accesrapide_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bientôt disponible");
+            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches);
+            form_acces_rapide_taches.Show();
         }
 
         private void gestion_tache_nouvelletache_btn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bientôt disponible");
+            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
+            form_nouvelle_tache.Show();
         }
     }
 }

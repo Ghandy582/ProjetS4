@@ -38,21 +38,20 @@ namespace extranet_projet_s4
         private void eleve_menu_gestion_taches_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_gestion_tache form_gestion_tache = new Form_gestion_tache(form_login);
+            Form_gestion_tache form_gestion_tache = new Form_gestion_tache(form_login,utilisateur,taches);
             form_gestion_tache.Show();
 
         }
 
         private void eleve_menu_acces_rapide_taches_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Bientôt disponible");
             Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches);
             form_acces_rapide_taches.Show();
         }
 
         private void eleve_menu_nouvelle_tache_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Bientôt disponible");
+
             Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
             form_nouvelle_tache.Show();
         }

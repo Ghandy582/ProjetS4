@@ -68,8 +68,13 @@ namespace extranet_projet_s4
             {
                 if (utilisateur.Premiere_co_membre == 0)
                 {
-                    Creation_fichier();
-
+                    if (!File.Exists("BDD.sqlite")) {
+                        Creation_fichier();
+                    }
+                    else
+                    {
+                        MessageBox.Show("c'est votre première connection sur l'application mais le fichier sqllite existe déjà");
+                    }   
                     //on modifie première co dans la bdd
                     Modif_premiereCo(utilisateur);
                 }
@@ -79,7 +84,7 @@ namespace extranet_projet_s4
                 }
                 else
                 {
-                    MessageBox.Show("Le fichier sqllite existe.");
+                    //MessageBox.Show("Le fichier sqllite existe.");
                 }
             }
             catch (Exception ex)

@@ -32,10 +32,10 @@
             this.Menu_Gestion_User = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Gestion_Groupe = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Gestion_Cours = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Gestion_Sceance = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main = new System.Windows.Forms.MenuStrip();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.PhpMyAdmin = new System.Windows.Forms.WebBrowser();
-            this.Menu_Gestion_Sceance = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,29 +48,36 @@
             this.Menu_Gestion_Sceance});
             this.Menu_Gestion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Menu_Gestion.Name = "Menu_Gestion";
-            this.Menu_Gestion.Size = new System.Drawing.Size(59, 20);
+            this.Menu_Gestion.Size = new System.Drawing.Size(153, 52);
             this.Menu_Gestion.Text = "Gestion";
             // 
             // Menu_Gestion_User
             // 
             this.Menu_Gestion_User.Name = "Menu_Gestion_User";
-            this.Menu_Gestion_User.Size = new System.Drawing.Size(179, 22);
+            this.Menu_Gestion_User.Size = new System.Drawing.Size(471, 54);
             this.Menu_Gestion_User.Text = "Gérer les utilisateurs";
             this.Menu_Gestion_User.Click += new System.EventHandler(this.Menu_User_Gestion_Click);
             // 
             // Menu_Gestion_Groupe
             // 
             this.Menu_Gestion_Groupe.Name = "Menu_Gestion_Groupe";
-            this.Menu_Gestion_Groupe.Size = new System.Drawing.Size(179, 22);
+            this.Menu_Gestion_Groupe.Size = new System.Drawing.Size(471, 54);
             this.Menu_Gestion_Groupe.Text = "Gérer les groupes";
             this.Menu_Gestion_Groupe.Click += new System.EventHandler(this.Menu_Gestion_Groupe_Click);
             // 
             // Menu_Gestion_Cours
             // 
             this.Menu_Gestion_Cours.Name = "Menu_Gestion_Cours";
-            this.Menu_Gestion_Cours.Size = new System.Drawing.Size(179, 22);
+            this.Menu_Gestion_Cours.Size = new System.Drawing.Size(471, 54);
             this.Menu_Gestion_Cours.Text = "Gérer les cours";
             this.Menu_Gestion_Cours.Click += new System.EventHandler(this.Menu_Gestion_Cours_Click);
+            // 
+            // Menu_Gestion_Sceance
+            // 
+            this.Menu_Gestion_Sceance.Name = "Menu_Gestion_Sceance";
+            this.Menu_Gestion_Sceance.Size = new System.Drawing.Size(471, 54);
+            this.Menu_Gestion_Sceance.Text = "Gérer les séances";
+            this.Menu_Gestion_Sceance.Click += new System.EventHandler(this.Menu_Gestion_Sceance_Click);
             // 
             // Menu_Main
             // 
@@ -80,36 +87,33 @@
             this.Menu_Gestion});
             this.Menu_Main.Location = new System.Drawing.Point(0, 0);
             this.Menu_Main.Name = "Menu_Main";
-            this.Menu_Main.Size = new System.Drawing.Size(1192, 24);
+            this.Menu_Main.Padding = new System.Windows.Forms.Padding(19, 6, 0, 6);
+            this.Menu_Main.Size = new System.Drawing.Size(3775, 64);
             this.Menu_Main.TabIndex = 2;
             this.Menu_Main.Text = "Menu_Main";
             // 
             // PhpMyAdmin
             // 
             this.PhpMyAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PhpMyAdmin.Location = new System.Drawing.Point(0, 24);
-            this.PhpMyAdmin.MinimumSize = new System.Drawing.Size(20, 20);
+            this.PhpMyAdmin.Location = new System.Drawing.Point(0, 64);
+            this.PhpMyAdmin.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.PhpMyAdmin.MinimumSize = new System.Drawing.Size(63, 57);
             this.PhpMyAdmin.Name = "PhpMyAdmin";
-            this.PhpMyAdmin.Size = new System.Drawing.Size(1192, 561);
+            this.PhpMyAdmin.Size = new System.Drawing.Size(3775, 1601);
             this.PhpMyAdmin.TabIndex = 3;
             this.PhpMyAdmin.Url = new System.Uri("http://localhost/phpmyadmin/#PMAURL-1:db_structure.php?db=projet4&table=&server=1" +
         "&target=&token=70d891510a56ec46ba98001cb80807be", System.UriKind.Absolute);
             // 
-            // Menu_Gestion_Sceance
-            // 
-            this.Menu_Gestion_Sceance.Name = "Menu_Gestion_Sceance";
-            this.Menu_Gestion_Sceance.Size = new System.Drawing.Size(179, 22);
-            this.Menu_Gestion_Sceance.Text = "Gérer les séances";
-            this.Menu_Gestion_Sceance.Click += new System.EventHandler(this.Menu_Gestion_Sceance_Click);
-            // 
             // Form_AdminMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1192, 585);
+            this.ClientSize = new System.Drawing.Size(3775, 1665);
             this.Controls.Add(this.PhpMyAdmin);
             this.Controls.Add(this.Menu_Main);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "Form_AdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
