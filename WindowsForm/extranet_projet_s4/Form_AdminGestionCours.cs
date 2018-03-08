@@ -94,7 +94,7 @@ namespace extranet_projet_s4
 
         private void SQLentrer_Button_Click(object sender, EventArgs e)
         {
-            if (SQL_TB.Text == "" || SQL_TB.Text == "DELETE FROM `cours` WHERE ")
+            if (SQL_TB.Text == "" || SQL_TB.Text == "DELETE FROM `cours` WHERE `cours`.`ID_Cours` ")
             {
                 MessageBox.Show("Erreur !");
             }

@@ -39,6 +39,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data">
       <HintPath>..\..\programme\mysql-connector.net\MySql.Data.dll</HintPath>
     </Reference>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
+using Microsoft.VisualBasic;
 
 namespace extranet_projet_s4
 {
@@ -129,8 +130,12 @@ namespace extranet_projet_s4
 
         private void AjouterButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Soon!");
-            //SQL_TB.Text = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`,`Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6])";
+
+            //Microsoft.VisualBasic.Interaction.Inputbox(message)
+            string salt = CreateSalt(4);
+            string pwd = MD5Hash(SQLpwd_TB.Text, salt);
+            SQL_TB.Text = "INSERT INTO `membre`(`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES ( , , ,'"+ salt +"','"+ pwd +"', , ,[value-8],[value-9])";
+            
         }
 
         private void SQLentrer_Button_Click(object sender, EventArgs e)
@@ -138,19 +143,19 @@ namespace extranet_projet_s4
             //------ Pour le salt and hash des passwords -------
             string salt= CreateSalt(4);
             string pwd = MD5Hash(SQLpwd_TB.Text, salt);
-
-            //---------------------------------------------------
-            MessageBox.Show(pwd);
-            MySqlCommand cmd = BDD.CreateCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT membre ( Nom,Prenom,User,Password,Rank,salt) VALUES ('"+Add_Nom_TB.Text+"','"+Add_Prenom_TB.Text+"','"+Add_User_TB.Text+"','"+pwd+"','"+Add_Rank_TB.Text+ "','" + salt + "')";
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Ajouter !");*/
-            MySqlCommand cmd = BDD.CreateCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = SQL_TB.Text;
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Supprimer !");
+            */
+            if (SQL_TB.Text == "")
+            {
+                MessageBox.Show("Erreur !");
+            }
+            else
+            {
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = SQL_TB.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Commande Appliquée !");
+            }
         }
 
         private void SupprimerButton_Click(object sender, EventArgs e)
