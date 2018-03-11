@@ -21,6 +21,7 @@ namespace extranet_projet_s4
             this.BDD = SQL;
             InitializeComponent();
             UpdateGrid(BDD);
+            ComboFill(BDD);
         }
         private void UpdateGrid(MySqlConnection SQL)
         {
@@ -52,7 +53,27 @@ namespace extranet_projet_s4
 
         private void SupprimerButton_Click(object sender, EventArgs e)
         {
-            SQL_TB.Text = "DELETE FROM `seance` WHERE";
+            SQL_TB.Text = "DELETE FROM `seance` WHERE `seance`.`ID_Seance` =";
+        }
+
+        private void Calendrier_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            Date_Box.Text = Calendrier.SelectionRange.Start.ToShortDateString();
+        }
+
+        private void ComboFill(MySqlConnection SQL)
+        {
+
+            string query = "SELECT * FROM cours";
+            MySqlCommand cmd = new MySqlCommand(query, SQL);
+
+            using (MySqlDataReader Reader = cmd.ExecuteReader())
+            {
+                while (Reader.Read())
+                {
+                    Cours_CB.Items.Add(Reader.GetString("ID_Cours"));
+                }
+            }
         }
     }
 }

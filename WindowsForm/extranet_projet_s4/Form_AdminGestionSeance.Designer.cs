@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Nom_Box = new System.Windows.Forms.TextBox();
-            this.Prenom_Box = new System.Windows.Forms.TextBox();
-            this.PWD_Box = new System.Windows.Forms.TextBox();
-            this.Identity_Box = new System.Windows.Forms.TextBox();
+            this.NoteP_Box = new System.Windows.Forms.TextBox();
+            this.Note_Box = new System.Windows.Forms.TextBox();
+            this.BoolDate_Box = new System.Windows.Forms.TextBox();
+            this.Date_Box = new System.Windows.Forms.TextBox();
             this.Cours_Label = new System.Windows.Forms.Label();
             this.NoteP_Label = new System.Windows.Forms.Label();
             this.Note_Label = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
-            this.Groupe_CB = new System.Windows.Forms.ComboBox();
+            this.Cours_CB = new System.Windows.Forms.ComboBox();
             this.PanelGestion = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
@@ -56,35 +56,35 @@
             this.PanelGestion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Nom_Box
+            // NoteP_Box
             // 
-            this.Nom_Box.Location = new System.Drawing.Point(172, 184);
-            this.Nom_Box.Multiline = true;
-            this.Nom_Box.Name = "Nom_Box";
-            this.Nom_Box.Size = new System.Drawing.Size(264, 74);
-            this.Nom_Box.TabIndex = 18;
+            this.NoteP_Box.Location = new System.Drawing.Point(172, 184);
+            this.NoteP_Box.Multiline = true;
+            this.NoteP_Box.Name = "NoteP_Box";
+            this.NoteP_Box.Size = new System.Drawing.Size(264, 74);
+            this.NoteP_Box.TabIndex = 18;
             // 
-            // Prenom_Box
+            // Note_Box
             // 
-            this.Prenom_Box.Location = new System.Drawing.Point(172, 90);
-            this.Prenom_Box.Multiline = true;
-            this.Prenom_Box.Name = "Prenom_Box";
-            this.Prenom_Box.Size = new System.Drawing.Size(264, 79);
-            this.Prenom_Box.TabIndex = 17;
+            this.Note_Box.Location = new System.Drawing.Point(172, 90);
+            this.Note_Box.Multiline = true;
+            this.Note_Box.Name = "Note_Box";
+            this.Note_Box.Size = new System.Drawing.Size(264, 79);
+            this.Note_Box.TabIndex = 17;
             // 
-            // PWD_Box
+            // BoolDate_Box
             // 
-            this.PWD_Box.Location = new System.Drawing.Point(172, 50);
-            this.PWD_Box.Name = "PWD_Box";
-            this.PWD_Box.Size = new System.Drawing.Size(264, 20);
-            this.PWD_Box.TabIndex = 16;
+            this.BoolDate_Box.Location = new System.Drawing.Point(172, 50);
+            this.BoolDate_Box.Name = "BoolDate_Box";
+            this.BoolDate_Box.Size = new System.Drawing.Size(264, 20);
+            this.BoolDate_Box.TabIndex = 16;
             // 
-            // Identity_Box
+            // Date_Box
             // 
-            this.Identity_Box.Location = new System.Drawing.Point(172, 11);
-            this.Identity_Box.Name = "Identity_Box";
-            this.Identity_Box.Size = new System.Drawing.Size(264, 20);
-            this.Identity_Box.TabIndex = 15;
+            this.Date_Box.Location = new System.Drawing.Point(172, 11);
+            this.Date_Box.Name = "Date_Box";
+            this.Date_Box.Size = new System.Drawing.Size(264, 20);
+            this.Date_Box.TabIndex = 15;
             // 
             // Cours_Label
             // 
@@ -118,18 +118,18 @@
             this.DateF_Label.AutoSize = true;
             this.DateF_Label.Location = new System.Drawing.Point(12, 53);
             this.DateF_Label.Name = "DateF_Label";
-            this.DateF_Label.Size = new System.Drawing.Size(118, 13);
+            this.DateF_Label.Size = new System.Drawing.Size(95, 13);
             this.DateF_Label.TabIndex = 9;
-            this.DateF_Label.Text = "Date de fin de séance :";
+            this.DateF_Label.Text = "Début de journée :";
             // 
             // DateD_Label
             // 
             this.DateD_Label.AutoSize = true;
             this.DateD_Label.Location = new System.Drawing.Point(12, 14);
             this.DateD_Label.Name = "DateD_Label";
-            this.DateD_Label.Size = new System.Drawing.Size(134, 13);
+            this.DateD_Label.Size = new System.Drawing.Size(89, 13);
             this.DateD_Label.TabIndex = 8;
-            this.DateD_Label.Text = "Date de début de séance :";
+            this.DateD_Label.Text = "Date de séance :";
             // 
             // Enter_Button
             // 
@@ -207,11 +207,11 @@
             // 
             this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.PanelAdd.Controls.Add(this.Calendrier);
-            this.PanelAdd.Controls.Add(this.Groupe_CB);
-            this.PanelAdd.Controls.Add(this.Nom_Box);
-            this.PanelAdd.Controls.Add(this.Prenom_Box);
-            this.PanelAdd.Controls.Add(this.PWD_Box);
-            this.PanelAdd.Controls.Add(this.Identity_Box);
+            this.PanelAdd.Controls.Add(this.Cours_CB);
+            this.PanelAdd.Controls.Add(this.NoteP_Box);
+            this.PanelAdd.Controls.Add(this.Note_Box);
+            this.PanelAdd.Controls.Add(this.BoolDate_Box);
+            this.PanelAdd.Controls.Add(this.Date_Box);
             this.PanelAdd.Controls.Add(this.Cours_Label);
             this.PanelAdd.Controls.Add(this.NoteP_Label);
             this.PanelAdd.Controls.Add(this.Note_Label);
@@ -228,14 +228,15 @@
             this.Calendrier.Location = new System.Drawing.Point(453, 50);
             this.Calendrier.Name = "Calendrier";
             this.Calendrier.TabIndex = 20;
+            this.Calendrier.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.Calendrier_DateChanged);
             // 
-            // Groupe_CB
+            // Cours_CB
             // 
-            this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 277);
-            this.Groupe_CB.Name = "Groupe_CB";
-            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
-            this.Groupe_CB.TabIndex = 19;
+            this.Cours_CB.FormattingEnabled = true;
+            this.Cours_CB.Location = new System.Drawing.Point(172, 277);
+            this.Cours_CB.Name = "Cours_CB";
+            this.Cours_CB.Size = new System.Drawing.Size(264, 21);
+            this.Cours_CB.TabIndex = 19;
             // 
             // PanelGestion
             // 
@@ -270,10 +271,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox Nom_Box;
-        private System.Windows.Forms.TextBox Prenom_Box;
-        private System.Windows.Forms.TextBox PWD_Box;
-        private System.Windows.Forms.TextBox Identity_Box;
+        private System.Windows.Forms.TextBox NoteP_Box;
+        private System.Windows.Forms.TextBox Note_Box;
+        private System.Windows.Forms.TextBox BoolDate_Box;
+        private System.Windows.Forms.TextBox Date_Box;
         private System.Windows.Forms.Label Cours_Label;
         private System.Windows.Forms.Label NoteP_Label;
         private System.Windows.Forms.Label Note_Label;
@@ -290,6 +291,6 @@
         private System.Windows.Forms.Panel PanelAdd;
         private System.Windows.Forms.Panel PanelGestion;
         private System.Windows.Forms.MonthCalendar Calendrier;
-        private System.Windows.Forms.ComboBox Groupe_CB;
+        private System.Windows.Forms.ComboBox Cours_CB;
     }
 }

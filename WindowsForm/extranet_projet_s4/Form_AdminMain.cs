@@ -94,7 +94,8 @@ namespace extranet_projet_s4
 
         private void Menu_Gestion_Sceance_Click(object sender, EventArgs e)
         {
-
+            Form_AdminGestionSeance Gestion_Page = new Form_AdminGestionSeance(BDD);
+            Gestion_Page.Show();
         }
     }
 }

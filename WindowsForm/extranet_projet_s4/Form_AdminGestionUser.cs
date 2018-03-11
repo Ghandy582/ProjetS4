@@ -131,10 +131,10 @@ namespace extranet_projet_s4
         private void AjouterButton_Click(object sender, EventArgs e)
         {
 
-            Interaction.InputBox("Mot de passe", "Title", "Default Text");
+            SQLpwd_TB.Text = Interaction.InputBox("Mot de passe", "Title", "Default Text");
             string salt = CreateSalt(4);
             string pwd = MD5Hash(SQLpwd_TB.Text, salt);
-            SQL_TB.Text = "INSERT INTO `membre`(`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES ( , , ,'"+ salt +"','"+ pwd +"', , ,[value-8],[value-9])";
+            SQL_TB.Text = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES ( , ,'"+ pwd +"','"+ salt +"', , ,)";
             
         }
 
