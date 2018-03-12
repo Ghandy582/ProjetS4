@@ -44,7 +44,7 @@
             this.nouvelle_tache_label.Location = new System.Drawing.Point(0, 83);
             this.nouvelle_tache_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.nouvelle_tache_label.Name = "nouvelle_tache_label";
-            this.nouvelle_tache_label.Size = new System.Drawing.Size(306, 49);
+            this.nouvelle_tache_label.Size = new System.Drawing.Size(105, 18);
             this.nouvelle_tache_label.TabIndex = 0;
             this.nouvelle_tache_label.Text = "Tâche à faire : ";
             this.nouvelle_tache_label.Click += new System.EventHandler(this.nouvelle_tache_label_Click);
@@ -52,9 +52,9 @@
             // nouvelle_tache_textbox
             // 
             this.nouvelle_tache_textbox.Location = new System.Drawing.Point(342, 85);
-            this.nouvelle_tache_textbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nouvelle_tache_textbox.Margin = new System.Windows.Forms.Padding(6);
             this.nouvelle_tache_textbox.Name = "nouvelle_tache_textbox";
-            this.nouvelle_tache_textbox.Size = new System.Drawing.Size(559, 44);
+            this.nouvelle_tache_textbox.Size = new System.Drawing.Size(559, 20);
             this.nouvelle_tache_textbox.TabIndex = 1;
             // 
             // nouvelle_tache_sansDate_radiobtn
@@ -62,9 +62,9 @@
             this.nouvelle_tache_sansDate_radiobtn.AutoSize = true;
             this.nouvelle_tache_sansDate_radiobtn.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nouvelle_tache_sansDate_radiobtn.Location = new System.Drawing.Point(141, 187);
-            this.nouvelle_tache_sansDate_radiobtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nouvelle_tache_sansDate_radiobtn.Margin = new System.Windows.Forms.Padding(6);
             this.nouvelle_tache_sansDate_radiobtn.Name = "nouvelle_tache_sansDate_radiobtn";
-            this.nouvelle_tache_sansDate_radiobtn.Size = new System.Drawing.Size(393, 53);
+            this.nouvelle_tache_sansDate_radiobtn.Size = new System.Drawing.Size(139, 22);
             this.nouvelle_tache_sansDate_radiobtn.TabIndex = 2;
             this.nouvelle_tache_sansDate_radiobtn.TabStop = true;
             this.nouvelle_tache_sansDate_radiobtn.Text = "Sans date butoire";
@@ -76,9 +76,9 @@
             this.nouvelle_tache_avecDate_radiobtn.AutoSize = true;
             this.nouvelle_tache_avecDate_radiobtn.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nouvelle_tache_avecDate_radiobtn.Location = new System.Drawing.Point(141, 278);
-            this.nouvelle_tache_avecDate_radiobtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nouvelle_tache_avecDate_radiobtn.Margin = new System.Windows.Forms.Padding(6);
             this.nouvelle_tache_avecDate_radiobtn.Name = "nouvelle_tache_avecDate_radiobtn";
-            this.nouvelle_tache_avecDate_radiobtn.Size = new System.Drawing.Size(390, 53);
+            this.nouvelle_tache_avecDate_radiobtn.Size = new System.Drawing.Size(136, 22);
             this.nouvelle_tache_avecDate_radiobtn.TabIndex = 3;
             this.nouvelle_tache_avecDate_radiobtn.TabStop = true;
             this.nouvelle_tache_avecDate_radiobtn.Text = "A faire avant le : ";
@@ -97,7 +97,7 @@
             // 
             this.nouvelle_tache_ajouter_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nouvelle_tache_ajouter_btn.Location = new System.Drawing.Point(348, 927);
-            this.nouvelle_tache_ajouter_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nouvelle_tache_ajouter_btn.Margin = new System.Windows.Forms.Padding(6);
             this.nouvelle_tache_ajouter_btn.Name = "nouvelle_tache_ajouter_btn";
             this.nouvelle_tache_ajouter_btn.Size = new System.Drawing.Size(342, 68);
             this.nouvelle_tache_ajouter_btn.TabIndex = 5;
@@ -109,7 +109,7 @@
             // 
             this.nouvelle_tache_annuler_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nouvelle_tache_annuler_btn.Location = new System.Drawing.Point(703, 927);
-            this.nouvelle_tache_annuler_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nouvelle_tache_annuler_btn.Margin = new System.Windows.Forms.Padding(6);
             this.nouvelle_tache_annuler_btn.Name = "nouvelle_tache_annuler_btn";
             this.nouvelle_tache_annuler_btn.Size = new System.Drawing.Size(209, 68);
             this.nouvelle_tache_annuler_btn.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.Controls.Add(this.nouvelle_tache_textbox);
             this.Controls.Add(this.nouvelle_tache_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form_nouvelle_tache";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nouvelle tâche";
