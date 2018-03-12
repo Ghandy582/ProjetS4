@@ -45,7 +45,7 @@
             this.eleve_menu.Location = new System.Drawing.Point(0, 0);
             this.eleve_menu.Name = "eleve_menu";
             this.eleve_menu.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.eleve_menu.Size = new System.Drawing.Size(3376, 65);
+            this.eleve_menu.Size = new System.Drawing.Size(3376, 56);
             this.eleve_menu.TabIndex = 0;
             this.eleve_menu.Text = "menuStrip1";
             // 
@@ -56,7 +56,7 @@
             this.eleve_menu_acces_rapide_taches,
             this.eleve_menu_nouvelle_tache});
             this.eleve_menu_taches.Name = "eleve_menu_taches";
-            this.eleve_menu_taches.Size = new System.Drawing.Size(149, 57);
+            this.eleve_menu_taches.Size = new System.Drawing.Size(149, 48);
             this.eleve_menu_taches.Text = "Tâches";
             // 
             // eleve_menu_gestion_taches
@@ -82,13 +82,12 @@
             // 
             // Form_eleve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(3376, 1650);
             this.Controls.Add(this.eleve_menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.eleve_menu;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form_eleve";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

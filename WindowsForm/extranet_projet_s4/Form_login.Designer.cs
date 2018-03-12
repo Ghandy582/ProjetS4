@@ -63,7 +63,7 @@
             // login_user_tb
             // 
             this.login_user_tb.Location = new System.Drawing.Point(365, 122);
-            this.login_user_tb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login_user_tb.Margin = new System.Windows.Forms.Padding(6);
             this.login_user_tb.Name = "login_user_tb";
             this.login_user_tb.Size = new System.Drawing.Size(359, 44);
             this.login_user_tb.TabIndex = 2;
@@ -71,7 +71,7 @@
             // login_mdp_tb
             // 
             this.login_mdp_tb.Location = new System.Drawing.Point(365, 252);
-            this.login_mdp_tb.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login_mdp_tb.Margin = new System.Windows.Forms.Padding(6);
             this.login_mdp_tb.Name = "login_mdp_tb";
             this.login_mdp_tb.PasswordChar = '*';
             this.login_mdp_tb.Size = new System.Drawing.Size(359, 44);
@@ -81,7 +81,7 @@
             // 
             this.login_connexion_btn.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_connexion_btn.Location = new System.Drawing.Point(565, 420);
-            this.login_connexion_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login_connexion_btn.Margin = new System.Windows.Forms.Padding(6);
             this.login_connexion_btn.Name = "login_connexion_btn";
             this.login_connexion_btn.Size = new System.Drawing.Size(273, 87);
             this.login_connexion_btn.TabIndex = 4;
@@ -101,7 +101,7 @@
             this.Controls.Add(this.user_texte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "form_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

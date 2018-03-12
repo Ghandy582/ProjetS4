@@ -41,7 +41,7 @@
             this.gestion_tache_tache_a_realiser_label.Location = new System.Drawing.Point(8, 46);
             this.gestion_tache_tache_a_realiser_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gestion_tache_tache_a_realiser_label.Name = "gestion_tache_tache_a_realiser_label";
-            this.gestion_tache_tache_a_realiser_label.Size = new System.Drawing.Size(219, 29);
+            this.gestion_tache_tache_a_realiser_label.Size = new System.Drawing.Size(657, 90);
             this.gestion_tache_tache_a_realiser_label.TabIndex = 0;
             this.gestion_tache_tache_a_realiser_label.Text = "Tâches à réaliser :";
             // 
@@ -49,20 +49,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 318);
+            this.label1.Location = new System.Drawing.Point(11, 684);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 29);
+            this.label1.Size = new System.Drawing.Size(1047, 90);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tâches récemment réalisées :";
             // 
             // gestion_tache_nouvelletache_btn
             // 
             this.gestion_tache_nouvelletache_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestion_tache_nouvelletache_btn.Location = new System.Drawing.Point(969, 542);
-            this.gestion_tache_nouvelletache_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gestion_tache_nouvelletache_btn.Location = new System.Drawing.Point(1838, 1306);
+            this.gestion_tache_nouvelletache_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_nouvelletache_btn.Name = "gestion_tache_nouvelletache_btn";
-            this.gestion_tache_nouvelletache_btn.Size = new System.Drawing.Size(89, 30);
+            this.gestion_tache_nouvelletache_btn.Size = new System.Drawing.Size(339, 105);
             this.gestion_tache_nouvelletache_btn.TabIndex = 2;
             this.gestion_tache_nouvelletache_btn.Text = "Nouvelle tâche";
             this.gestion_tache_nouvelletache_btn.UseVisualStyleBackColor = true;
@@ -71,10 +71,10 @@
             // gestion_tache_accesrapide_btn
             // 
             this.gestion_tache_accesrapide_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestion_tache_accesrapide_btn.Location = new System.Drawing.Point(841, 542);
-            this.gestion_tache_accesrapide_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gestion_tache_accesrapide_btn.Location = new System.Drawing.Point(1411, 1306);
+            this.gestion_tache_accesrapide_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_accesrapide_btn.Name = "gestion_tache_accesrapide_btn";
-            this.gestion_tache_accesrapide_btn.Size = new System.Drawing.Size(124, 30);
+            this.gestion_tache_accesrapide_btn.Size = new System.Drawing.Size(401, 105);
             this.gestion_tache_accesrapide_btn.TabIndex = 3;
             this.gestion_tache_accesrapide_btn.Text = "Ouvrir l\'accès rapide";
             this.gestion_tache_accesrapide_btn.UseVisualStyleBackColor = true;
@@ -83,13 +83,13 @@
             // Form_gestion_tache
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1068, 581);
+            this.ClientSize = new System.Drawing.Size(2201, 1431);
             this.Controls.Add(this.gestion_tache_accesrapide_btn);
             this.Controls.Add(this.gestion_tache_nouvelletache_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gestion_tache_tache_a_realiser_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_gestion_tache";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion des tâches";
