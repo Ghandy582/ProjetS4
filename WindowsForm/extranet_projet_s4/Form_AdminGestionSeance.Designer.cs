@@ -139,6 +139,7 @@
             this.Enter_Button.TabIndex = 7;
             this.Enter_Button.Text = "Entrer";
             this.Enter_Button.UseVisualStyleBackColor = true;
+            this.Enter_Button.Click += new System.EventHandler(this.Enter_Button_Click);
             // 
             // SQLentrer_Button
             // 
@@ -148,6 +149,7 @@
             this.SQLentrer_Button.TabIndex = 15;
             this.SQLentrer_Button.Text = "Entrer";
             this.SQLentrer_Button.UseVisualStyleBackColor = true;
+            this.SQLentrer_Button.Click += new System.EventHandler(this.SQLentrer_Button_Click);
             // 
             // SupprimerButton
             // 

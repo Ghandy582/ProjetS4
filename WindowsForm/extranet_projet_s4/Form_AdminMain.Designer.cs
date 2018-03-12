@@ -36,6 +36,7 @@
             this.Menu_Main = new System.Windows.Forms.MenuStrip();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.PhpMyAdmin = new System.Windows.Forms.WebBrowser();
+            this.assignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +85,8 @@
             this.Menu_Main.BackColor = System.Drawing.SystemColors.MenuBar;
             this.Menu_Main.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.Menu_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_Gestion});
+            this.Menu_Gestion,
+            this.assignerToolStripMenuItem});
             this.Menu_Main.Location = new System.Drawing.Point(0, 0);
             this.Menu_Main.Name = "Menu_Main";
             this.Menu_Main.Size = new System.Drawing.Size(1308, 24);
@@ -101,6 +103,12 @@
             this.PhpMyAdmin.TabIndex = 3;
             this.PhpMyAdmin.Url = new System.Uri("http://localhost/phpmyadmin/#PMAURL-1:db_structure.php?db=projet4&table=&server=1" +
         "&target=&token=70d891510a56ec46ba98001cb80807be", System.UriKind.Absolute);
+            // 
+            // assignerToolStripMenuItem
+            // 
+            this.assignerToolStripMenuItem.Name = "assignerToolStripMenuItem";
+            this.assignerToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.assignerToolStripMenuItem.Text = "Assigner";
             // 
             // Form_AdminMain
             // 
@@ -131,5 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Groupe;
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Cours;
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Sceance;
+        private System.Windows.Forms.ToolStripMenuItem assignerToolStripMenuItem;
     }
 }

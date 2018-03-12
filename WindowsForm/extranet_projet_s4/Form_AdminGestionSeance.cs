@@ -75,5 +75,45 @@ namespace extranet_projet_s4
                 }
             }
         }
+
+        private void Enter_Button_Click(object sender, EventArgs e)
+        {
+            if (BoolDate_Box.Text == "")
+            {
+                MessageBox.Show("Erreur !");
+            }
+            else
+            {
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('"+ Date_Box.Text +"','"+ BoolDate_Box.Text +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + Cours_CB.Text +"')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Ajouter !");
+                Date_Box.Text = "";
+                BoolDate_Box.Text = "";
+                NoteP_Box.Text = "";
+                Note_Box.Text = "";
+                Cours_CB.Text = "";
+                UpdateGrid(BDD);
+            }
+        }
+
+        private void SQLentrer_Button_Click(object sender, EventArgs e)
+        {
+            if (SQL_TB.Text == "" || SQL_TB.Text == "DELETE FROM `seance` WHERE `seance`.`ID_Seance` =")
+            {
+                MessageBox.Show("Erreur !");
+            }
+            else
+            {
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = SQL_TB.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Commandes appliqué !");
+                UpdateGrid(BDD);
+                SQL_TB.Text = "";
+            }
+        }
     }
 }
