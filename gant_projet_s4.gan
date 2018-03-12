@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-01-15" view-index="0" gantt-divider-location="627" resource-divider-location="300" version="2.8.6" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-01-13" view-index="0" gantt-divider-location="627" resource-divider-location="300" version="2.8.6" locale="fr">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="307" order="0"/>
-        <field id="tpd4" name="Date de début" width="143" order="1"/>
-        <field id="tpd5" name="Date de fin" width="173" order="2"/>
-        <option id="color.recent"><![CDATA[#ccffff #ff9999 #cc0033]]></option>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="414" order="0"/>
+        <field id="tpd4" name="Date de début" width="102" order="1"/>
+        <field id="tpd5" name="Date de fin" width="107" order="2"/>
+        <option id="color.recent"><![CDATA[#ff99ff #f4f4f4 #ccffff #ff9999 #cc0033]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -37,8 +37,8 @@
         <task id="5" name="Mise en place du projet" color="#8cb6ce" meeting="false" start="2018-01-16" duration="30" complete="0" thirdDate="2018-01-16" thirdDate-constraint="1" expand="true">
             <task id="9" name="choix d'un sujet" color="#8cb6ce" meeting="false" start="2018-01-16" duration="3" complete="0" thirdDate="2018-01-24" thirdDate-constraint="0" expand="true"/>
             <task id="15" name="apprendre à utiliser Framaboard" color="#8cb6ce" meeting="false" start="2018-01-30" duration="2" complete="0" thirdDate="2018-01-16" thirdDate-constraint="0" expand="true"/>
-            <task id="19" name="apprendr eà utlisier git" color="#8cb6ce" meeting="false" start="2018-02-20" duration="5" complete="0" thirdDate="2018-02-20" thirdDate-constraint="0" expand="true"/>
-            <task id="26" name="apprentissage sommaire des Windows Forms" color="#8cb6ce" meeting="false" start="2018-01-26" duration="12" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+            <task id="19" name="apprendre à utlisier github" color="#8cb6ce" meeting="false" start="2018-02-20" duration="5" complete="0" thirdDate="2018-02-20" thirdDate-constraint="0" expand="true"/>
+            <task id="26" name="apprentissage sommaire des Windows Forms" color="#8cb6ce" meeting="false" start="2018-01-22" duration="12" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="28" name="Analyse" color="#ff9999" meeting="false" start="2018-01-19" duration="6" complete="0" thirdDate="2018-01-16" thirdDate-constraint="0" expand="true">
             <task id="29" name="Cahier des charges" color="#ff9999" meeting="false" start="2018-01-19" duration="6" complete="0" thirdDate="2018-01-08" thirdDate-constraint="0" expand="true"/>
@@ -49,6 +49,22 @@
             <task id="37" name="Mockup page acceuil élève" color="#ccffff" meeting="false" start="2018-02-07" duration="3" complete="0" thirdDate="2018-02-09" thirdDate-constraint="0" expand="true"/>
             <task id="39" name="Mockup page acceuil professeur" color="#ccffff" meeting="false" start="2018-02-09" duration="3" complete="0" thirdDate="2018-01-08" thirdDate-constraint="0" expand="true"/>
             <task id="42" name="Création base de donnée" color="#ccffff" meeting="false" start="2018-01-31" duration="19" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="45" name="Programmation" color="#ff99ff" meeting="false" start="2018-01-24" duration="26" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+            <task id="49" name="système d'authentification" color="#ff99ff" meeting="false" start="2018-01-24" duration="8" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+                <task id="53" name="Salage et Hashage des mots de passes" color="#ff99ff" meeting="false" start="2018-01-24" duration="3" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="54" name="Stocker et récupérer les données d'autentification" color="#ff99ff" meeting="false" start="2018-01-29" duration="5" complete="0" thirdDate="2018-01-29" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="61" name="Système de tâches" color="#ff99ff" meeting="false" start="2018-02-05" duration="18" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+                <task id="64" name="Créer un fichier sql lite" color="#ff99ff" meeting="false" start="2018-02-05" duration="5" complete="0" thirdDate="2018-02-05" thirdDate-constraint="0" expand="true"/>
+                <task id="67" name="Ajouter de nouvelles tâches" color="#ff99ff" meeting="false" start="2018-02-05" duration="7" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="76" name="Accès rapide" color="#ff99ff" meeting="false" start="2018-02-16" duration="9" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="81" name="Gestionnaire des tâches" color="#ff99ff" meeting="false" start="2018-02-28" duration="1" complete="0" thirdDate="2018-02-28" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="95" name="Interface Eleve" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true">
+                <task id="96" name="Page d'acceuil" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="97" name="Menu" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true"/>
+            </task>
         </task>
     </tasks>
     <resources/>
