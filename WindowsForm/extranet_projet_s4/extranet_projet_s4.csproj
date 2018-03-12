@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7260F5B6-7079-473C-8D26-C2611AF8A9A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>extranet_projet_s4</RootNamespace>
+    <AssemblyName>extranet_projet_s4</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icone.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\programme\mysql-connector.net\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity">
+      <HintPath>..\..\programme\mysql-connector.net\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web">
+      <HintPath>..\..\programme\mysql-connector.net\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\programme\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="emploi_temps.cs" />
+    <Compile Include="Form_acces_rapide_taches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_acces_rapide_taches.Designer.cs">
+      <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminGestionCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionCours.Designer.cs">
+      <DependentUpon>Form_AdminGestionCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminGestionGroupe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionGroupe.Designer.cs">
+      <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminGestionSeance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionSeance.Designer.cs">
+      <DependentUpon>Form_AdminGestionSeance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminMain.designer.cs">
+      <DependentUpon>Form_AdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_login.Designer.cs">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_choix_admin_eleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_choix_admin_eleve.Designer.cs">
+      <DependentUpon>Form_choix_admin_eleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_eleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_eleve.Designer.cs">
+      <DependentUpon>Form_eleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_gestion_tache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_gestion_tache.Designer.cs">
+      <DependentUpon>Form_gestion_tache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminGestionUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminGestionUser.designer.cs">
+      <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_nouvelle_tache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_nouvelle_tache.Designer.cs">
+      <DependentUpon>Form_nouvelle_tache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="taches.cs" />
+    <Compile Include="utilisateur.cs" />
+    <EmbeddedResource Include="Form_acces_rapide_taches.resx">
+      <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionCours.resx">
+      <DependentUpon>Form_AdminGestionCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionGroupe.resx">
+      <DependentUpon>Form_AdminGestionGroupe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionSeance.resx">
+      <DependentUpon>Form_AdminGestionSeance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminMain.resx">
+      <DependentUpon>Form_AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_login.resx">
+      <DependentUpon>Form_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_choix_admin_eleve.resx">
+      <DependentUpon>Form_choix_admin_eleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_eleve.resx">
+      <DependentUpon>Form_eleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_gestion_tache.resx">
+      <DependentUpon>Form_gestion_tache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminGestionUser.resx">
+      <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_nouvelle_tache.resx">
+      <DependentUpon>Form_nouvelle_tache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icone.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
