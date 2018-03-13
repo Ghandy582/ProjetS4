@@ -79,8 +79,8 @@
             // 
             // Form_acces_rapide_taches
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(493, 567);
             this.Controls.Add(this.acces_rapide_tache_rafraichir);
             this.Controls.Add(this.acces_rapide_tache_tache_termine_btn);

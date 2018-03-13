@@ -35,12 +35,10 @@
             // choix_admineleve_admin_btn
             // 
             this.choix_admineleve_admin_btn.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.choix_admineleve_admin_btn.Location = new System.Drawing.Point(226, 209);
-            this.choix_admineleve_admin_btn.Margin = new System.Windows.Forms.Padding(6);
-            this.choix_admineleve_admin_btn.Location = new System.Drawing.Point(71, 73);
-            this.choix_admineleve_admin_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.choix_admineleve_admin_btn.Location = new System.Drawing.Point(38, 82);
+            this.choix_admineleve_admin_btn.Margin = new System.Windows.Forms.Padding(2);
             this.choix_admineleve_admin_btn.Name = "choix_admineleve_admin_btn";
-            this.choix_admineleve_admin_btn.Size = new System.Drawing.Size(115, 53);
+            this.choix_admineleve_admin_btn.Size = new System.Drawing.Size(172, 53);
             this.choix_admineleve_admin_btn.TabIndex = 0;
             this.choix_admineleve_admin_btn.Text = "Administrateur";
             this.choix_admineleve_admin_btn.UseVisualStyleBackColor = true;
@@ -49,12 +47,10 @@
             // choix_admineleve_eleve_btn
             // 
             this.choix_admineleve_eleve_btn.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.choix_admineleve_eleve_btn.Location = new System.Drawing.Point(782, 209);
-            this.choix_admineleve_eleve_btn.Margin = new System.Windows.Forms.Padding(6);
-            this.choix_admineleve_eleve_btn.Location = new System.Drawing.Point(247, 73);
-            this.choix_admineleve_eleve_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.choix_admineleve_eleve_btn.Location = new System.Drawing.Point(252, 82);
+            this.choix_admineleve_eleve_btn.Margin = new System.Windows.Forms.Padding(2);
             this.choix_admineleve_eleve_btn.Name = "choix_admineleve_eleve_btn";
-            this.choix_admineleve_eleve_btn.Size = new System.Drawing.Size(115, 53);
+            this.choix_admineleve_eleve_btn.Size = new System.Drawing.Size(172, 53);
             this.choix_admineleve_eleve_btn.TabIndex = 1;
             this.choix_admineleve_eleve_btn.Text = "Elève";
             this.choix_admineleve_eleve_btn.UseVisualStyleBackColor = true;
@@ -62,19 +58,13 @@
             // 
             // Form_choix_admin_eleve
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1374, 574);
-            this.Controls.Add(this.choix_admineleve_eleve_btn);
-            this.Controls.Add(this.choix_admineleve_admin_btn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 202);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(466, 205);
             this.Controls.Add(this.choix_admineleve_eleve_btn);
             this.Controls.Add(this.choix_admineleve_admin_btn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_choix_admin_eleve";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intranet";
