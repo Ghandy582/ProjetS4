@@ -45,7 +45,7 @@
             this.eleve_menu.Location = new System.Drawing.Point(0, 0);
             this.eleve_menu.Name = "eleve_menu";
             this.eleve_menu.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
-            this.eleve_menu.Size = new System.Drawing.Size(3376, 56);
+            this.eleve_menu.Size = new System.Drawing.Size(1426, 35);
             this.eleve_menu.TabIndex = 0;
             this.eleve_menu.Text = "menuStrip1";
             // 
@@ -56,34 +56,35 @@
             this.eleve_menu_acces_rapide_taches,
             this.eleve_menu_nouvelle_tache});
             this.eleve_menu_taches.Name = "eleve_menu_taches";
-            this.eleve_menu_taches.Size = new System.Drawing.Size(149, 48);
+            this.eleve_menu_taches.Size = new System.Drawing.Size(81, 27);
             this.eleve_menu_taches.Text = "Tâches";
             // 
             // eleve_menu_gestion_taches
             // 
             this.eleve_menu_gestion_taches.Name = "eleve_menu_gestion_taches";
-            this.eleve_menu_gestion_taches.Size = new System.Drawing.Size(464, 54);
+            this.eleve_menu_gestion_taches.Size = new System.Drawing.Size(248, 30);
             this.eleve_menu_gestion_taches.Text = "Gestion des tâches";
             this.eleve_menu_gestion_taches.Click += new System.EventHandler(this.eleve_menu_gestion_taches_Click);
             // 
             // eleve_menu_acces_rapide_taches
             // 
             this.eleve_menu_acces_rapide_taches.Name = "eleve_menu_acces_rapide_taches";
-            this.eleve_menu_acces_rapide_taches.Size = new System.Drawing.Size(464, 54);
+            this.eleve_menu_acces_rapide_taches.Size = new System.Drawing.Size(248, 30);
             this.eleve_menu_acces_rapide_taches.Text = "Accès rapide";
             this.eleve_menu_acces_rapide_taches.Click += new System.EventHandler(this.eleve_menu_acces_rapide_taches_Click);
             // 
             // eleve_menu_nouvelle_tache
             // 
             this.eleve_menu_nouvelle_tache.Name = "eleve_menu_nouvelle_tache";
-            this.eleve_menu_nouvelle_tache.Size = new System.Drawing.Size(464, 54);
+            this.eleve_menu_nouvelle_tache.Size = new System.Drawing.Size(248, 30);
             this.eleve_menu_nouvelle_tache.Text = "Nouvelle tâche";
             this.eleve_menu_nouvelle_tache.Click += new System.EventHandler(this.eleve_menu_nouvelle_tache_Click);
             // 
             // Form_eleve
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(3376, 1650);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1426, 808);
             this.Controls.Add(this.eleve_menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.eleve_menu;
