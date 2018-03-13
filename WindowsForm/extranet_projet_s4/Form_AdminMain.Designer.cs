@@ -36,7 +36,7 @@
             this.Menu_Main = new System.Windows.Forms.MenuStrip();
             this.assignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Apropos_BTN = new System.Windows.Forms.Button();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@
             this.assignerToolStripMenuItem});
             this.Menu_Main.Location = new System.Drawing.Point(0, 0);
             this.Menu_Main.Name = "Menu_Main";
-            this.Menu_Main.Size = new System.Drawing.Size(1098, 24);
+            this.Menu_Main.Size = new System.Drawing.Size(1123, 24);
             this.Menu_Main.TabIndex = 2;
             this.Menu_Main.Text = "Menu_Main";
             // 
@@ -100,23 +100,27 @@
             this.assignerToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.assignerToolStripMenuItem.Text = "Assigner";
             // 
-            // button1
+            // Apropos_BTN
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(22, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 118);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Personnalisation";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Apropos_BTN.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Apropos_BTN.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.Apropos_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Apropos_BTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Apropos_BTN.Location = new System.Drawing.Point(980, 467);
+            this.Apropos_BTN.Name = "Apropos_BTN";
+            this.Apropos_BTN.Size = new System.Drawing.Size(131, 127);
+            this.Apropos_BTN.TabIndex = 4;
+            this.Apropos_BTN.Text = "À propos";
+            this.Apropos_BTN.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Apropos_BTN.UseVisualStyleBackColor = false;
             // 
             // Form_AdminMain
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1098, 563);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1123, 606);
+            this.Controls.Add(this.Apropos_BTN);
             this.Controls.Add(this.Menu_Main);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -124,7 +128,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Menu_Main.ResumeLayout(false);
             this.Menu_Main.PerformLayout();
@@ -142,6 +145,6 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Cours;
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Sceance;
         private System.Windows.Forms.ToolStripMenuItem assignerToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Apropos_BTN;
     }
 }

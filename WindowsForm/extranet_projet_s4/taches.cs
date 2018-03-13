@@ -49,8 +49,7 @@ namespace extranet_projet_s4
                 crea_table.Close();
                 //___ la table pour les emplacment des dossier PLUS TARD
 
-                
-               
+
             }
             catch (Exception ex)
             {

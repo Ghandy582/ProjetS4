@@ -97,5 +97,6 @@ namespace extranet_projet_s4
             Form_AdminGestionSeance Gestion_Page = new Form_AdminGestionSeance(BDD);
             Gestion_Page.Show();
         }
+
     }
 }

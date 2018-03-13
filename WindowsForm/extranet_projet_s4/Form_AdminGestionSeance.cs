@@ -74,6 +74,16 @@ namespace extranet_projet_s4
                     Cours_CB.Items.Add(Reader.GetString("ID_Cours"));
                 }
             }
+            string query2 = "SELECT * FROM groupe";
+            MySqlCommand cmd2 = new MySqlCommand(query2, SQL);
+
+            using (MySqlDataReader Reader = cmd2.ExecuteReader())
+            {
+                while (Reader.Read())
+                {
+                    Groupe_CB.Items.Add(Reader.GetString("ID_Groupe"));
+                }
+            }
         }
 
         private void Enter_Button_Click(object sender, EventArgs e)
@@ -87,6 +97,8 @@ namespace extranet_projet_s4
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('"+ Date_Box.Text +"','"+ BoolDate_Box.Text +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + Cours_CB.Text +"')";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "INSERT INTO `groupe_seance`(`ID_Seance`, `ID_Groupe`) VALUES ((SELECT `ID_Seance` FROM `seance` Order BY `ID_Seance` DESC LIMIT 1),'"+ Groupe_CB.Text +"')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Ajouter !");
                 Date_Box.Text = "";

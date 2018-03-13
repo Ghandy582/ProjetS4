@@ -50,6 +50,10 @@
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
             this.Cours_CB = new System.Windows.Forms.ComboBox();
             this.PanelGestion = new System.Windows.Forms.Panel();
+            this.Groupe_CB = new System.Windows.Forms.ComboBox();
+            this.Groupe_text = new System.Windows.Forms.Label();
+            this.Cours_BTN = new System.Windows.Forms.Button();
+            this.Groupe_BTN = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -133,7 +137,7 @@
             // 
             // Enter_Button
             // 
-            this.Enter_Button.Location = new System.Drawing.Point(531, 280);
+            this.Enter_Button.Location = new System.Drawing.Point(538, 292);
             this.Enter_Button.Name = "Enter_Button";
             this.Enter_Button.Size = new System.Drawing.Size(149, 41);
             this.Enter_Button.TabIndex = 7;
@@ -143,7 +147,7 @@
             // 
             // SQLentrer_Button
             // 
-            this.SQLentrer_Button.Location = new System.Drawing.Point(185, 565);
+            this.SQLentrer_Button.Location = new System.Drawing.Point(185, 577);
             this.SQLentrer_Button.Name = "SQLentrer_Button";
             this.SQLentrer_Button.Size = new System.Drawing.Size(149, 41);
             this.SQLentrer_Button.TabIndex = 15;
@@ -208,6 +212,10 @@
             // PanelAdd
             // 
             this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelAdd.Controls.Add(this.Groupe_BTN);
+            this.PanelAdd.Controls.Add(this.Cours_BTN);
+            this.PanelAdd.Controls.Add(this.Groupe_text);
+            this.PanelAdd.Controls.Add(this.Groupe_CB);
             this.PanelAdd.Controls.Add(this.Calendrier);
             this.PanelAdd.Controls.Add(this.Cours_CB);
             this.PanelAdd.Controls.Add(this.NoteP_Box);
@@ -248,11 +256,46 @@
             this.PanelGestion.Size = new System.Drawing.Size(1040, 270);
             this.PanelGestion.TabIndex = 9;
             // 
+            // Groupe_CB
+            // 
+            this.Groupe_CB.FormattingEnabled = true;
+            this.Groupe_CB.Location = new System.Drawing.Point(172, 312);
+            this.Groupe_CB.Name = "Groupe_CB";
+            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
+            this.Groupe_CB.TabIndex = 21;
+            // 
+            // Groupe_text
+            // 
+            this.Groupe_text.AutoSize = true;
+            this.Groupe_text.Location = new System.Drawing.Point(12, 315);
+            this.Groupe_text.Name = "Groupe_text";
+            this.Groupe_text.Size = new System.Drawing.Size(48, 13);
+            this.Groupe_text.TabIndex = 22;
+            this.Groupe_text.Text = "Groupe :";
+            // 
+            // Cours_BTN
+            // 
+            this.Cours_BTN.Location = new System.Drawing.Point(442, 277);
+            this.Cours_BTN.Name = "Cours_BTN";
+            this.Cours_BTN.Size = new System.Drawing.Size(20, 21);
+            this.Cours_BTN.TabIndex = 23;
+            this.Cours_BTN.Text = "?";
+            this.Cours_BTN.UseVisualStyleBackColor = true;
+            // 
+            // Groupe_BTN
+            // 
+            this.Groupe_BTN.Location = new System.Drawing.Point(442, 312);
+            this.Groupe_BTN.Name = "Groupe_BTN";
+            this.Groupe_BTN.Size = new System.Drawing.Size(20, 21);
+            this.Groupe_BTN.TabIndex = 24;
+            this.Groupe_BTN.Text = "?";
+            this.Groupe_BTN.UseVisualStyleBackColor = true;
+            // 
             // Form_AdminGestionSeance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1039, 623);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SupprimerButton);
             this.Controls.Add(this.AjouterButton);
@@ -295,5 +338,9 @@
         private System.Windows.Forms.Panel PanelGestion;
         private System.Windows.Forms.MonthCalendar Calendrier;
         private System.Windows.Forms.ComboBox Cours_CB;
+        private System.Windows.Forms.Label Groupe_text;
+        private System.Windows.Forms.ComboBox Groupe_CB;
+        private System.Windows.Forms.Button Groupe_BTN;
+        private System.Windows.Forms.Button Cours_BTN;
     }
 }
