@@ -35,13 +35,7 @@ namespace extranet_projet_s4
             form_login.Close();
         }
 
-        private void eleve_menu_gestion_taches_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form_gestion_tache form_gestion_tache = new Form_gestion_tache(form_login,utilisateur,taches);
-            form_gestion_tache.Show();
 
-        }
 
         private void eleve_menu_acces_rapide_taches_Click(object sender, EventArgs e)
         {
@@ -54,6 +48,18 @@ namespace extranet_projet_s4
 
             Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
             form_nouvelle_tache.Show();
+        }
+
+        private void eleve_menu_gestion_taches_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_gestion_tache form_gestion_tache = new Form_gestion_tache(form_login, utilisateur, taches,this);
+            form_gestion_tache.Show();
+        }
+
+        private void eleve_menu_taches_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

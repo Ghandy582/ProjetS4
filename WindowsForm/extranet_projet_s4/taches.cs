@@ -68,12 +68,13 @@ namespace extranet_projet_s4
             {
                 if (utilisateur.Premiere_co_membre == 0)
                 {
+                    // Si le fichier n'existe pas 
                     if (!File.Exists("BDD.sqlite")) {
                         Creation_fichier();
                     }
                     else
                     {
-                        MessageBox.Show("c'est votre première connection sur l'application mais le fichier sqllite existe déjà");
+                        MessageBox.Show("c'est votre première connexion sur l'application mais le fichier sqllite existe déjà");
                     }   
                     //on modifie première co dans la bdd
                     Modif_premiereCo(utilisateur);
@@ -133,7 +134,7 @@ namespace extranet_projet_s4
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
 
 
-        SQLiteConnection ajouter_tache;          // Database Connection Object
+        SQLiteConnection ajouter_tache;       // Database Connection Object
         SQLiteCommand sqlite_cmd;             // Database Command Object
         SQLiteDataReader sqlite_datareader;  // Data Reader Object
 
@@ -141,8 +142,8 @@ namespace extranet_projet_s4
 
         /*---------------------------------- METHODES -------------------------------*/
 
-        //rechercher les tâches déjà créées pour acces rapide 
-        public void affiche_taches_liste_acces_rapide( CheckedListBox c)
+        //rechercher les tâches déjà créées pour acces rapide correspondant à l'id de la personne co
+        public void affiche_taches_liste_acces_rapide( CheckedListBox c, int id)
         {
             SQLiteConnection affiche_taches;          // Database Connection Object
             SQLiteCommand sqlite_cmd;             // Database Command Object
@@ -154,7 +155,7 @@ namespace extranet_projet_s4
 
             sqlite_cmd = affiche_taches.CreateCommand();
 
-            sqlite_cmd.CommandText = "SELECT intitule FROM taches";
+            sqlite_cmd.CommandText = "SELECT intitule FROM taches WHERE id_membre='"+id+"'";
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
 
@@ -192,7 +193,6 @@ namespace extranet_projet_s4
         }
         //______________________________________________________________________
         // Ajouter une nouvelle tâche si une date butoire
-
         public void Ajout_Tache_Avec_Date(int id_utilisateur, string intitule, string fin_tache,string date_ajout)
         {
             try
@@ -212,6 +212,11 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode d'ajout de tache avec date butoire" + ex.ToString());
             }
         }
+
+        //______________________________________________________________________
+        // Vérifier si une tache arrive bientot à sa date butoire
+
+
     }
 
 

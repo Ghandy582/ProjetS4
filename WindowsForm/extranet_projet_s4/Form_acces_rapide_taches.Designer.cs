@@ -47,7 +47,7 @@
             // acces_rapide_tache_ajouter_tache
             // 
             this.acces_rapide_tache_ajouter_tache.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acces_rapide_tache_ajouter_tache.Location = new System.Drawing.Point(64, 516);
+            this.acces_rapide_tache_ajouter_tache.Location = new System.Drawing.Point(239, 516);
             this.acces_rapide_tache_ajouter_tache.Name = "acces_rapide_tache_ajouter_tache";
             this.acces_rapide_tache_ajouter_tache.Size = new System.Drawing.Size(242, 39);
             this.acces_rapide_tache_ajouter_tache.TabIndex = 1;
@@ -69,7 +69,7 @@
             // acces_rapide_tache_rafraichir
             // 
             this.acces_rapide_tache_rafraichir.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.acces_rapide_tache_rafraichir.Location = new System.Drawing.Point(312, 516);
+            this.acces_rapide_tache_rafraichir.Location = new System.Drawing.Point(64, 516);
             this.acces_rapide_tache_rafraichir.Name = "acces_rapide_tache_rafraichir";
             this.acces_rapide_tache_rafraichir.Size = new System.Drawing.Size(169, 39);
             this.acces_rapide_tache_rafraichir.TabIndex = 3;

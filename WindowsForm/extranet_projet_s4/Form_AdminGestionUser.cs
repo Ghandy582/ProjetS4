@@ -190,5 +190,10 @@ namespace extranet_projet_s4
             }
            
         }
+
+        private void GestionUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
