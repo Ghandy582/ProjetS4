@@ -19,7 +19,7 @@ namespace extranet_projet_s4
             InitializeComponent();
             utilisateur = u;
             taches = t;
-            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste);
+            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste,utilisateur.Id_Membre);
         }
 
         private void acces_rapide_tache_ajouter_tache_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace extranet_projet_s4
         private void acces_rapide_tache_rafraichir_Click(object sender, EventArgs e)
         {
             acces_rapide_tache_liste.Items.Clear();
-            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste);
+            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste, utilisateur.Id_Membre);
         }
     }
 }

@@ -187,13 +187,13 @@ namespace extranet_projet_s4
                     form_eleve.Show();
 
                 }
-                // __________ POUR ADMIN + PROF (6) ___________
+                // __________ POUR ADMIN + PROF (5) ___________
                 else if (count == 1 && role_tentative_co == 5)
                 {
                     MessageBox.Show("VID Correct ! Vous etes un admin et un professeur");
 
                 }
-                // __________ POUR ADMIN + ELEVE (5) ___________
+                // __________ POUR ADMIN + ELEVE (4) ___________
                 else if (count == 1 && role_tentative_co == 4)
                 {
                     Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);

@@ -37,4 +37,8 @@ relié menu avec ces fenetres
 ajout des taches dans le fichier sqllite sans date butoire
 avec un timmer pour voir les nouvelles tâches 
 ajout des taches dans le fichier sqllite avec une date butoire
-
+__ 13 mars _____
+les taches ne s'affiche que pour la personne concernée (avec l'id)
+commencer le menu dans la fenetre de gestion de tache
+faire en sorte que quand on clique sur acceuil dans le menu de la page gestion de taches, cela tue cette fenetre et retourne à la page d'acceuil
+A FAIRE: creer les méthodes pour la vérification si une date atteint beintôt sa date butoire et si oui on fait une notification

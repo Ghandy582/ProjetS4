@@ -32,6 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gestion_tache_nouvelletache_btn = new System.Windows.Forms.Button();
             this.gestion_tache_accesrapide_btn = new System.Windows.Forms.Button();
+            this.gestion_taches_menu = new System.Windows.Forms.MenuStrip();
+            this.gestion_tache_menu_taches = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestion_tache_menu_acces_rapide_taches = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestion_tache_menu_nouvelle_tache = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestion_tache_menu_aaccueil = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestion_taches_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gestion_tache_tache_a_realiser_label
@@ -80,11 +86,56 @@
             this.gestion_tache_accesrapide_btn.UseVisualStyleBackColor = true;
             this.gestion_tache_accesrapide_btn.Click += new System.EventHandler(this.gestion_tache_accesrapide_btn_Click);
             // 
+            // gestion_taches_menu
+            // 
+            this.gestion_taches_menu.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestion_taches_menu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.gestion_taches_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestion_tache_menu_aaccueil,
+            this.gestion_tache_menu_taches});
+            this.gestion_taches_menu.Location = new System.Drawing.Point(0, 0);
+            this.gestion_taches_menu.Name = "gestion_taches_menu";
+            this.gestion_taches_menu.Padding = new System.Windows.Forms.Padding(13, 4, 0, 4);
+            this.gestion_taches_menu.Size = new System.Drawing.Size(1408, 36);
+            this.gestion_taches_menu.TabIndex = 4;
+            this.gestion_taches_menu.Text = "menuStrip1";
+            // 
+            // gestion_tache_menu_taches
+            // 
+            this.gestion_tache_menu_taches.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestion_tache_menu_acces_rapide_taches,
+            this.gestion_tache_menu_nouvelle_tache});
+            this.gestion_tache_menu_taches.Name = "gestion_tache_menu_taches";
+            this.gestion_tache_menu_taches.Size = new System.Drawing.Size(81, 28);
+            this.gestion_tache_menu_taches.Text = "Tâches";
+            // 
+            // gestion_tache_menu_acces_rapide_taches
+            // 
+            this.gestion_tache_menu_acces_rapide_taches.Name = "gestion_tache_menu_acces_rapide_taches";
+            this.gestion_tache_menu_acces_rapide_taches.Size = new System.Drawing.Size(252, 30);
+            this.gestion_tache_menu_acces_rapide_taches.Text = "Accès rapide";
+            this.gestion_tache_menu_acces_rapide_taches.Click += new System.EventHandler(this.gestion_tache_menu_acces_rapide_taches_Click);
+            // 
+            // gestion_tache_menu_nouvelle_tache
+            // 
+            this.gestion_tache_menu_nouvelle_tache.Name = "gestion_tache_menu_nouvelle_tache";
+            this.gestion_tache_menu_nouvelle_tache.Size = new System.Drawing.Size(252, 30);
+            this.gestion_tache_menu_nouvelle_tache.Text = "Nouvelle tâche";
+            this.gestion_tache_menu_nouvelle_tache.Click += new System.EventHandler(this.gestion_tache_menu_nouvelle_tache_Click);
+            // 
+            // gestion_tache_menu_aaccueil
+            // 
+            this.gestion_tache_menu_aaccueil.Name = "gestion_tache_menu_aaccueil";
+            this.gestion_tache_menu_aaccueil.Size = new System.Drawing.Size(82, 28);
+            this.gestion_tache_menu_aaccueil.Text = "Accueil";
+            this.gestion_tache_menu_aaccueil.Click += new System.EventHandler(this.gestion_tache_menu_aaccueil_Click);
+            // 
             // Form_gestion_tache
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1408, 818);
+            this.Controls.Add(this.gestion_taches_menu);
             this.Controls.Add(this.gestion_tache_accesrapide_btn);
             this.Controls.Add(this.gestion_tache_nouvelletache_btn);
             this.Controls.Add(this.label1);
@@ -96,6 +147,8 @@
             this.Text = "Gestion des tâches";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_gestion_tache_FormClosed);
             this.Load += new System.EventHandler(this.Form_gestion_tache_Load);
+            this.gestion_taches_menu.ResumeLayout(false);
+            this.gestion_taches_menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +160,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button gestion_tache_nouvelletache_btn;
         private System.Windows.Forms.Button gestion_tache_accesrapide_btn;
+        private System.Windows.Forms.MenuStrip gestion_taches_menu;
+        private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_taches;
+        private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_acces_rapide_taches;
+        private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_nouvelle_tache;
+        private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_aaccueil;
     }
 }
