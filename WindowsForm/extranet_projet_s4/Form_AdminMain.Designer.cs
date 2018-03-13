@@ -82,7 +82,8 @@
             // 
             // Menu_Main
             // 
-            this.Menu_Main.BackColor = System.Drawing.Color.White;
+            this.Menu_Main.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.Menu_Main.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.Menu_Main.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.Menu_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_Gestion,
@@ -122,7 +123,7 @@
             this.Name = "Form_AdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
+            this.TransparencyKey = System.Drawing.Color.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Menu_Main.ResumeLayout(false);

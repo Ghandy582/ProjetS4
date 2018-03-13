@@ -250,7 +250,8 @@
             // 
             // Form_AdminGestionSeance
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1039, 623);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SupprimerButton);
