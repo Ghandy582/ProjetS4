@@ -25,6 +25,7 @@ namespace extranet_projet_s4
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // voila
             this.Hide();
             Form_eleve form_eleve = new Form_eleve(form_login, utilisateur);
             form_eleve.Show();
