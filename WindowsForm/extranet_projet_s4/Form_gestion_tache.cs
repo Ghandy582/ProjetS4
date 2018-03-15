@@ -31,7 +31,8 @@ namespace extranet_projet_s4
 
         private void Form_gestion_tache_Load(object sender, EventArgs e)
         {
-
+            //remplir les datagrigview
+            taches.Remplir_dataGridView_a_realiser(gestion_tache_tache_a_realiser_datagrid,utilisateur.Id_Membre);
         }
 
         private void Form_gestion_tache_FormClosed(object sender, FormClosedEventArgs e)

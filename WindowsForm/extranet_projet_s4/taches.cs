@@ -10,6 +10,10 @@ using System.Configuration;
 //Pour utiliser mysql
 using MySql.Data.MySqlClient;
 using System.IO;
+// Pour les notifications
+using Tulpep.NotificationWindow;
+
+using System.Data;
 
 namespace extranet_projet_s4
 {
@@ -127,6 +131,7 @@ namespace extranet_projet_s4
         /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
         static string serveur = ConfigurationManager.AppSettings["serveur"];
         static string database = ConfigurationManager.AppSettings["database"];
+        static string nb_jours_notif_string = ConfigurationManager.AppSettings["nb_jours_notif"];
         /*_____________________________________________*/
 
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
@@ -213,9 +218,159 @@ namespace extranet_projet_s4
         }
 
         //______________________________________________________________________
-        // Vérifier si une tache arrive bientot à sa date butoire
+        // Vérifier si une tache arrive bientot à sa date butoire ou périmé
+        public void Verification_approche_date_butoire(int id_membre)
+        {
+            DateTime today = DateTime.Today;
+            //fin tache va pas rester Now c'est juste pour que le programme me fiche la paix
+            DateTime fin_tache=DateTime.Now;
+            int result1;
+            int result2;
+            int nb_taches_perimes=0;
+            int nb_taches_proche_fin=0;
+            int nb_tache_bonnes = 0;
+            string intitule_peri="";
+            string intitule_proche="";
+            string date_perime="";
+            // On convertie la variable qui est stockée dans le .conf
+            double nb_jours_notif = Convert.ToDouble(nb_jours_notif_string);
+
+            SQLiteConnection recherche_tache_echeante;      // Database Connection Object
+            SQLiteCommand sqlite_cmd;             // Database Command Object
+            SQLiteDataReader sqlite_datareader;  // Data Reader Object
+            recherche_tache_echeante = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+            try
+            {
+                recherche_tache_echeante.Open();
+
+                sqlite_cmd = recherche_tache_echeante.CreateCommand();
+                //On sélectionne les taches avec une date butoire correspondant à l'id de la personne co
+                sqlite_cmd.CommandText = "SELECT * FROM taches WHERE id_membre='" + id_membre + "' AND date_butoire!='NULL'";
+
+                sqlite_datareader = sqlite_cmd.ExecuteReader();
+
+                // The SQLiteDataReader allows us to run through each row per loop
+                while (sqlite_datareader.Read()) // Read() returns true if there is still a result line to read
+                {
+                    //on récupère la date butoire pour chaque tache
+                    fin_tache = DateTime.Parse(sqlite_datareader.GetString(4));
+                    //On compare avec aujourdhui
+                    result1 = DateTime.Compare(today, fin_tache);
+
+                    DateTime today_et_deux_jours = today.AddDays(nb_jours_notif);
+                    //On compare si proche de fin en fonction du nb de jours choisi
+                    result2 = DateTime.Compare(today_et_deux_jours, fin_tache);
+
+                    //Si tache périmé
+                    if (result1 > 0)
+                    {
+                        nb_taches_perimes += 1;
+                        intitule_peri = sqlite_datareader.GetString(2);
+                        date_perime = fin_tache.ToString();
+                    }
+                    // Si il reste que nb_jours_notif jour avant date butoire
+                    else if (result2 >= 0)
+                    {
+                        nb_taches_proche_fin += 1;
+                        intitule_proche = sqlite_datareader.GetString(2);
+                    }
+                    else
+                    {
+                        nb_tache_bonnes += 1;
+                    }
+
+                }
+                recherche_tache_echeante.Close();
+                //MessageBox.Show("Nombre de taches prérimés: " + nb_taches_perimes + " Nombres de taches proche de leurs dates butoire: " + nb_taches_proche_fin + " Nombres de tâches bonnes: " + nb_tache_bonnes);
+                Notifier(nb_taches_perimes, nb_taches_proche_fin, intitule_peri, date_perime, intitule_proche, fin_tache.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de vérification des taches périmées et celles proche de leurs dates butoire" + ex.ToString());
+            }
+        }
 
 
+        //_______________________________________________________________________
+        // Les notifications
+        public void Notifier(int nb_peri, int nb_proche, string intitule_peri, string date_peri, string intitule_proche, string date_proche)
+        {
+            PopupNotifier notification = new PopupNotifier();
+            notification.Delay = 5000;
+            notification.Image = Properties.Resources.icone;
+            notification.TitleFont = new System.Drawing.Font("Segoe UI", 10F);
+            notification.TitleColor = System.Drawing.Color.FromName("Red");
+            notification.ContentFont = new System.Drawing.Font("Segoe UI", 9F);
+
+            try
+            {
+                
+                //Si une seule tache périmés
+                if (nb_peri == 1)
+                {
+
+                    notification.TitleText = "Retard pour une tâche";
+                    notification.ContentText = "Vous avez du retard pour une tâche. Cela concerne la tâche : " + intitule_peri + " qui devait être terminée avant le " + date_peri;
+                    notification.Popup();
+                }
+                //Si plusieurs tâches périmés
+                else if (nb_peri > 1)
+                {
+                    notification.TitleText = "Retard pour plusieurs tâches";
+                    notification.ContentText = "Vous avez du retard pour plusieurs tâches. Cela concerne " + nb_peri + " tâches.";
+                    notification.Popup();
+                }
+                else
+                {
+
+                }
+
+                //Si une seule tâche approche de sa date butoire
+                if (nb_proche == 1)
+                {
+                    notification.TitleText = "Date butoire proche pour une tâche";
+                    notification.ContentText = "L'une de vos tâches approche de sa date butoire. Cela concerne la tâche : " + intitule_proche + " elle doit être réaisée avant le " + date_proche;
+                    notification.Popup();
+                }
+                // Si plusieurs tâches approchent de leurs dates butoires
+                else if (nb_proche> 1)
+                {
+                    notification.TitleText = "Date butoire proche pour plusieurs tâches";
+                    notification.ContentText = "Vous avez plusieurs tâches qui approchent de leur date butoire. Cela concerne " + nb_proche + " tâches.";
+                    notification.Popup();
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de notification" + ex.ToString());
+            }
+        }
+
+        //_______________________________________________________________________
+        // Remplir le datagridview des tâche à réaliser
+        public void Remplir_dataGridView_a_realiser(DataGridView v,int id)
+        {
+            SQLiteConnection conn;          // Database Connection Object
+            conn= new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("SELECT intitule, date_creation, date_butoire FROM taches WHERE id_membre='" + id + "'", conn);
+            
+            try
+            {
+                conn.Open();
+                DataSet ds = new DataSet();
+                dataadapter.Fill(ds, "Info");
+                v.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode pour remplir le tableau des tâches à réaliser" + ex.ToString());
+            }
+        }
     }
 
 

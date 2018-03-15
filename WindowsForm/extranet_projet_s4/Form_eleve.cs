@@ -28,6 +28,8 @@ namespace extranet_projet_s4
         private void Form_eleve_Load(object sender, EventArgs e)
         {
             this.Text = utilisateur.Prenom_Membre + " " + utilisateur.Nom_Membre;
+            //On vérifie les tâches pour notifier si besoin
+            taches.Verification_approche_date_butoire(utilisateur.Id_Membre);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)
