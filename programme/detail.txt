@@ -42,3 +42,12 @@ les taches ne s'affiche que pour la personne concernée (avec l'id)
 commencer le menu dans la fenetre de gestion de tache
 faire en sorte que quand on clique sur acceuil dans le menu de la page gestion de taches, cela tue cette fenetre et retourne à la page d'acceuil
 A FAIRE: creer les méthodes pour la vérification si une date atteint beintôt sa date butoire et si oui on fait une notification
+
+__15 mars __
+création de la méthode de verification si une tache est périmé ou proche de sa peremption 
+ajout du package nugget Notification Window
+création de la méthode de notification 
+soucis: pour notif si tache périmés + tache proche il m'affiche une seule notif
+création de la méthode pour remplir le datagridview
+faut maintenant le rendre plus jolie car c'est franchement moche
+
