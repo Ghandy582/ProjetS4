@@ -98,5 +98,10 @@ namespace extranet_projet_s4
             Gestion_Page.Show();
         }
 
+        private void Apropos_BTN_Click(object sender, EventArgs e)
+        {
+            Form_APropos Gestion_Page = new Form_APropos();
+            Gestion_Page.Show();
+        }
     }
 }

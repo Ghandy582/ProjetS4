@@ -37,6 +37,9 @@
             this.assignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.Apropos_BTN = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +85,7 @@
             // 
             // Menu_Main
             // 
-            this.Menu_Main.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.Menu_Main.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Menu_Main.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.Menu_Main.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.Menu_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -103,27 +106,86 @@
             // Apropos_BTN
             // 
             this.Apropos_BTN.BackColor = System.Drawing.Color.RoyalBlue;
+            this.Apropos_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Apropos_BTN.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.Apropos_BTN.FlatAppearance.BorderSize = 0;
+            this.Apropos_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Apropos_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Apropos_BTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Apropos_BTN.Location = new System.Drawing.Point(980, 467);
+            this.Apropos_BTN.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Apropos_BTN.Location = new System.Drawing.Point(980, 470);
             this.Apropos_BTN.Name = "Apropos_BTN";
             this.Apropos_BTN.Size = new System.Drawing.Size(131, 127);
             this.Apropos_BTN.TabIndex = 4;
             this.Apropos_BTN.Text = "À propos";
             this.Apropos_BTN.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.Apropos_BTN.UseVisualStyleBackColor = false;
+            this.Apropos_BTN.Click += new System.EventHandler(this.Apropos_BTN_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(980, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 127);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "SSH Support";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.ForestGreen;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(980, 325);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 127);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Réglage";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(980, 180);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 127);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Fichier";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form_AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1123, 606);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Apropos_BTN);
             this.Controls.Add(this.Menu_Main);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form_AdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -146,5 +208,8 @@
         private System.Windows.Forms.ToolStripMenuItem Menu_Gestion_Sceance;
         private System.Windows.Forms.ToolStripMenuItem assignerToolStripMenuItem;
         private System.Windows.Forms.Button Apropos_BTN;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
