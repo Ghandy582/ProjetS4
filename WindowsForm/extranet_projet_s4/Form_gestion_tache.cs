@@ -76,5 +76,10 @@ namespace extranet_projet_s4
             fermer_programme = false;
             this.Close();
         }
+
+        private void gestion_tache_menu_parametres_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bientôt disponible");
+        }
     }
 }
