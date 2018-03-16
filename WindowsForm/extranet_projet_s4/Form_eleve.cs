@@ -63,5 +63,13 @@ namespace extranet_projet_s4
         {
 
         }
+
+        private void eleve_menu_tache_parametres_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bientôt disponible");
+            this.Hide();
+            Form_paramestres_taches form_parametres_taches = new Form_paramestres_taches();
+            form_parametres_taches.Show();
+        }
     }
 }

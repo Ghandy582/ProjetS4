@@ -61,7 +61,7 @@ namespace extranet_projet_s4
                     }
                     else
                     {
-                        taches.Ajout_Tache_Avec_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, fin_tache.ToString(), today.ToString());
+                        taches.Ajout_Tache_Avec_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, fin_tache.ToShortDateString(), today.ToString());
                         this.Close();
                     }
                 }

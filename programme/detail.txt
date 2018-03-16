@@ -50,4 +50,7 @@ création de la méthode de notification
 soucis: pour notif si tache périmés + tache proche il m'affiche une seule notif
 création de la méthode pour remplir le datagridview
 faut maintenant le rendre plus jolie car c'est franchement moche
-
+__16 mars__
+creation de la table tache realisées dans le fichier sqllite.
+ajout des paramètres de tâches dans le menu
+création de la fenetre des paramêtres de taches avec les radio boutons

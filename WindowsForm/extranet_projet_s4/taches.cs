@@ -49,8 +49,23 @@ namespace extranet_projet_s4
 
                 // execute la commande
                 cmd.ExecuteNonQuery();
-                //SQLiteDataReader sqlite_datareader;  // Data Reader Object
+
                 crea_table.Close();
+
+                //_____ la table pour les tâches réalisée _________
+                SQLiteConnection crea_table_taches_realises;
+                crea_table_taches_realises = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;");
+                crea_table_taches_realises.Open();
+
+                SQLiteCommand cmd2 = crea_table_taches_realises.CreateCommand();
+
+                // le texte de la requete
+                cmd2.CommandText = "CREATE TABLE taches_realisees (id_tache_realisees integer primary key,id_membre integer, intitule varchar(250),date_realisation text, date_butoire text);";
+
+                // execute la commande
+                cmd2.ExecuteNonQuery();
+
+                crea_table_taches_realises.Close();
                 //___ la table pour les emplacment des dossier PLUS TARD
 
 
@@ -110,7 +125,7 @@ namespace extranet_projet_s4
                 cmd_modi_premire_co.CommandText= "UPDATE `membre` SET `PremiereCo_Membre`=" + 1 + " WHERE `ID_membre`=" + utilisateur.Id_Membre + ";";
                 connexion.Open();
                 cmd_modi_premire_co.ExecuteNonQuery();
-                MessageBox.Show("Valeur premiere co membre bien modifée dans la BDD");
+                //MessageBox.Show("Valeur premiere co membre bien modifée dans la BDD");
                 connexion.Close();
             }
             catch (Exception ex)
@@ -282,7 +297,7 @@ namespace extranet_projet_s4
                 }
                 recherche_tache_echeante.Close();
                 //MessageBox.Show("Nombre de taches prérimés: " + nb_taches_perimes + " Nombres de taches proche de leurs dates butoire: " + nb_taches_proche_fin + " Nombres de tâches bonnes: " + nb_tache_bonnes);
-                Notifier(nb_taches_perimes, nb_taches_proche_fin, intitule_peri, date_perime, intitule_proche, fin_tache.ToString());
+                Notifier(nb_taches_perimes, nb_taches_proche_fin, intitule_peri, date_perime, intitule_proche, fin_tache.ToShortDateString());
             }
             catch (Exception ex)
             {

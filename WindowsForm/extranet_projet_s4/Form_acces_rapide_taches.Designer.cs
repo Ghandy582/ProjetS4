@@ -89,7 +89,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_acces_rapide_taches";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_acces_rapide_taches";
+            this.Text = "Vos tâches";
             this.Load += new System.EventHandler(this.Form_acces_rapide_taches_Load);
             this.ResumeLayout(false);
 
