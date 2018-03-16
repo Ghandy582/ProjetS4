@@ -103,5 +103,17 @@ namespace extranet_projet_s4
             Form_APropos Gestion_Page = new Form_APropos();
             Gestion_Page.Show();
         }
+
+        private void Reglage_BTN_Click(object sender, EventArgs e)
+        {
+            Form_AdminPhp Gestion_Page = new Form_AdminPhp();
+            Gestion_Page.Show();
+        }
+
+        private void Menu_Assigner_Prof_Click(object sender, EventArgs e)
+        {
+            Form_AdminAssignerProf Gestion_Page = new Form_AdminAssignerProf(BDD);
+            Gestion_Page.Show();
+        }
     }
 }

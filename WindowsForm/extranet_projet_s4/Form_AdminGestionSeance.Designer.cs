@@ -47,13 +47,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
+            this.Groupe_BTN = new System.Windows.Forms.Button();
+            this.Cours_BTN = new System.Windows.Forms.Button();
+            this.Groupe_text = new System.Windows.Forms.Label();
+            this.Groupe_CB = new System.Windows.Forms.ComboBox();
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
             this.Cours_CB = new System.Windows.Forms.ComboBox();
             this.PanelGestion = new System.Windows.Forms.Panel();
-            this.Groupe_CB = new System.Windows.Forms.ComboBox();
-            this.Groupe_text = new System.Windows.Forms.Label();
-            this.Cours_BTN = new System.Windows.Forms.Button();
-            this.Groupe_BTN = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -208,6 +208,7 @@
             this.Gestion_GridView.Name = "Gestion_GridView";
             this.Gestion_GridView.Size = new System.Drawing.Size(1040, 270);
             this.Gestion_GridView.TabIndex = 0;
+            this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
             // 
             // PanelAdd
             // 
@@ -233,6 +234,41 @@
             this.PanelAdd.Size = new System.Drawing.Size(690, 353);
             this.PanelAdd.TabIndex = 16;
             // 
+            // Groupe_BTN
+            // 
+            this.Groupe_BTN.Location = new System.Drawing.Point(442, 312);
+            this.Groupe_BTN.Name = "Groupe_BTN";
+            this.Groupe_BTN.Size = new System.Drawing.Size(20, 21);
+            this.Groupe_BTN.TabIndex = 24;
+            this.Groupe_BTN.Text = "?";
+            this.Groupe_BTN.UseVisualStyleBackColor = true;
+            // 
+            // Cours_BTN
+            // 
+            this.Cours_BTN.Location = new System.Drawing.Point(442, 277);
+            this.Cours_BTN.Name = "Cours_BTN";
+            this.Cours_BTN.Size = new System.Drawing.Size(20, 21);
+            this.Cours_BTN.TabIndex = 23;
+            this.Cours_BTN.Text = "?";
+            this.Cours_BTN.UseVisualStyleBackColor = true;
+            // 
+            // Groupe_text
+            // 
+            this.Groupe_text.AutoSize = true;
+            this.Groupe_text.Location = new System.Drawing.Point(12, 315);
+            this.Groupe_text.Name = "Groupe_text";
+            this.Groupe_text.Size = new System.Drawing.Size(48, 13);
+            this.Groupe_text.TabIndex = 22;
+            this.Groupe_text.Text = "Groupe :";
+            // 
+            // Groupe_CB
+            // 
+            this.Groupe_CB.FormattingEnabled = true;
+            this.Groupe_CB.Location = new System.Drawing.Point(172, 312);
+            this.Groupe_CB.Name = "Groupe_CB";
+            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
+            this.Groupe_CB.TabIndex = 21;
+            // 
             // Calendrier
             // 
             this.Calendrier.Location = new System.Drawing.Point(453, 50);
@@ -255,41 +291,6 @@
             this.PanelGestion.Name = "PanelGestion";
             this.PanelGestion.Size = new System.Drawing.Size(1040, 270);
             this.PanelGestion.TabIndex = 9;
-            // 
-            // Groupe_CB
-            // 
-            this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 312);
-            this.Groupe_CB.Name = "Groupe_CB";
-            this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
-            this.Groupe_CB.TabIndex = 21;
-            // 
-            // Groupe_text
-            // 
-            this.Groupe_text.AutoSize = true;
-            this.Groupe_text.Location = new System.Drawing.Point(12, 315);
-            this.Groupe_text.Name = "Groupe_text";
-            this.Groupe_text.Size = new System.Drawing.Size(48, 13);
-            this.Groupe_text.TabIndex = 22;
-            this.Groupe_text.Text = "Groupe :";
-            // 
-            // Cours_BTN
-            // 
-            this.Cours_BTN.Location = new System.Drawing.Point(442, 277);
-            this.Cours_BTN.Name = "Cours_BTN";
-            this.Cours_BTN.Size = new System.Drawing.Size(20, 21);
-            this.Cours_BTN.TabIndex = 23;
-            this.Cours_BTN.Text = "?";
-            this.Cours_BTN.UseVisualStyleBackColor = true;
-            // 
-            // Groupe_BTN
-            // 
-            this.Groupe_BTN.Location = new System.Drawing.Point(442, 312);
-            this.Groupe_BTN.Name = "Groupe_BTN";
-            this.Groupe_BTN.Size = new System.Drawing.Size(20, 21);
-            this.Groupe_BTN.TabIndex = 24;
-            this.Groupe_BTN.Text = "?";
-            this.Groupe_BTN.UseVisualStyleBackColor = true;
             // 
             // Form_AdminGestionSeance
             // 

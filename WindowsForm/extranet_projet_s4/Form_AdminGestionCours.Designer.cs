@@ -134,6 +134,7 @@
             this.Gestion_GridView.Name = "Gestion_GridView";
             this.Gestion_GridView.Size = new System.Drawing.Size(926, 270);
             this.Gestion_GridView.TabIndex = 0;
+            this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
             // 
             // PanelAdd
             // 

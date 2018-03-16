@@ -35,10 +35,12 @@
             this.Menu_Gestion_Sceance = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main = new System.Windows.Forms.MenuStrip();
             this.assignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Assigner_Prof = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Assigner_Note = new System.Windows.Forms.ToolStripMenuItem();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.Apropos_BTN = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Reglage_BTN = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
@@ -99,9 +101,25 @@
             // 
             // assignerToolStripMenuItem
             // 
+            this.assignerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Assigner_Prof,
+            this.Menu_Assigner_Note});
             this.assignerToolStripMenuItem.Name = "assignerToolStripMenuItem";
             this.assignerToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.assignerToolStripMenuItem.Text = "Assigner";
+            // 
+            // Menu_Assigner_Prof
+            // 
+            this.Menu_Assigner_Prof.Name = "Menu_Assigner_Prof";
+            this.Menu_Assigner_Prof.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Prof.Text = "Professeur";
+            this.Menu_Assigner_Prof.Click += new System.EventHandler(this.Menu_Assigner_Prof_Click);
+            // 
+            // Menu_Assigner_Note
+            // 
+            this.Menu_Assigner_Note.Name = "Menu_Assigner_Note";
+            this.Menu_Assigner_Note.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Note.Text = "Note";
             // 
             // Apropos_BTN
             // 
@@ -138,22 +156,23 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // Reglage_BTN
             // 
-            this.button2.BackColor = System.Drawing.Color.ForestGreen;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(980, 325);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 127);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Réglage";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.Reglage_BTN.BackColor = System.Drawing.Color.ForestGreen;
+            this.Reglage_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Reglage_BTN.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.Reglage_BTN.FlatAppearance.BorderSize = 0;
+            this.Reglage_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reglage_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reglage_BTN.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Reglage_BTN.Location = new System.Drawing.Point(980, 325);
+            this.Reglage_BTN.Name = "Reglage_BTN";
+            this.Reglage_BTN.Size = new System.Drawing.Size(131, 127);
+            this.Reglage_BTN.TabIndex = 6;
+            this.Reglage_BTN.Text = "Réglage";
+            this.Reglage_BTN.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Reglage_BTN.UseVisualStyleBackColor = false;
+            this.Reglage_BTN.Click += new System.EventHandler(this.Reglage_BTN_Click);
             // 
             // button3
             // 
@@ -179,7 +198,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1123, 606);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Reglage_BTN);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Apropos_BTN);
             this.Controls.Add(this.Menu_Main);
@@ -188,7 +207,7 @@
             this.MaximizeBox = false;
             this.Name = "Form_AdminMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Console Administrateur";
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Menu_Main.ResumeLayout(false);
@@ -209,7 +228,9 @@
         private System.Windows.Forms.ToolStripMenuItem assignerToolStripMenuItem;
         private System.Windows.Forms.Button Apropos_BTN;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Reglage_BTN;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Assigner_Prof;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Assigner_Note;
     }
 }

@@ -77,6 +77,12 @@
     <Compile Include="Form_acces_rapide_taches.Designer.cs">
       <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AdminAssignerProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminAssignerProf.Designer.cs">
+      <DependentUpon>Form_AdminAssignerProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AdminGestionCours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="Form_AdminMain.designer.cs">
       <DependentUpon>Form_AdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AdminPhp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminPhp.Designer.cs">
+      <DependentUpon>Form_AdminPhp.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_APropos.cs">
       <SubType>Form</SubType>
@@ -151,6 +163,9 @@
     <EmbeddedResource Include="Form_acces_rapide_taches.resx">
       <DependentUpon>Form_acces_rapide_taches.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminAssignerProf.resx">
+      <DependentUpon>Form_AdminAssignerProf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminGestionCours.resx">
       <DependentUpon>Form_AdminGestionCours.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminMain.resx">
       <DependentUpon>Form_AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminPhp.resx">
+      <DependentUpon>Form_AdminPhp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_APropos.resx">
       <DependentUpon>Form_APropos.cs</DependentUpon>
