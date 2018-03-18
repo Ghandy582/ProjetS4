@@ -41,6 +41,8 @@ namespace extranet_projet_s4
 
         private void Form_paramestres_taches_Load(object sender, EventArgs e)
         {
+            nb_jours_notif_string = ConfigurationManager.AppSettings["nb_jours_notif"];
+            nb_jours_supression = ConfigurationManager.AppSettings["nb_jours_supression"];
             //Pour cocher les bons radiobuttons
             if (nb_jours_notif_string == "1")
             {
@@ -140,5 +142,6 @@ namespace extranet_projet_s4
         {
             this.Close();
         }
+       
     }
 }
