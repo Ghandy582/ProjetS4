@@ -38,8 +38,8 @@
             this.gestion_tache_menu_taches = new System.Windows.Forms.ToolStripMenuItem();
             this.gestion_tache_menu_acces_rapide_taches = new System.Windows.Forms.ToolStripMenuItem();
             this.gestion_tache_menu_nouvelle_tache = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestion_tache_tache_a_realiser_datagrid = new System.Windows.Forms.DataGridView();
             this.gestion_tache_menu_parametres = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestion_tache_tache_a_realiser_datagrid = new System.Windows.Forms.DataGridView();
             this.gestion_taches_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_tache_tache_a_realiser_datagrid)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             // 
             this.gestion_tache_nouvelletache_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestion_tache_nouvelletache_btn.Location = new System.Drawing.Point(1198, 748);
-            this.gestion_tache_nouvelletache_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gestion_tache_nouvelletache_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_nouvelletache_btn.Name = "gestion_tache_nouvelletache_btn";
             this.gestion_tache_nouvelletache_btn.Size = new System.Drawing.Size(200, 58);
             this.gestion_tache_nouvelletache_btn.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.gestion_tache_accesrapide_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gestion_tache_accesrapide_btn.Location = new System.Drawing.Point(962, 748);
-            this.gestion_tache_accesrapide_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gestion_tache_accesrapide_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_accesrapide_btn.Name = "gestion_tache_accesrapide_btn";
             this.gestion_tache_accesrapide_btn.Size = new System.Drawing.Size(216, 58);
             this.gestion_tache_accesrapide_btn.TabIndex = 3;
@@ -103,6 +103,7 @@
             this.gestion_taches_menu.Size = new System.Drawing.Size(1407, 36);
             this.gestion_taches_menu.TabIndex = 4;
             this.gestion_taches_menu.Text = "menuStrip1";
+            this.gestion_taches_menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.gestion_taches_menu_ItemClicked);
             // 
             // gestion_tache_menu_aaccueil
             // 
@@ -124,16 +125,23 @@
             // gestion_tache_menu_acces_rapide_taches
             // 
             this.gestion_tache_menu_acces_rapide_taches.Name = "gestion_tache_menu_acces_rapide_taches";
-            this.gestion_tache_menu_acces_rapide_taches.Size = new System.Drawing.Size(252, 30);
+            this.gestion_tache_menu_acces_rapide_taches.Size = new System.Drawing.Size(217, 30);
             this.gestion_tache_menu_acces_rapide_taches.Text = "Accès rapide";
             this.gestion_tache_menu_acces_rapide_taches.Click += new System.EventHandler(this.gestion_tache_menu_acces_rapide_taches_Click);
             // 
             // gestion_tache_menu_nouvelle_tache
             // 
             this.gestion_tache_menu_nouvelle_tache.Name = "gestion_tache_menu_nouvelle_tache";
-            this.gestion_tache_menu_nouvelle_tache.Size = new System.Drawing.Size(252, 30);
+            this.gestion_tache_menu_nouvelle_tache.Size = new System.Drawing.Size(217, 30);
             this.gestion_tache_menu_nouvelle_tache.Text = "Nouvelle tâche";
             this.gestion_tache_menu_nouvelle_tache.Click += new System.EventHandler(this.gestion_tache_menu_nouvelle_tache_Click);
+            // 
+            // gestion_tache_menu_parametres
+            // 
+            this.gestion_tache_menu_parametres.Name = "gestion_tache_menu_parametres";
+            this.gestion_tache_menu_parametres.Size = new System.Drawing.Size(217, 30);
+            this.gestion_tache_menu_parametres.Text = "Paramètres";
+            this.gestion_tache_menu_parametres.Click += new System.EventHandler(this.gestion_tache_menu_parametres_Click);
             // 
             // gestion_tache_tache_a_realiser_datagrid
             // 
@@ -147,19 +155,12 @@
             this.gestion_tache_tache_a_realiser_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gestion_tache_tache_a_realiser_datagrid.GridColor = System.Drawing.SystemColors.MenuText;
             this.gestion_tache_tache_a_realiser_datagrid.Location = new System.Drawing.Point(15, 104);
-            this.gestion_tache_tache_a_realiser_datagrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gestion_tache_tache_a_realiser_datagrid.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_tache_a_realiser_datagrid.Name = "gestion_tache_tache_a_realiser_datagrid";
             this.gestion_tache_tache_a_realiser_datagrid.ReadOnly = true;
             this.gestion_tache_tache_a_realiser_datagrid.RowTemplate.Height = 46;
             this.gestion_tache_tache_a_realiser_datagrid.Size = new System.Drawing.Size(1377, 322);
             this.gestion_tache_tache_a_realiser_datagrid.TabIndex = 5;
-            // 
-            // gestion_tache_menu_parametres
-            // 
-            this.gestion_tache_menu_parametres.Name = "gestion_tache_menu_parametres";
-            this.gestion_tache_menu_parametres.Size = new System.Drawing.Size(252, 30);
-            this.gestion_tache_menu_parametres.Text = "Paramètres";
-            this.gestion_tache_menu_parametres.Click += new System.EventHandler(this.gestion_tache_menu_parametres_Click);
             // 
             // Form_gestion_tache
             // 
@@ -174,7 +175,7 @@
             this.Controls.Add(this.gestion_tache_tache_a_realiser_label);
             this.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_gestion_tache";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion des tâches";
