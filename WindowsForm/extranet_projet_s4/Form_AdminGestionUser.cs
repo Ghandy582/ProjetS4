@@ -144,17 +144,24 @@ namespace extranet_projet_s4
             string salt= CreateSalt(4);
             string pwd = MD5Hash(SQLpwd_TB.Text, salt);
             */
-            if (SQL_TB.Text == "")
+            try
             {
-                MessageBox.Show("Erreur !");
+                if (SQL_TB.Text == "")
+                {
+                    MessageBox.Show("Erreur !");
+                }
+                else
+                {
+                    MySqlCommand cmd = BDD.CreateCommand();
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = SQL_TB.Text;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Commande Appliquée !");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MySqlCommand cmd = BDD.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = SQL_TB.Text;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Commande Appliquée !");
+                MessageBox.Show("SQL ajouter : '" + ex.ToString() + "'");
             }
         }
 
@@ -165,11 +172,9 @@ namespace extranet_projet_s4
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            if(Prenom_Box.Text == "" || Nom_Box.Text == "" || Identity_Box.Text == "" || PWD_Box.Text == "")
+            try
             {
-                MessageBox.Show("Erreur !");
-            }
-            else { //------ Pour le salt and hash des passwords -------
+                //------ Pour le salt and hash des passwords -------
                 string salt = CreateSalt(4);
                 string pwd = MD5Hash(PWD_Box.Text, salt);
 
@@ -188,12 +193,13 @@ namespace extranet_projet_s4
                 PWD_Box.Text = "";
                 UpdateGrid(BDD);
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ajouter : '" + ex.ToString() + "'");
+            }
+            
            
         }
 
-        private void GestionUser_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

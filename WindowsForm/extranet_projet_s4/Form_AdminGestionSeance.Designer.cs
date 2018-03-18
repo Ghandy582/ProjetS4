@@ -54,6 +54,9 @@
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
             this.Cours_CB = new System.Windows.Forms.ComboBox();
             this.PanelGestion = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -62,15 +65,15 @@
             // 
             // NoteP_Box
             // 
-            this.NoteP_Box.Location = new System.Drawing.Point(172, 184);
+            this.NoteP_Box.Location = new System.Drawing.Point(172, 171);
             this.NoteP_Box.Multiline = true;
             this.NoteP_Box.Name = "NoteP_Box";
-            this.NoteP_Box.Size = new System.Drawing.Size(264, 74);
+            this.NoteP_Box.Size = new System.Drawing.Size(264, 49);
             this.NoteP_Box.TabIndex = 18;
             // 
             // Note_Box
             // 
-            this.Note_Box.Location = new System.Drawing.Point(172, 90);
+            this.Note_Box.Location = new System.Drawing.Point(172, 86);
             this.Note_Box.Multiline = true;
             this.Note_Box.Name = "Note_Box";
             this.Note_Box.Size = new System.Drawing.Size(264, 79);
@@ -78,14 +81,14 @@
             // 
             // BoolDate_Box
             // 
-            this.BoolDate_Box.Location = new System.Drawing.Point(172, 50);
+            this.BoolDate_Box.Location = new System.Drawing.Point(172, 59);
             this.BoolDate_Box.Name = "BoolDate_Box";
             this.BoolDate_Box.Size = new System.Drawing.Size(264, 20);
             this.BoolDate_Box.TabIndex = 16;
             // 
             // Date_Box
             // 
-            this.Date_Box.Location = new System.Drawing.Point(172, 11);
+            this.Date_Box.Location = new System.Drawing.Point(172, 31);
             this.Date_Box.Name = "Date_Box";
             this.Date_Box.Size = new System.Drawing.Size(264, 20);
             this.Date_Box.TabIndex = 15;
@@ -93,7 +96,7 @@
             // Cours_Label
             // 
             this.Cours_Label.AutoSize = true;
-            this.Cours_Label.Location = new System.Drawing.Point(12, 280);
+            this.Cours_Label.Location = new System.Drawing.Point(12, 232);
             this.Cours_Label.Name = "Cours_Label";
             this.Cours_Label.Size = new System.Drawing.Size(104, 13);
             this.Cours_Label.TabIndex = 12;
@@ -102,7 +105,7 @@
             // NoteP_Label
             // 
             this.NoteP_Label.AutoSize = true;
-            this.NoteP_Label.Location = new System.Drawing.Point(12, 184);
+            this.NoteP_Label.Location = new System.Drawing.Point(12, 174);
             this.NoteP_Label.Name = "NoteP_Label";
             this.NoteP_Label.Size = new System.Drawing.Size(129, 13);
             this.NoteP_Label.TabIndex = 11;
@@ -111,7 +114,7 @@
             // Note_Label
             // 
             this.Note_Label.AutoSize = true;
-            this.Note_Label.Location = new System.Drawing.Point(12, 90);
+            this.Note_Label.Location = new System.Drawing.Point(12, 86);
             this.Note_Label.Name = "Note_Label";
             this.Note_Label.Size = new System.Drawing.Size(80, 13);
             this.Note_Label.TabIndex = 10;
@@ -120,7 +123,7 @@
             // DateF_Label
             // 
             this.DateF_Label.AutoSize = true;
-            this.DateF_Label.Location = new System.Drawing.Point(12, 53);
+            this.DateF_Label.Location = new System.Drawing.Point(12, 62);
             this.DateF_Label.Name = "DateF_Label";
             this.DateF_Label.Size = new System.Drawing.Size(95, 13);
             this.DateF_Label.TabIndex = 9;
@@ -129,7 +132,7 @@
             // DateD_Label
             // 
             this.DateD_Label.AutoSize = true;
-            this.DateD_Label.Location = new System.Drawing.Point(12, 14);
+            this.DateD_Label.Location = new System.Drawing.Point(12, 34);
             this.DateD_Label.Name = "DateD_Label";
             this.DateD_Label.Size = new System.Drawing.Size(89, 13);
             this.DateD_Label.TabIndex = 8;
@@ -137,7 +140,7 @@
             // 
             // Enter_Button
             // 
-            this.Enter_Button.Location = new System.Drawing.Point(538, 292);
+            this.Enter_Button.Location = new System.Drawing.Point(538, 236);
             this.Enter_Button.Name = "Enter_Button";
             this.Enter_Button.Size = new System.Drawing.Size(149, 41);
             this.Enter_Button.TabIndex = 7;
@@ -157,7 +160,7 @@
             // 
             // SupprimerButton
             // 
-            this.SupprimerButton.Location = new System.Drawing.Point(179, 285);
+            this.SupprimerButton.Location = new System.Drawing.Point(179, 368);
             this.SupprimerButton.Name = "SupprimerButton";
             this.SupprimerButton.Size = new System.Drawing.Size(155, 23);
             this.SupprimerButton.TabIndex = 12;
@@ -167,7 +170,7 @@
             // 
             // AjouterButton
             // 
-            this.AjouterButton.Location = new System.Drawing.Point(13, 285);
+            this.AjouterButton.Location = new System.Drawing.Point(13, 368);
             this.AjouterButton.Name = "AjouterButton";
             this.AjouterButton.Size = new System.Drawing.Size(155, 23);
             this.AjouterButton.TabIndex = 11;
@@ -177,10 +180,10 @@
             // 
             // SQL_TB
             // 
-            this.SQL_TB.Location = new System.Drawing.Point(13, 314);
+            this.SQL_TB.Location = new System.Drawing.Point(13, 399);
             this.SQL_TB.Multiline = true;
             this.SQL_TB.Name = "SQL_TB";
-            this.SQL_TB.Size = new System.Drawing.Size(321, 245);
+            this.SQL_TB.Size = new System.Drawing.Size(321, 160);
             this.SQL_TB.TabIndex = 10;
             // 
             // ClicDroitSupprimer
@@ -213,6 +216,7 @@
             // PanelAdd
             // 
             this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelAdd.Controls.Add(this.label5);
             this.PanelAdd.Controls.Add(this.Groupe_BTN);
             this.PanelAdd.Controls.Add(this.Cours_BTN);
             this.PanelAdd.Controls.Add(this.Groupe_text);
@@ -229,14 +233,14 @@
             this.PanelAdd.Controls.Add(this.DateF_Label);
             this.PanelAdd.Controls.Add(this.DateD_Label);
             this.PanelAdd.Controls.Add(this.Enter_Button);
-            this.PanelAdd.Location = new System.Drawing.Point(351, 285);
+            this.PanelAdd.Location = new System.Drawing.Point(351, 337);
             this.PanelAdd.Name = "PanelAdd";
-            this.PanelAdd.Size = new System.Drawing.Size(690, 353);
+            this.PanelAdd.Size = new System.Drawing.Size(690, 301);
             this.PanelAdd.TabIndex = 16;
             // 
             // Groupe_BTN
             // 
-            this.Groupe_BTN.Location = new System.Drawing.Point(442, 312);
+            this.Groupe_BTN.Location = new System.Drawing.Point(442, 256);
             this.Groupe_BTN.Name = "Groupe_BTN";
             this.Groupe_BTN.Size = new System.Drawing.Size(20, 21);
             this.Groupe_BTN.TabIndex = 24;
@@ -245,7 +249,7 @@
             // 
             // Cours_BTN
             // 
-            this.Cours_BTN.Location = new System.Drawing.Point(442, 277);
+            this.Cours_BTN.Location = new System.Drawing.Point(442, 229);
             this.Cours_BTN.Name = "Cours_BTN";
             this.Cours_BTN.Size = new System.Drawing.Size(20, 21);
             this.Cours_BTN.TabIndex = 23;
@@ -255,7 +259,7 @@
             // Groupe_text
             // 
             this.Groupe_text.AutoSize = true;
-            this.Groupe_text.Location = new System.Drawing.Point(12, 315);
+            this.Groupe_text.Location = new System.Drawing.Point(12, 260);
             this.Groupe_text.Name = "Groupe_text";
             this.Groupe_text.Size = new System.Drawing.Size(48, 13);
             this.Groupe_text.TabIndex = 22;
@@ -264,14 +268,14 @@
             // Groupe_CB
             // 
             this.Groupe_CB.FormattingEnabled = true;
-            this.Groupe_CB.Location = new System.Drawing.Point(172, 312);
+            this.Groupe_CB.Location = new System.Drawing.Point(172, 256);
             this.Groupe_CB.Name = "Groupe_CB";
             this.Groupe_CB.Size = new System.Drawing.Size(264, 21);
             this.Groupe_CB.TabIndex = 21;
             // 
             // Calendrier
             // 
-            this.Calendrier.Location = new System.Drawing.Point(453, 50);
+            this.Calendrier.Location = new System.Drawing.Point(448, 34);
             this.Calendrier.Name = "Calendrier";
             this.Calendrier.TabIndex = 20;
             this.Calendrier.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.Calendrier_DateChanged);
@@ -279,7 +283,7 @@
             // Cours_CB
             // 
             this.Cours_CB.FormattingEnabled = true;
-            this.Cours_CB.Location = new System.Drawing.Point(172, 277);
+            this.Cours_CB.Location = new System.Drawing.Point(172, 229);
             this.Cours_CB.Name = "Cours_CB";
             this.Cours_CB.Size = new System.Drawing.Size(264, 21);
             this.Cours_CB.TabIndex = 19;
@@ -292,11 +296,43 @@
             this.PanelGestion.Size = new System.Drawing.Size(1040, 270);
             this.PanelGestion.TabIndex = 9;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(313, 291);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(413, 29);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Ajouter un nouvelle séance de cours :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 341);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 24);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Commande SQL :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Insérer données :";
+            // 
             // Form_AdminGestionSeance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SQLentrer_Button);
             this.Controls.Add(this.SupprimerButton);
             this.Controls.Add(this.AjouterButton);
@@ -343,5 +379,8 @@
         private System.Windows.Forms.ComboBox Groupe_CB;
         private System.Windows.Forms.Button Groupe_BTN;
         private System.Windows.Forms.Button Cours_BTN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

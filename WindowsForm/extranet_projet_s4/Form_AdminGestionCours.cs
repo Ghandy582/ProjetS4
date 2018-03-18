@@ -110,5 +110,6 @@ namespace extranet_projet_s4
                 Coefficient_Box.Text = "";
             }
         }
+
     }
 }

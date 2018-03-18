@@ -41,6 +41,9 @@
             this.SQLEntrer_Button = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ClicDroitSupprimer = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.Panel_GridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,15 +73,15 @@
             // 
             // SQL_Box
             // 
-            this.SQL_Box.Location = new System.Drawing.Point(12, 267);
+            this.SQL_Box.Location = new System.Drawing.Point(15, 343);
             this.SQL_Box.Multiline = true;
             this.SQL_Box.Name = "SQL_Box";
-            this.SQL_Box.Size = new System.Drawing.Size(396, 120);
+            this.SQL_Box.Size = new System.Drawing.Size(396, 90);
             this.SQL_Box.TabIndex = 1;
             // 
             // Ajouter_Button
             // 
-            this.Ajouter_Button.Location = new System.Drawing.Point(12, 238);
+            this.Ajouter_Button.Location = new System.Drawing.Point(15, 314);
             this.Ajouter_Button.Name = "Ajouter_Button";
             this.Ajouter_Button.Size = new System.Drawing.Size(190, 23);
             this.Ajouter_Button.TabIndex = 2;
@@ -88,7 +91,7 @@
             // 
             // Supprimer_Button
             // 
-            this.Supprimer_Button.Location = new System.Drawing.Point(220, 238);
+            this.Supprimer_Button.Location = new System.Drawing.Point(223, 314);
             this.Supprimer_Button.Name = "Supprimer_Button";
             this.Supprimer_Button.Size = new System.Drawing.Size(188, 23);
             this.Supprimer_Button.TabIndex = 3;
@@ -99,17 +102,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.Libelle_Box);
             this.panel1.Controls.Add(this.Entrer_Button);
             this.panel1.Controls.Add(this.Libelle_Label);
-            this.panel1.Location = new System.Drawing.Point(12, 437);
+            this.panel1.Location = new System.Drawing.Point(15, 480);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 99);
             this.panel1.TabIndex = 4;
             // 
             // Libelle_Box
             // 
-            this.Libelle_Box.Location = new System.Drawing.Point(145, 12);
+            this.Libelle_Box.Location = new System.Drawing.Point(147, 33);
             this.Libelle_Box.Name = "Libelle_Box";
             this.Libelle_Box.Size = new System.Drawing.Size(249, 20);
             this.Libelle_Box.TabIndex = 7;
@@ -127,7 +131,7 @@
             // Libelle_Label
             // 
             this.Libelle_Label.AutoSize = true;
-            this.Libelle_Label.Location = new System.Drawing.Point(15, 15);
+            this.Libelle_Label.Location = new System.Drawing.Point(13, 33);
             this.Libelle_Label.Name = "Libelle_Label";
             this.Libelle_Label.Size = new System.Drawing.Size(96, 13);
             this.Libelle_Label.TabIndex = 0;
@@ -135,7 +139,7 @@
             // 
             // SQLEntrer_Button
             // 
-            this.SQLEntrer_Button.Location = new System.Drawing.Point(268, 394);
+            this.SQLEntrer_Button.Location = new System.Drawing.Point(268, 441);
             this.SQLEntrer_Button.Name = "SQLEntrer_Button";
             this.SQLEntrer_Button.Size = new System.Drawing.Size(140, 37);
             this.SQLEntrer_Button.TabIndex = 5;
@@ -158,11 +162,43 @@
             this.ClicDroitSupprimer.Text = "Supprimer";
             this.ClicDroitSupprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(410, 29);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Ajouter un nouveau groupe de travail:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 287);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 24);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Commande SQL :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Insérer données :";
+            // 
             // Form_AdminGestionGroupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(424, 542);
+            this.ClientSize = new System.Drawing.Size(424, 591);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.SQLEntrer_Button);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Supprimer_Button);
@@ -197,5 +233,8 @@
         private System.Windows.Forms.TextBox Libelle_Box;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ClicDroitSupprimer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

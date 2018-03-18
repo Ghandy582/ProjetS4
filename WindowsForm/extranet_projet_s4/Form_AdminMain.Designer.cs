@@ -111,14 +111,14 @@
             // Menu_Assigner_Prof
             // 
             this.Menu_Assigner_Prof.Name = "Menu_Assigner_Prof";
-            this.Menu_Assigner_Prof.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Prof.Size = new System.Drawing.Size(129, 22);
             this.Menu_Assigner_Prof.Text = "Professeur";
             this.Menu_Assigner_Prof.Click += new System.EventHandler(this.Menu_Assigner_Prof_Click);
             // 
             // Menu_Assigner_Note
             // 
             this.Menu_Assigner_Note.Name = "Menu_Assigner_Note";
-            this.Menu_Assigner_Note.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Note.Size = new System.Drawing.Size(129, 22);
             this.Menu_Assigner_Note.Text = "Note";
             // 
             // Apropos_BTN
