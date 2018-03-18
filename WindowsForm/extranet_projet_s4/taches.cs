@@ -147,6 +147,7 @@ namespace extranet_projet_s4
         static string serveur = ConfigurationManager.AppSettings["serveur"];
         static string database = ConfigurationManager.AppSettings["database"];
         static string nb_jours_notif_string = ConfigurationManager.AppSettings["nb_jours_notif"];
+        static string nb_jours_supression = ConfigurationManager.AppSettings["nb_jours_supression"];
         /*_____________________________________________*/
 
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
@@ -386,7 +387,71 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode pour remplir le tableau des tâches à réaliser" + ex.ToString());
             }
         }
+
+        //________________________________________________________________________
+        public void Changer_parametres_taches(int nb_notif, int nb_supp)
+        {
+            try
+            {
+                // on modifie dans le fichier de configuration
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                if (nb_notif == 1)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_notif");
+                    config.AppSettings.Settings.Add("nb_jours_notif", "1");
+                }
+                else if (nb_notif == 3)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_notif");
+                    config.AppSettings.Settings.Add("nb_jours_notif", "3");
+                }
+                else if (nb_notif == 7)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_notif");
+                    config.AppSettings.Settings.Add("nb_jours_notif", "7");
+                }
+                else if (nb_notif==10)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_notif");
+                    config.AppSettings.Settings.Add("nb_jours_notif", "10");
+                }
+
+                if (nb_supp == 3)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_supression");
+                    config.AppSettings.Settings.Add("nb_jours_supression", "3");
+                }
+                else if (nb_supp == 7)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_supression");
+                    config.AppSettings.Settings.Add("nb_jours_supression", "7");
+                }
+                else if (nb_supp == 15)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_supression");
+                    config.AppSettings.Settings.Add("nb_jours_supression", "15");
+                }
+                else if (nb_supp == 30)
+                {
+                    config.AppSettings.Settings.Remove("nb_jours_supression");
+                    config.AppSettings.Settings.Add("nb_jours_supression", "30");
+                }
+
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+                nb_jours_notif_string = ConfigurationManager.AppSettings["nb_jours_notif"];
+                nb_jours_supression = ConfigurationManager.AppSettings["nb_jours_supression"];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de changements des paramètres des tâches " + ex.ToString());
+            }
+
+        }
     }
+
 
 
 }

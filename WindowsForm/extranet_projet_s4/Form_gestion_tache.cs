@@ -79,7 +79,13 @@ namespace extranet_projet_s4
 
         private void gestion_tache_menu_parametres_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bientôt disponible");
+            Form_paramestres_taches form_parametres_taches = new Form_paramestres_taches(taches);
+            form_parametres_taches.Show();
+        }
+
+        private void gestion_taches_menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
