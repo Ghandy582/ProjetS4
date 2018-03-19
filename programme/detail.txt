@@ -58,4 +58,8 @@ __ 18 mars __
 création de la méthode de changement de paramètres de tache
 la fenetre de paramètres affiche les bons paramètres
 petit souci pour le raffraichissement
-
+__19 mars__
+dans l'acces rapide on peut maintenant basculer les taches réalisées dans la bonne table
+rafraichissement de l'acces rapide quand on déplace une tâche
+affichage des tâches récement réalisées dans le gestionnaire des tâches 
+rectification des notifications

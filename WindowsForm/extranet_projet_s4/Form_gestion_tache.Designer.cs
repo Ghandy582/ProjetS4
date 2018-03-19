@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gestion_tache_tache_a_realiser_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gestion_tache_nouvelletache_btn = new System.Windows.Forms.Button();
@@ -40,8 +41,10 @@
             this.gestion_tache_menu_nouvelle_tache = new System.Windows.Forms.ToolStripMenuItem();
             this.gestion_tache_menu_parametres = new System.Windows.Forms.ToolStripMenuItem();
             this.gestion_tache_tache_a_realiser_datagrid = new System.Windows.Forms.DataGridView();
+            this.gestion_tache_tache_realisees_datagrid = new System.Windows.Forms.DataGridView();
             this.gestion_taches_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_tache_tache_a_realiser_datagrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestion_tache_tache_realisees_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // gestion_tache_tache_a_realiser_label
@@ -59,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 452);
+            this.label1.Location = new System.Drawing.Point(7, 440);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(527, 44);
@@ -69,10 +72,10 @@
             // gestion_tache_nouvelletache_btn
             // 
             this.gestion_tache_nouvelletache_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestion_tache_nouvelletache_btn.Location = new System.Drawing.Point(1198, 748);
+            this.gestion_tache_nouvelletache_btn.Location = new System.Drawing.Point(1079, 548);
             this.gestion_tache_nouvelletache_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_nouvelletache_btn.Name = "gestion_tache_nouvelletache_btn";
-            this.gestion_tache_nouvelletache_btn.Size = new System.Drawing.Size(200, 58);
+            this.gestion_tache_nouvelletache_btn.Size = new System.Drawing.Size(216, 58);
             this.gestion_tache_nouvelletache_btn.TabIndex = 2;
             this.gestion_tache_nouvelletache_btn.Text = "Nouvelle tâche";
             this.gestion_tache_nouvelletache_btn.UseVisualStyleBackColor = true;
@@ -81,7 +84,7 @@
             // gestion_tache_accesrapide_btn
             // 
             this.gestion_tache_accesrapide_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestion_tache_accesrapide_btn.Location = new System.Drawing.Point(962, 748);
+            this.gestion_tache_accesrapide_btn.Location = new System.Drawing.Point(1079, 633);
             this.gestion_tache_accesrapide_btn.Margin = new System.Windows.Forms.Padding(2);
             this.gestion_tache_accesrapide_btn.Name = "gestion_tache_accesrapide_btn";
             this.gestion_tache_accesrapide_btn.Size = new System.Drawing.Size(216, 58);
@@ -100,7 +103,7 @@
             this.gestion_taches_menu.Location = new System.Drawing.Point(0, 0);
             this.gestion_taches_menu.Name = "gestion_taches_menu";
             this.gestion_taches_menu.Padding = new System.Windows.Forms.Padding(14, 4, 0, 4);
-            this.gestion_taches_menu.Size = new System.Drawing.Size(1407, 36);
+            this.gestion_taches_menu.Size = new System.Drawing.Size(1407, 35);
             this.gestion_taches_menu.TabIndex = 4;
             this.gestion_taches_menu.Text = "menuStrip1";
             this.gestion_taches_menu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.gestion_taches_menu_ItemClicked);
@@ -108,7 +111,7 @@
             // gestion_tache_menu_aaccueil
             // 
             this.gestion_tache_menu_aaccueil.Name = "gestion_tache_menu_aaccueil";
-            this.gestion_tache_menu_aaccueil.Size = new System.Drawing.Size(82, 28);
+            this.gestion_tache_menu_aaccueil.Size = new System.Drawing.Size(82, 27);
             this.gestion_tache_menu_aaccueil.Text = "Accueil";
             this.gestion_tache_menu_aaccueil.Click += new System.EventHandler(this.gestion_tache_menu_aaccueil_Click);
             // 
@@ -119,7 +122,7 @@
             this.gestion_tache_menu_nouvelle_tache,
             this.gestion_tache_menu_parametres});
             this.gestion_tache_menu_taches.Name = "gestion_tache_menu_taches";
-            this.gestion_tache_menu_taches.Size = new System.Drawing.Size(81, 28);
+            this.gestion_tache_menu_taches.Size = new System.Drawing.Size(81, 27);
             this.gestion_tache_menu_taches.Text = "Tâches";
             // 
             // gestion_tache_menu_acces_rapide_taches
@@ -148,8 +151,8 @@
             this.gestion_tache_tache_a_realiser_datagrid.AllowUserToAddRows = false;
             this.gestion_tache_tache_a_realiser_datagrid.AllowUserToDeleteRows = false;
             this.gestion_tache_tache_a_realiser_datagrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gestion_tache_tache_a_realiser_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestion_tache_tache_a_realiser_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gestion_tache_tache_a_realiser_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gestion_tache_tache_a_realiser_datagrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gestion_tache_tache_a_realiser_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -159,14 +162,35 @@
             this.gestion_tache_tache_a_realiser_datagrid.Name = "gestion_tache_tache_a_realiser_datagrid";
             this.gestion_tache_tache_a_realiser_datagrid.ReadOnly = true;
             this.gestion_tache_tache_a_realiser_datagrid.RowTemplate.Height = 46;
-            this.gestion_tache_tache_a_realiser_datagrid.Size = new System.Drawing.Size(1377, 322);
+            this.gestion_tache_tache_a_realiser_datagrid.Size = new System.Drawing.Size(1377, 316);
             this.gestion_tache_tache_a_realiser_datagrid.TabIndex = 5;
+            // 
+            // gestion_tache_tache_realisees_datagrid
+            // 
+            this.gestion_tache_tache_realisees_datagrid.AllowUserToAddRows = false;
+            this.gestion_tache_tache_realisees_datagrid.AllowUserToDeleteRows = false;
+            this.gestion_tache_tache_realisees_datagrid.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gestion_tache_tache_realisees_datagrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.gestion_tache_tache_realisees_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gestion_tache_tache_realisees_datagrid.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.gestion_tache_tache_realisees_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gestion_tache_tache_realisees_datagrid.GridColor = System.Drawing.SystemColors.MenuText;
+            this.gestion_tache_tache_realisees_datagrid.Location = new System.Drawing.Point(15, 498);
+            this.gestion_tache_tache_realisees_datagrid.Margin = new System.Windows.Forms.Padding(2);
+            this.gestion_tache_tache_realisees_datagrid.Name = "gestion_tache_tache_realisees_datagrid";
+            this.gestion_tache_tache_realisees_datagrid.ReadOnly = true;
+            this.gestion_tache_tache_realisees_datagrid.RowTemplate.Height = 46;
+            this.gestion_tache_tache_realisees_datagrid.Size = new System.Drawing.Size(930, 242);
+            this.gestion_tache_tache_realisees_datagrid.TabIndex = 6;
+            this.gestion_tache_tache_realisees_datagrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form_gestion_tache
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1407, 813);
+            this.ClientSize = new System.Drawing.Size(1407, 771);
+            this.Controls.Add(this.gestion_tache_tache_realisees_datagrid);
             this.Controls.Add(this.gestion_tache_tache_a_realiser_datagrid);
             this.Controls.Add(this.gestion_taches_menu);
             this.Controls.Add(this.gestion_tache_accesrapide_btn);
@@ -184,6 +208,7 @@
             this.gestion_taches_menu.ResumeLayout(false);
             this.gestion_taches_menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gestion_tache_tache_a_realiser_datagrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestion_tache_tache_realisees_datagrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +227,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_aaccueil;
         private System.Windows.Forms.DataGridView gestion_tache_tache_a_realiser_datagrid;
         private System.Windows.Forms.ToolStripMenuItem gestion_tache_menu_parametres;
+        private System.Windows.Forms.DataGridView gestion_tache_tache_realisees_datagrid;
     }
 }
