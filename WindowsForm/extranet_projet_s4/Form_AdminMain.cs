@@ -116,5 +116,10 @@ namespace extranet_projet_s4
             Gestion_Page.Show();
         }
 
+        private void Menu_Assigner_Note_Click(object sender, EventArgs e)
+        {
+            Form_AdminAssignerNote Gestion_Page = new Form_AdminAssignerNote(BDD);
+            Gestion_Page.Show();
+        }
     }
 }

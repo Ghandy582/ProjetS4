@@ -88,11 +88,8 @@ namespace extranet_projet_s4
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            if (BoolDate_Box.Text == "")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+            
+            try
             {
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -108,15 +105,15 @@ namespace extranet_projet_s4
                 Cours_CB.Text = "";
                 UpdateGrid(BDD);
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Entrer Seance '" + ex.ToString() + "'");
+            }
         }
 
         private void SQLentrer_Button_Click(object sender, EventArgs e)
         {
-            if (SQL_TB.Text == "" || SQL_TB.Text == "DELETE FROM `seance` WHERE `seance`.`ID_Seance` =")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+            try
             {
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -125,6 +122,10 @@ namespace extranet_projet_s4
                 MessageBox.Show("Commandes appliqué !");
                 UpdateGrid(BDD);
                 SQL_TB.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Entrer SQL Seance '" + ex.ToString() + "'");
             }
         }
     }
