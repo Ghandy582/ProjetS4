@@ -15,8 +15,8 @@ namespace extranet_projet_s4
     public partial class Form_paramestres_taches : Form
     {
         Taches taches;
-        static string nb_jours_notif_string = ConfigurationManager.AppSettings["nb_jours_notif"];
-        static string nb_jours_supression = ConfigurationManager.AppSettings["nb_jours_supression"];
+        static string nb_jours_notif_string;
+        static string nb_jours_supression;
 
         string nb_modif;
         string nb_supp;

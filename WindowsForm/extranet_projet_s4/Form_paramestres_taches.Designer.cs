@@ -188,7 +188,7 @@
             // parametre_taches_valider_btn
             // 
             this.parametre_taches_valider_btn.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.parametre_taches_valider_btn.Location = new System.Drawing.Point(235, 491);
+            this.parametre_taches_valider_btn.Location = new System.Drawing.Point(257, 491);
             this.parametre_taches_valider_btn.Margin = new System.Windows.Forms.Padding(9);
             this.parametre_taches_valider_btn.Name = "parametre_taches_valider_btn";
             this.parametre_taches_valider_btn.Size = new System.Drawing.Size(210, 52);
