@@ -60,7 +60,7 @@ namespace extranet_projet_s4
                 SQLiteCommand cmd2 = crea_table_taches_realises.CreateCommand();
 
                 // le texte de la requete
-                cmd2.CommandText = "CREATE TABLE taches_realisees (id_tache_realisees integer primary key,id_membre integer, intitule varchar(250),date_realisation text, date_butoire text);";
+                cmd2.CommandText = "CREATE TABLE taches_realisees (id_tache_realisees integer primary key,id_membre integer, intitule varchar(250),date_realisation text);";
 
                 // execute la commande
                 cmd2.ExecuteNonQuery();
@@ -157,6 +157,8 @@ namespace extranet_projet_s4
         SQLiteConnection ajouter_tache;       // Database Connection Object
         SQLiteCommand sqlite_cmd;             // Database Command Object
         SQLiteDataReader sqlite_datareader;  // Data Reader Object
+
+
 
 
 
@@ -306,7 +308,6 @@ namespace extranet_projet_s4
             }
         }
 
-
         //_______________________________________________________________________
         // Les notifications
         public void Notifier(int nb_peri, int nb_proche, string intitule_peri, string date_peri, string intitule_proche, string date_proche)
@@ -320,44 +321,53 @@ namespace extranet_projet_s4
 
             try
             {
-                
-                //Si une seule tache périmés
-                if (nb_peri == 1)
+                if (nb_peri >= 1 && nb_proche >= 1)
                 {
+                    notification.TitleText = "Retard et date butoire proche";
+                    notification.ContentText = "Vous avez du retard pour  " + nb_peri + " tâche(s) et "+nb_proche+" est/sont proches de leur date butoire";
+                    notification.Popup();
 
-                    notification.TitleText = "Retard pour une tâche";
-                    notification.ContentText = "Vous avez du retard pour une tâche. Cela concerne la tâche : " + intitule_peri + " qui devait être terminée avant le " + date_peri;
-                    notification.Popup();
-                }
-                //Si plusieurs tâches périmés
-                else if (nb_peri > 1)
-                {
-                    notification.TitleText = "Retard pour plusieurs tâches";
-                    notification.ContentText = "Vous avez du retard pour plusieurs tâches. Cela concerne " + nb_peri + " tâches.";
-                    notification.Popup();
                 }
                 else
                 {
+                    //Si une seule tache périmés
+                    if (nb_peri == 1)
+                    {
 
-                }
+                        notification.TitleText = "Retard pour une tâche";
+                        notification.ContentText = "Vous avez du retard pour une tâche. Cela concerne la tâche : " + intitule_peri + " qui devait être terminée avant le " + date_peri;
+                        notification.Popup();
+                    }
+                    //Si plusieurs tâches périmés
+                    else if (nb_peri > 1)
+                    {
+                        notification.TitleText = "Retard pour plusieurs tâches";
+                        notification.ContentText = "Vous avez du retard pour plusieurs tâches. Cela concerne " + nb_peri + " tâches.";
+                        notification.Popup();
+                    }
+                    else
+                    {
 
-                //Si une seule tâche approche de sa date butoire
-                if (nb_proche == 1)
-                {
-                    notification.TitleText = "Date butoire proche pour une tâche";
-                    notification.ContentText = "L'une de vos tâches approche de sa date butoire. Cela concerne la tâche : " + intitule_proche + " elle doit être réaisée avant le " + date_proche;
-                    notification.Popup();
-                }
-                // Si plusieurs tâches approchent de leurs dates butoires
-                else if (nb_proche> 1)
-                {
-                    notification.TitleText = "Date butoire proche pour plusieurs tâches";
-                    notification.ContentText = "Vous avez plusieurs tâches qui approchent de leur date butoire. Cela concerne " + nb_proche + " tâches.";
-                    notification.Popup();
-                }
-                else
-                {
+                    }
 
+                    //Si une seule tâche approche de sa date butoire
+                    if (nb_proche == 1)
+                    {
+                        notification.TitleText = "Date butoire proche pour une tâche";
+                        notification.ContentText = "L'une de vos tâches approche de sa date butoire. Cela concerne la tâche : " + intitule_proche + " elle doit être réaisée avant le " + date_proche;
+                        notification.Popup();
+                    }
+                    // Si plusieurs tâches approchent de leurs dates butoires
+                    else if (nb_proche > 1)
+                    {
+                        notification.TitleText = "Date butoire proche pour plusieurs tâches";
+                        notification.ContentText = "Vous avez plusieurs tâches qui approchent de leur date butoire. Cela concerne " + nb_proche + " tâches.";
+                        notification.Popup();
+                    }
+                    else
+                    {
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -387,8 +397,30 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode pour remplir le tableau des tâches à réaliser" + ex.ToString());
             }
         }
+        //_______________________________________________________________________
+        // Remplir le datagridview des tâche réalisées
+        public void Remplir_dataGridView_realisees(DataGridView v, int id)
+        {
+            SQLiteConnection conn;          // Database Connection Object
+            conn = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("SELECT intitule, date_realisation FROM taches_realisees WHERE id_membre='" + id + "'", conn);
+
+            try
+            {
+                conn.Open();
+                DataSet ds = new DataSet();
+                dataadapter.Fill(ds, "Info");
+                v.DataSource = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode pour remplir le tableau des tâches réalisées " + ex.ToString());
+            }
+        }
 
         //________________________________________________________________________
+        // Pour changer les paramètres de taches (modifier le .conf
         public void Changer_parametres_taches(int nb_notif, int nb_supp)
         {
             try
@@ -449,6 +481,39 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode de changements des paramètres des tâches " + ex.ToString());
             }
 
+        }
+
+        //_________________________________________________________________________
+        // Basculer les tâches réalisés dans la table taches réalisées pour acces rapide
+        public void Transfert_tache_realisee(CheckedListBox liste, int id)
+        {
+            try
+            {
+                DateTime today = DateTime.Now;
+                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                ajouter_tache.Open();
+                sqlite_cmd = ajouter_tache.CreateCommand();
+
+                // Pour tous les items cochés
+                foreach (object itemChecked in liste.CheckedItems)
+                {
+                    //---- On ajoute dans la table taches realisées ----
+                    
+                    sqlite_cmd.CommandText = "INSERT INTO taches_realisees (id_membre,intitule,date_realisation) VALUES ('" + id + "','" + itemChecked.ToString() + "','" + today.ToShortDateString() +  "');";
+                    sqlite_datareader = sqlite_cmd.ExecuteReader();
+                    sqlite_datareader.Close();
+                    //--------------------------------------------------
+                    //---- On supprime de la table à réaliser ----------
+                    sqlite_cmd.CommandText = "DELETE FROM taches WHERE id_membre='"+id+"' AND intitule='"+ itemChecked.ToString()+"';";
+                    sqlite_datareader = sqlite_cmd.ExecuteReader();
+                    //--------------------------------------------------                    
+                }
+                ajouter_tache.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de transfert des tâches réalisées dans l'accès rapide:  " + ex.ToString());
+            }
         }
     }
 

@@ -15,13 +15,14 @@ namespace extranet_projet_s4
         Taches taches;
         Utilisateur utilisateur;
         DateTime fin_tache;
-        DateTime today = DateTime.Now;
+        DateTime today;
 
         public Form_nouvelle_tache(Utilisateur u,Taches t)
         {
             InitializeComponent();
             taches = t;
             utilisateur = u;
+            today = DateTime.Now;
 
         }
 
@@ -61,13 +62,13 @@ namespace extranet_projet_s4
                     }
                     else
                     {
-                        taches.Ajout_Tache_Avec_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, fin_tache.ToShortDateString(), today.ToString());
+                        taches.Ajout_Tache_Avec_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, fin_tache.ToShortDateString(), today.ToShortDateString());
                         this.Close();
                     }
                 }
                 else if (nouvelle_tache_sansDate_radiobtn.Checked)
                 {
-                    taches.Ajout_Tache_Sans_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, today.ToString());
+                    taches.Ajout_Tache_Sans_Date(utilisateur.Id_Membre, nouvelle_tache_textbox.Text, today.ToShortDateString());
                     this.Close();
                     
                 }

@@ -50,6 +50,10 @@ namespace extranet_projet_s4
         private void acces_rapide_tache_tache_termine_btn_Click(object sender, EventArgs e)
         {
 
+            taches.Transfert_tache_realisee(acces_rapide_tache_liste, utilisateur.Id_Membre);
+            //On réactualise la liste
+            acces_rapide_tache_liste.Items.Clear();
+            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste, utilisateur.Id_Membre);
         }
 
         private void acces_rapide_tache_rafraichir_Click(object sender, EventArgs e)
