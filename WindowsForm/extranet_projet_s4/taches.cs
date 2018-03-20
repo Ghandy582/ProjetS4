@@ -506,6 +506,7 @@ namespace extranet_projet_s4
                     //---- On supprime de la table à réaliser ----------
                     sqlite_cmd.CommandText = "DELETE FROM taches WHERE id_membre='"+id+"' AND intitule='"+ itemChecked.ToString()+"';";
                     sqlite_datareader = sqlite_cmd.ExecuteReader();
+                    sqlite_datareader.Close();
                     //--------------------------------------------------                    
                 }
                 ajouter_tache.Close();

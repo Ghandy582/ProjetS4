@@ -14,33 +14,27 @@ namespace extranet_projet_s4
     {
         Utilisateur utilisateur;
         Taches taches;
-        public Form_acces_rapide_taches(Utilisateur u, Taches t)
+        Form_gestion_tache form_gestion_tache;
+        public Form_acces_rapide_taches(Utilisateur u, Taches t, Form_gestion_tache g)
         {
             InitializeComponent();
             utilisateur = u;
             taches = t;
             taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste,utilisateur.Id_Membre);
+            form_gestion_tache = g;
         }
 
         private void acces_rapide_tache_ajouter_tache_Click(object sender, EventArgs e)
         {
-            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
+            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches, form_gestion_tache);
             form_nouvelle_tache.Show();
         }
 
         private void Form_acces_rapide_taches_Load(object sender, EventArgs e)
         {
-            /*Timer timer = new Timer();
-            timer.Interval = (1 * 1000); // 1 secs
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();*/
+            
         }      
-        /*
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            acces_rapide_tache_liste.Items.Clear();
-            taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste);
-        }*/
+        
 
         private void acces_rapide_tache_liste_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,6 +48,14 @@ namespace extranet_projet_s4
             //On réactualise la liste
             acces_rapide_tache_liste.Items.Clear();
             taches.affiche_taches_liste_acces_rapide(this.acces_rapide_tache_liste, utilisateur.Id_Membre);
+            //si gestion tache ouvert on le rafraichie 
+            if (form_gestion_tache != null && form_gestion_tache.Visible == true)
+            {
+                //remplir les datagrigview
+                taches.Remplir_dataGridView_a_realiser(form_gestion_tache.Gestion_tache_tache_a_realiser_datagrid, utilisateur.Id_Membre);
+                taches.Remplir_dataGridView_realisees(form_gestion_tache.Gestion_tache_tache_realisees_datagrid , utilisateur.Id_Membre);
+
+            }
         }
 
         private void acces_rapide_tache_rafraichir_Click(object sender, EventArgs e)

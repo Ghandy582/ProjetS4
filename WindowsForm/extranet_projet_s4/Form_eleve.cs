@@ -18,6 +18,7 @@ namespace extranet_projet_s4
         Taches taches = new Taches();
         //On créé un objet SqlLite pour la gestion du fichier sqlite
         Sqlite sqlite = new Sqlite();
+        Form_gestion_tache form_gestion_tache;
         public Form_eleve(form_login lg, Utilisateur u)
         {
             InitializeComponent();
@@ -41,14 +42,14 @@ namespace extranet_projet_s4
 
         private void eleve_menu_acces_rapide_taches_Click(object sender, EventArgs e)
         {
-            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches);
+            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches, form_gestion_tache);
             form_acces_rapide_taches.Show();
         }
 
         private void eleve_menu_nouvelle_tache_Click(object sender, EventArgs e)
         {
 
-            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
+            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches,form_gestion_tache);
             form_nouvelle_tache.Show();
         }
 

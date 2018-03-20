@@ -201,5 +201,9 @@ namespace extranet_projet_s4
            
         }
 
+        private void Gestion_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
