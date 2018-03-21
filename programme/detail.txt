@@ -67,3 +67,5 @@ __20 mars__
 remplacment des caractères chiant pour ajour de taches
 rafraichissement du datagridview quand on ajoute une nouvelle tache
 rafraichissement datagridview quand on déplace une tache dans réalisées depuis acces rapide 
+__ 21 mars __ 
+création de la méthode de suppression des vielles taches réalisées

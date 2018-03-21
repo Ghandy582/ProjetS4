@@ -31,6 +31,8 @@ namespace extranet_projet_s4
             this.Text = utilisateur.Prenom_Membre + " " + utilisateur.Nom_Membre;
             //On vérifie les tâches pour notifier si besoin
             taches.Verification_approche_date_butoire(utilisateur.Id_Membre);
+            //On supprime les taches réalisées trop vielles 
+            taches.Suppression_tache_realisee(utilisateur.Id_Membre);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)
