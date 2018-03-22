@@ -48,26 +48,26 @@ namespace extranet_projet_s4
 
         private void gestion_tache_accesrapide_btn_Click(object sender, EventArgs e)
         {
-            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches);
+            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches,this);
             form_acces_rapide_taches.Show();
         }
 
         private void gestion_tache_nouvelletache_btn_Click(object sender, EventArgs e)
         {
-            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
+            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches,this);
             form_nouvelle_tache.Show();
         }
 
         private void gestion_tache_menu_acces_rapide_taches_Click(object sender, EventArgs e)
         {
-            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches);
+            Form_acces_rapide_taches form_acces_rapide_taches = new Form_acces_rapide_taches(utilisateur, taches,this);
             form_acces_rapide_taches.Show();
         }
 
         private void gestion_tache_menu_nouvelle_tache_Click(object sender, EventArgs e)
         {
 
-            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches);
+            Form_nouvelle_tache form_nouvelle_tache = new Form_nouvelle_tache(utilisateur, taches,this);
             form_nouvelle_tache.Show();
         }
 
@@ -92,6 +92,14 @@ namespace extranet_projet_s4
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        public DataGridView Gestion_tache_tache_a_realiser_datagrid
+        {
+            get { return this.gestion_tache_tache_a_realiser_datagrid; }
+        }
+        public DataGridView Gestion_tache_tache_realisees_datagrid
+        {
+            get { return this.gestion_tache_tache_realisees_datagrid; }
         }
     }
 }

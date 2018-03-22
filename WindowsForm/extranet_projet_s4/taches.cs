@@ -154,7 +154,7 @@ namespace extranet_projet_s4
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
 
 
-        SQLiteConnection ajouter_tache;       // Database Connection Object
+        SQLiteConnection conn_sqllite;       // Database Connection Object
         SQLiteCommand sqlite_cmd;             // Database Command Object
         SQLiteDataReader sqlite_datareader;  // Data Reader Object
 
@@ -199,12 +199,12 @@ namespace extranet_projet_s4
             {
                 /*-------- INSERTION DANS LE FICHIER SQLITE ---------*/
 
-                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
-                ajouter_tache.Open();
-                sqlite_cmd = ajouter_tache.CreateCommand();
+                conn_sqllite = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                conn_sqllite.Open();
+                sqlite_cmd = conn_sqllite.CreateCommand();
                 sqlite_cmd.CommandText = "INSERT INTO taches (id_membre,intitule,date_creation, date_butoire) VALUES ('" + id_utilisateur + "','" + intitule + "','" + date+ "', 'NULL');";
                 sqlite_datareader = sqlite_cmd.ExecuteReader();
-                ajouter_tache.Close();
+                conn_sqllite.Close();
                 /*---------------------------------------------------*/
             }
             catch (Exception ex)
@@ -221,12 +221,12 @@ namespace extranet_projet_s4
             {
                 /*-------- INSERTION DANS LE FICHIER SQLITE ---------*/
 
-                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
-                ajouter_tache.Open();
-                sqlite_cmd = ajouter_tache.CreateCommand();
+                conn_sqllite = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                conn_sqllite.Open();
+                sqlite_cmd = conn_sqllite.CreateCommand();
                 sqlite_cmd.CommandText = "INSERT INTO taches (id_membre,intitule,date_creation, date_butoire) VALUES ('" + id_utilisateur + "','" + intitule + "','" + date_ajout + "', '"+fin_tache+"');";
                 sqlite_datareader = sqlite_cmd.ExecuteReader();
-                ajouter_tache.Close();
+                conn_sqllite.Close();
                 /*---------------------------------------------------*/
             }
             catch (Exception ex)
@@ -266,6 +266,7 @@ namespace extranet_projet_s4
                 sqlite_cmd.CommandText = "SELECT * FROM taches WHERE id_membre='" + id_membre + "' AND date_butoire!='NULL'";
 
                 sqlite_datareader = sqlite_cmd.ExecuteReader();
+                DateTime today_et_deux_jours = today.AddDays(nb_jours_notif);
 
                 // The SQLiteDataReader allows us to run through each row per loop
                 while (sqlite_datareader.Read()) // Read() returns true if there is still a result line to read
@@ -275,7 +276,7 @@ namespace extranet_projet_s4
                     //On compare avec aujourdhui
                     result1 = DateTime.Compare(today, fin_tache);
 
-                    DateTime today_et_deux_jours = today.AddDays(nb_jours_notif);
+                    
                     //On compare si proche de fin en fonction du nb de jours choisi
                     result2 = DateTime.Compare(today_et_deux_jours, fin_tache);
 
@@ -490,9 +491,9 @@ namespace extranet_projet_s4
             try
             {
                 DateTime today = DateTime.Now;
-                ajouter_tache = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
-                ajouter_tache.Open();
-                sqlite_cmd = ajouter_tache.CreateCommand();
+                conn_sqllite = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                conn_sqllite.Open();
+                sqlite_cmd = conn_sqllite.CreateCommand();
 
                 // Pour tous les items cochés
                 foreach (object itemChecked in liste.CheckedItems)
@@ -506,17 +507,91 @@ namespace extranet_projet_s4
                     //---- On supprime de la table à réaliser ----------
                     sqlite_cmd.CommandText = "DELETE FROM taches WHERE id_membre='"+id+"' AND intitule='"+ itemChecked.ToString()+"';";
                     sqlite_datareader = sqlite_cmd.ExecuteReader();
+                    sqlite_datareader.Close();
                     //--------------------------------------------------                    
                 }
-                ajouter_tache.Close();
+                conn_sqllite.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur pendant l'execution de la méthode de transfert des tâches réalisées dans l'accès rapide:  " + ex.ToString());
             }
         }
+        
+        //______________________________________________________________________
+        // Supprimer les anciennes taches réalisées
+        public void Suppression_tache_realisee(int id)
+        {
+            // REGARDEZ PAS MA METHODE ELLE EST TRES MOCHE MAIS CEST PAS GRAVE
+            try
+            {
+                nb_jours_supression = ConfigurationManager.AppSettings["nb_jours_supression"];
+                int result1;
+                DateTime today = DateTime.Today;             
+                //fin tache va pas rester Now c'est juste pour que le programme me fiche la paix
+                DateTime date_realisation = DateTime.Now;
+                
+                // On convertie la variable qui est stockée dans le .conf
+                double nb_jours_supp = Convert.ToDouble(nb_jours_supression);
+                DateTime date_supp_et_n_jours;
+                DateTime[] dates_a_supprimer = new DateTime[100];
+                int run = 0;
+                int i;
+
+                conn_sqllite = new SQLiteConnection("Data Source=BDD.sqlite;Version=3;New=True;");
+                conn_sqllite.Open();
+                sqlite_cmd = conn_sqllite.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT date_realisation FROM taches_realisees WHERE id_membre='" + id + "'";
+                sqlite_datareader = sqlite_cmd.ExecuteReader();
+                
+                // The SQLiteDataReader allows us to run through each row per loop
+                while (sqlite_datareader.Read()) // Read() returns true if there is still a result line to read
+                {
+                    //on récupère la date
+                    date_realisation = DateTime.Parse(sqlite_datareader.GetString(0));
+                    //On ajoute le nombre de jours de suppressions
+                    date_supp_et_n_jours = date_realisation.AddDays(nb_jours_supp);
+                    //On compare à la date d'ajourdh'ui
+                    result1 = DateTime.Compare(today, date_supp_et_n_jours);
+                    //Si plus vielles alors on la supprime
+                    //Si tache périmé
+                    if (result1 >=0)
+                    {
+                        //On veut pas plusieurs fois la même date
+                        if (run == 0)
+                        {
+                            dates_a_supprimer[run] = date_realisation;
+                            run++;
+                        }
+                        else if (date_realisation != dates_a_supprimer[run - 1])
+                        {
+                            dates_a_supprimer[run] = date_realisation;
+                            run++;
+                        }
+                    }
+
+                }
+                sqlite_datareader.Close();
+                //On parcours notre tableau pour suprimer les valeurs
+                if (run != 0)
+                {
+                    for( i=0; i<run; i++)
+                    {
+                        sqlite_cmd.CommandText = "DELETE FROM taches_realisees WHERE id_membre='" + id + "' AND date_realisation='" + dates_a_supprimer[i].ToShortDateString() + "';";
+                        sqlite_datareader = sqlite_cmd.ExecuteReader();
+                        sqlite_datareader.Close();
+                        MessageBox.Show("Supression de " + dates_a_supprimer[i].ToShortDateString());
+                    }
+                }
+                
+                
+                conn_sqllite.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de supressions des tâches réalisées dans l'accès rapide:  " + ex.ToString());
+            }
+        }
     }
-
-
-
 }
