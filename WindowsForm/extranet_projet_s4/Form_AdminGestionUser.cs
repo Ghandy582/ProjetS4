@@ -17,7 +17,6 @@ namespace extranet_projet_s4
     {
         private MySqlDataAdapter mySqlDataAdapter;
         public MySqlConnection BDD;
-
         private int rowIndex = 0;
         public GestionUser(MySqlConnection SQL)
         {
@@ -52,7 +51,7 @@ namespace extranet_projet_s4
             {
                 while (Reader.Read())
                 { 
-                    Groupe_CB.Items.Add(Reader.GetString("ID_Groupe"));
+                    Groupe_CB.Items.Add(Reader.GetString("Libelle_Groupe"));
                 }
             }
         }
@@ -177,12 +176,16 @@ namespace extranet_projet_s4
                 //------ Pour le salt and hash des passwords -------
                 string salt = CreateSalt(4);
                 string pwd = MD5Hash(PWD_Box.Text, salt);
-
                 //---------------------------------------------------
+                MySqlCommand cmd1 = new MySqlCommand("SELECT ID_Groupe FROM groupe WHERE Libelle_Groupe = '" + Groupe_CB.Text + "'", BDD);
+                MySqlDataReader Reader1 = cmd1.ExecuteReader();
+                Reader1.Read();
+                string IDGroupe = Reader1.GetString("ID_Groupe");
+                Reader1.Close();
                 //MessageBox.Show(pwd);
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + (Role_CB.SelectedIndex + 1) + "','" + Identity_Box.Text + "','" + pwd + "','" + salt + "','" + Prenom_Box.Text + "','" + Nom_Box.Text + "','" + Groupe_CB.Text + "')";
+                cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + (Role_CB.SelectedIndex + 1) + "','" + Identity_Box.Text + "','" + pwd + "','" + salt + "','" + Prenom_Box.Text + "','" + Nom_Box.Text + "','" + IDGroupe + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Ajouter !");
                 Role_CB.Text = "";

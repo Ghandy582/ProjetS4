@@ -34,13 +34,13 @@
             this.Note_TB = new System.Windows.Forms.TrackBar();
             this.Libelle_TB = new System.Windows.Forms.TextBox();
             this.Cours_CB = new System.Windows.Forms.ComboBox();
-            this.Note_Text = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Note_Text = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Note_TB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,16 +96,6 @@
             this.Cours_CB.Size = new System.Drawing.Size(222, 21);
             this.Cours_CB.TabIndex = 5;
             // 
-            // Note_Text
-            // 
-            this.Note_Text.AutoSize = true;
-            this.Note_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Note_Text.Location = new System.Drawing.Point(351, 172);
-            this.Note_Text.Name = "Note_Text";
-            this.Note_Text.Size = new System.Drawing.Size(44, 31);
-            this.Note_Text.TabIndex = 6;
-            this.Note_Text.Text = "20";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -148,9 +138,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 187);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 22;
-            this.label5.Text = "Note /20 :";
+            this.label5.Text = "Note :";
             // 
             // label6
             // 
@@ -161,18 +151,27 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Libellé de la note :";
             // 
+            // Note_Text
+            // 
+            this.Note_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Note_Text.Location = new System.Drawing.Point(331, 172);
+            this.Note_Text.Multiline = true;
+            this.Note_Text.Name = "Note_Text";
+            this.Note_Text.Size = new System.Drawing.Size(45, 45);
+            this.Note_Text.TabIndex = 24;
+            // 
             // Form_AdminAssignerNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 326);
+            this.Controls.Add(this.Note_Text);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Note_Text);
             this.Controls.Add(this.Cours_CB);
             this.Controls.Add(this.Libelle_TB);
             this.Controls.Add(this.Note_TB);
@@ -196,12 +195,12 @@
         private System.Windows.Forms.TrackBar Note_TB;
         private System.Windows.Forms.TextBox Libelle_TB;
         private System.Windows.Forms.ComboBox Cours_CB;
-        private System.Windows.Forms.Label Note_Text;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox Note_Text;
     }
 }

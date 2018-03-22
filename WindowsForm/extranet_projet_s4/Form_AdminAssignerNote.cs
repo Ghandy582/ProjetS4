@@ -13,8 +13,8 @@ namespace extranet_projet_s4
 {
     public partial class Form_AdminAssignerNote : Form
     {
-        private MySqlDataAdapter mySqlDataAdapter;
         public MySqlConnection BDD;
+
         public Form_AdminAssignerNote(MySqlConnection SQL)
         {
             this.BDD = SQL;

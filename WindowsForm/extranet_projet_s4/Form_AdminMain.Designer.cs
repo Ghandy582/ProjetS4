@@ -42,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Reglage_BTN = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.afficherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Afficher_Note = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,7 +94,8 @@
             this.Menu_Main.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.Menu_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Menu_Gestion,
-            this.assignerToolStripMenuItem});
+            this.assignerToolStripMenuItem,
+            this.afficherToolStripMenuItem});
             this.Menu_Main.Location = new System.Drawing.Point(0, 0);
             this.Menu_Main.Name = "Menu_Main";
             this.Menu_Main.Size = new System.Drawing.Size(1123, 24);
@@ -192,6 +195,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // afficherToolStripMenuItem
+            // 
+            this.afficherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Afficher_Note});
+            this.afficherToolStripMenuItem.Name = "afficherToolStripMenuItem";
+            this.afficherToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.afficherToolStripMenuItem.Text = "Afficher";
+            // 
+            // Menu_Afficher_Note
+            // 
+            this.Menu_Afficher_Note.Name = "Menu_Afficher_Note";
+            this.Menu_Afficher_Note.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Afficher_Note.Text = "Note";
+            this.Menu_Afficher_Note.Click += new System.EventHandler(this.Menu_Afficher_Note_Click);
+            // 
             // Form_AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -233,5 +251,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripMenuItem Menu_Assigner_Prof;
         private System.Windows.Forms.ToolStripMenuItem Menu_Assigner_Note;
+        private System.Windows.Forms.ToolStripMenuItem afficherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Afficher_Note;
     }
 }

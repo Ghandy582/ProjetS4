@@ -47,8 +47,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
-            this.Groupe_BTN = new System.Windows.Forms.Button();
-            this.Cours_BTN = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.Groupe_text = new System.Windows.Forms.Label();
             this.Groupe_CB = new System.Windows.Forms.ComboBox();
             this.Calendrier = new System.Windows.Forms.MonthCalendar();
@@ -56,7 +55,6 @@
             this.PanelGestion = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -217,8 +215,6 @@
             // 
             this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.PanelAdd.Controls.Add(this.label5);
-            this.PanelAdd.Controls.Add(this.Groupe_BTN);
-            this.PanelAdd.Controls.Add(this.Cours_BTN);
             this.PanelAdd.Controls.Add(this.Groupe_text);
             this.PanelAdd.Controls.Add(this.Groupe_CB);
             this.PanelAdd.Controls.Add(this.Calendrier);
@@ -238,23 +234,15 @@
             this.PanelAdd.Size = new System.Drawing.Size(690, 301);
             this.PanelAdd.TabIndex = 16;
             // 
-            // Groupe_BTN
+            // label5
             // 
-            this.Groupe_BTN.Location = new System.Drawing.Point(442, 256);
-            this.Groupe_BTN.Name = "Groupe_BTN";
-            this.Groupe_BTN.Size = new System.Drawing.Size(20, 21);
-            this.Groupe_BTN.TabIndex = 24;
-            this.Groupe_BTN.Text = "?";
-            this.Groupe_BTN.UseVisualStyleBackColor = true;
-            // 
-            // Cours_BTN
-            // 
-            this.Cours_BTN.Location = new System.Drawing.Point(442, 229);
-            this.Cours_BTN.Name = "Cours_BTN";
-            this.Cours_BTN.Size = new System.Drawing.Size(20, 21);
-            this.Cours_BTN.TabIndex = 23;
-            this.Cours_BTN.Text = "?";
-            this.Cours_BTN.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Insérer données :";
             // 
             // Groupe_text
             // 
@@ -316,16 +304,6 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Commande SQL :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 24);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Insérer données :";
-            // 
             // Form_AdminGestionSeance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -377,8 +355,6 @@
         private System.Windows.Forms.ComboBox Cours_CB;
         private System.Windows.Forms.Label Groupe_text;
         private System.Windows.Forms.ComboBox Groupe_CB;
-        private System.Windows.Forms.Button Groupe_BTN;
-        private System.Windows.Forms.Button Cours_BTN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
