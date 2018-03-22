@@ -189,6 +189,7 @@
             this.ClicDroitSupprimer.Name = "ClicDroitSupprimer";
             this.ClicDroitSupprimer.Size = new System.Drawing.Size(129, 22);
             this.ClicDroitSupprimer.Text = "Supprimer";
+            this.ClicDroitSupprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 
             // contextMenuStrip1
             // 
@@ -210,6 +211,7 @@
             this.Gestion_GridView.Size = new System.Drawing.Size(1040, 270);
             this.Gestion_GridView.TabIndex = 0;
             this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
+            this.Gestion_GridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_DataGrid_RowValidated);
             // 
             // PanelAdd
             // 

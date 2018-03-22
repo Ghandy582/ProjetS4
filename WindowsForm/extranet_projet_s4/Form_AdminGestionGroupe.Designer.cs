@@ -35,6 +35,7 @@
             this.Ajouter_Button = new System.Windows.Forms.Button();
             this.Supprimer_Button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.Libelle_Box = new System.Windows.Forms.TextBox();
             this.Entrer_Button = new System.Windows.Forms.Button();
             this.Libelle_Label = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.ClicDroitSupprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.Panel_GridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,6 +70,7 @@
             this.Gestion_GridView.Size = new System.Drawing.Size(423, 226);
             this.Gestion_GridView.TabIndex = 0;
             this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
+            this.Gestion_GridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_DataGrid_RowValidated);
             // 
             // SQL_Box
             // 
@@ -110,6 +111,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(397, 99);
             this.panel1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Insérer données :";
             // 
             // Libelle_Box
             // 
@@ -181,16 +192,6 @@
             this.label4.Size = new System.Drawing.Size(175, 24);
             this.label4.TabIndex = 21;
             this.label4.Text = "Commande SQL :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 24);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Insérer données :";
             // 
             // Form_AdminGestionGroupe
             // 

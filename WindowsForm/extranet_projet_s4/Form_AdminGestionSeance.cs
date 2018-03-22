@@ -33,7 +33,19 @@ namespace extranet_projet_s4
             mySqlDataAdapter.Fill(DS);
             Gestion_GridView.DataSource = DS.Tables[0];
         }
+        //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
+        private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable changes = ((DataTable)Gestion_GridView.DataSource).GetChanges();
 
+            if (changes != null)
+            {
+                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
+                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                mySqlDataAdapter.Update(changes);
+                ((DataTable)Gestion_GridView.DataSource).AcceptChanges();
+            }
+        }
         private void GestionCellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -43,6 +55,13 @@ namespace extranet_projet_s4
                 this.Gestion_GridView.CurrentCell = this.Gestion_GridView.Rows[e.RowIndex].Cells[1];
                 this.contextMenuStrip1.Show(this.Gestion_GridView, e.Location);
                 contextMenuStrip1.Show(Cursor.Position);
+            }
+        }
+        private void ClicDroitSupprimer_Click(object sender, EventArgs e)
+        {
+            if (!this.Gestion_GridView.Rows[this.rowIndex].IsNewRow)
+            {
+                this.Gestion_GridView.Rows.RemoveAt(this.rowIndex);
             }
         }
 
@@ -103,7 +122,7 @@ namespace extranet_projet_s4
                 Reader2.Close();
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('"+ Date_Box.Text +"','"+ BoolDate_Box.Text +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + IDCours + "')";
+                cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('" + Date_Box.Text + "','" + BoolDate_Box.Text +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + IDCours + "')";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "INSERT INTO `groupe_seance`(`ID_Seance`, `ID_Groupe`) VALUES ((SELECT `ID_Seance` FROM `seance` Order BY `ID_Seance` DESC LIMIT 1),'"+ IDGroupe +"')";
                 cmd.ExecuteNonQuery();

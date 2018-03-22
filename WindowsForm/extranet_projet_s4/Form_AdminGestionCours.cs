@@ -33,6 +33,19 @@ namespace extranet_projet_s4
             mySqlDataAdapter.Fill(DS);
             Gestion_GridView.DataSource = DS.Tables[0];
         }
+        //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
+        private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable changes = ((DataTable)Gestion_GridView.DataSource).GetChanges();
+
+            if (changes != null)
+            {
+                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
+                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                mySqlDataAdapter.Update(changes);
+                ((DataTable)Gestion_GridView.DataSource).AcceptChanges();
+            }
+        }
         /*clic droit sur le grid*/
         private void GestionCellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {

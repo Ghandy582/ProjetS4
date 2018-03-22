@@ -39,6 +39,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.Couleur_Panel = new System.Windows.Forms.Panel();
             this.Couleur_Button = new System.Windows.Forms.Button();
             this.Coefficient_Box = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gestion_GridView)).BeginInit();
             this.PanelAdd.SuspendLayout();
@@ -138,6 +138,7 @@
             this.Gestion_GridView.Size = new System.Drawing.Size(926, 270);
             this.Gestion_GridView.TabIndex = 0;
             this.Gestion_GridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GestionCellMouseUp);
+            this.Gestion_GridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.Liste_DataGrid_RowValidated);
             // 
             // PanelAdd
             // 
@@ -154,6 +155,16 @@
             this.PanelAdd.Name = "PanelAdd";
             this.PanelAdd.Size = new System.Drawing.Size(450, 190);
             this.PanelAdd.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 24);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Insérer données :";
             // 
             // Couleur_Panel
             // 
@@ -223,16 +234,6 @@
             this.label4.Size = new System.Drawing.Size(175, 24);
             this.label4.TabIndex = 21;
             this.label4.Text = "Commande SQL :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 24);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Insérer données :";
             // 
             // Form_AdminGestionCours
             // 

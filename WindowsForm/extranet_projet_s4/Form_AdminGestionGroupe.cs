@@ -50,7 +50,19 @@ namespace extranet_projet_s4
                 UpdateGrid(BDD);
             }
         }
+        //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
+        private void Liste_DataGrid_RowValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable changes = ((DataTable)Gestion_GridView.DataSource).GetChanges();
 
+            if (changes != null)
+            {
+                MySqlCommandBuilder mcb = new MySqlCommandBuilder(mySqlDataAdapter);
+                mySqlDataAdapter.UpdateCommand = mcb.GetUpdateCommand();
+                mySqlDataAdapter.Update(changes);
+                ((DataTable)Gestion_GridView.DataSource).AcceptChanges();
+            }
+        }
         private void GestionCellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
