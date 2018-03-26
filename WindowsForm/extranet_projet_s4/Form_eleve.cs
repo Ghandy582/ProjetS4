@@ -43,7 +43,7 @@ namespace extranet_projet_s4
             taches.Verification_approche_date_butoire(utilisateur.Id_Membre);
             //On supprime les taches réalisées trop vielles 
             taches.Suppression_tache_realisee(utilisateur.Id_Membre);
-            emploi_temps.Affiche_emploi_temps(this, utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn);
+            emploi_temps.Affiche_emploi_temps(utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn,form_eleve_lundi_aprem_btn,form_eleve_mardi_matin_btn,form_eleve_mardi_aprem_btn,form_eleve_mercredi_matin_btn,form_eleve_mercredi_aprem_btn,form_eleve_jeudi_matin_btn,form_eleve_jeudi_aprem_btn,form_eleve_vendredi_matin_btn,form_eleve_vendredi_aprem_btn);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)
