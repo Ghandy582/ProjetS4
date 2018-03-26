@@ -579,8 +579,7 @@ namespace extranet_projet_s4
                     {
                         sqlite_cmd.CommandText = "DELETE FROM taches_realisees WHERE id_membre='" + id + "' AND date_realisation='" + dates_a_supprimer[i].ToShortDateString() + "';";
                         sqlite_datareader = sqlite_cmd.ExecuteReader();
-                        sqlite_datareader.Close();
-                        MessageBox.Show("Supression de " + dates_a_supprimer[i].ToShortDateString());
+                        sqlite_datareader.Close();                       
                     }
                 }
                 
