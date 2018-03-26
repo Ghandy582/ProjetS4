@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SSH_Console = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // SSH_Console
+            // 
+            this.SSH_Console.Location = new System.Drawing.Point(13, 13);
+            this.SSH_Console.Multiline = true;
+            this.SSH_Console.Name = "SSH_Console";
+            this.SSH_Console.Size = new System.Drawing.Size(580, 641);
+            this.SSH_Console.TabIndex = 0;
             // 
             // Form_AdminSSH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1352, 599);
+            this.ClientSize = new System.Drawing.Size(605, 666);
+            this.Controls.Add(this.SSH_Console);
             this.Name = "Form_AdminSSH";
             this.Text = "Form_AdminSSH";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox SSH_Console;
     }
 }
