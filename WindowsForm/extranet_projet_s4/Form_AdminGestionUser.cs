@@ -187,7 +187,7 @@ namespace extranet_projet_s4
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `membre`(`Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `ID_Groupe`) VALUES('" + (Role_CB.SelectedIndex + 1) + "','" + Identity_Box.Text + "','" + pwd + "','" + salt + "','" + Prenom_Box.Text + "','" + Nom_Box.Text + "','" + IDGroupe + "')";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Ajouter !");
+                MessageBox.Show("Ajouté !");
                 Role_CB.Text = "";
                 Prenom_Box.Text = "";
                 Nom_Box.Text = "";

@@ -127,6 +127,12 @@
     <Compile Include="Form_AdminPhp.Designer.cs">
       <DependentUpon>Form_AdminPhp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AdminSSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdminSSH.Designer.cs">
+      <DependentUpon>Form_AdminSSH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_APropos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminPhp.resx">
       <DependentUpon>Form_AdminPhp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AdminSSH.resx">
+      <DependentUpon>Form_AdminSSH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_APropos.resx">
       <DependentUpon>Form_APropos.cs</DependentUpon>

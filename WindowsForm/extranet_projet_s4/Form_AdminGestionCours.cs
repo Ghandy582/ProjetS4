@@ -80,8 +80,7 @@ namespace extranet_projet_s4
             }
             else
             {
-                string color = col.Color.ToArgb().ToString("x");
-                color = color.Substring(2, 6);
+                int color = col.Color.ToArgb();
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `cours`(`Libelle_Cours`, `Coefficient_Cours`, `Couleur_Cours`) VALUES ('" + Libelle_Box.Text + "','" + Coefficient_Box.Text + "','" + color + "')";
@@ -95,8 +94,7 @@ namespace extranet_projet_s4
 
         private void AjouterButton_Click(object sender, EventArgs e)
         {
-            string color = col.Color.ToArgb().ToString("x");
-            color = color.Substring(2, 6);
+            int color = col.Color.ToArgb();
             SQL_TB.Text = "INSERT INTO `cours`(`Libelle_Cours`, `Coefficient_Cours`, `Couleur_Cours`) VALUES ('  Libelle ',' Coefficient ','" + color + "')";
         }
 

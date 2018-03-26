@@ -28,13 +28,10 @@ namespace extranet_projet_s4
         {
             try
             {
-                MySqlCommand cmd1 = new MySqlCommand("SELECT Libelle_Cours FROM groupe_seance JOIN seance ON groupe_seance.ID_Seance = seance.ID_Seance JOIN groupe ON groupe_seance.ID_Groupe = groupe.ID_Groupe JOIN cours ON seance.ID_Cours = cours.ID_Cours WHERE groupe_seance.ID_groupe = 2 AND seance.Date_Seance = '" + DateTime.Now.ToShortDateString() + "'", connexion);
+                MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM emploie", connexion);
                 MySqlDataReader Reader1 = cmd1.ExecuteReader();
                 Reader1.Read();
                 string Libelle_Cours = Reader1.GetString("Libelle_Cours");
-                //button7.Text = Libelle_Cours;
-                DateTime test = DateTime.Now;
-                //button1.Text = "'" + test.DayOfWeek + "'";
             }
             catch (Exception ex)
             {

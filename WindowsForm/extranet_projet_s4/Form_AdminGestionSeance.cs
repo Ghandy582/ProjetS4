@@ -126,7 +126,7 @@ namespace extranet_projet_s4
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "INSERT INTO `groupe_seance`(`ID_Seance`, `ID_Groupe`) VALUES ((SELECT `ID_Seance` FROM `seance` Order BY `ID_Seance` DESC LIMIT 1),'"+ IDGroupe +"')";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Ajouter !");
+                MessageBox.Show("Ajouté !");
                 Date_Box.Text = "";
                 BoolDate_Box.Text = "";
                 NoteP_Box.Text = "";
