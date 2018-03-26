@@ -22,6 +22,7 @@ namespace extranet_projet_s4
         static string database = ConfigurationManager.AppSettings["database"];
         //On créé un objet tache pour toute la gestion des tâches
         Taches taches = new Taches();
+        Emploi_temps emploi_temps = new Emploi_temps();
         //On créé un objet SqlLite pour la gestion du fichier sqlite
         Sqlite sqlite = new Sqlite();
         Form_gestion_tache form_gestion_tache;
@@ -31,6 +32,8 @@ namespace extranet_projet_s4
             this.form_login = lg;
             this.utilisateur = u;
             sqlite.Verification(utilisateur);
+            
+
         }
 
         private void Form_eleve_Load(object sender, EventArgs e)
@@ -40,6 +43,7 @@ namespace extranet_projet_s4
             taches.Verification_approche_date_butoire(utilisateur.Id_Membre);
             //On supprime les taches réalisées trop vielles 
             taches.Suppression_tache_realisee(utilisateur.Id_Membre);
+            emploi_temps.Affiche_emploi_temps(this, utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)

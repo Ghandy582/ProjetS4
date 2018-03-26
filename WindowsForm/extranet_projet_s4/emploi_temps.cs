@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace extranet_projet_s4
 {
-    class emploi_temps
+    class Emploi_temps
     {
         /*---------------------------- PROPRIETES ---------------------------*/
        
@@ -24,16 +24,21 @@ namespace extranet_projet_s4
         
         
         /*---------------------------------- METHODES --------------------------------*/
-        void Affiche_emploi_temps(Form_eleve form_eleve)
+        public void Affiche_emploi_temps(Form_eleve form_eleve, int id,Button a)
         {
             try
             {
-                MySqlCommand cmd1 = new MySqlCommand("SELECT Libelle_Cours FROM groupe_seance JOIN seance ON groupe_seance.ID_Seance = seance.ID_Seance JOIN groupe ON groupe_seance.ID_Groupe = groupe.ID_Groupe JOIN cours ON seance.ID_Cours = cours.ID_Cours WHERE groupe_seance.ID_groupe = 2 AND seance.Date_Seance = '" + DateTime.Now.ToShortDateString() + "'", connexion);
+                connexion.Open();
+                MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='"+id+"' AND Date_Seance='"+DateTime.Today.ToShortDateString()+"';", connexion);
                 MySqlDataReader Reader1 = cmd1.ExecuteReader();
                 Reader1.Read();
                 string Libelle_Cours = Reader1.GetString("Libelle_Cours");
+                string couleur = Reader1.GetString("Couleur_Cours");
+                a.Text = Libelle_Cours;
+               // a.BackColor = System.Drawing.Color.FromKnownColor(couleur);
+                MessageBox.Show(Libelle_Cours);
                 //button7.Text = Libelle_Cours;
-                DateTime test = DateTime.Now;
+                connexion.Close();
                 //button1.Text = "'" + test.DayOfWeek + "'";
             }
             catch (Exception ex)
@@ -41,5 +46,7 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode d'affichage de l'emploi du temps " + ex.ToString());
             }
         }
+
+        
     }
 }
