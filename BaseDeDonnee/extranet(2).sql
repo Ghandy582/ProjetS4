@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 26 mars 2018 à 09:01
+-- Généré le :  lun. 26 mars 2018 à 09:12
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -104,7 +104,16 @@ CREATE TABLE IF NOT EXISTS `groupe` (
   `ID_Groupe` int(11) NOT NULL AUTO_INCREMENT,
   `Libelle_Groupe` varchar(250) NOT NULL,
   PRIMARY KEY (`ID_Groupe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `groupe`
+--
+
+INSERT INTO `groupe` (`ID_Groupe`, `Libelle_Groupe`) VALUES
+(1, 'Professeurs'),
+(2, 'Formation21C'),
+(3, 'Formation21A');
 
 -- --------------------------------------------------------
 
@@ -139,7 +148,19 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `ID_Groupe` int(11) NOT NULL,
   PRIMARY KEY (`ID_membre`),
   KEY `FK_Membre_ID_Groupe` (`ID_Groupe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `membre`
+--
+
+INSERT INTO `membre` (`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES
+(2, 4, 'user2', 'f133d09e1ab9ac0bca7f48432314317f', 'NM16DQ==', 'Jean', 'Bonbeur', 1, 2),
+(7, 4, 'cgengoo', '2dd939790934c0a9c5666e6812a7b4c4', 'wpBcpA==', 'Christopher', 'Gengoo', 0, 2),
+(9, 5, 'srobbe', 'c4a27dad5b71986c63d9cb25c279ff24', 'hqdj+w==', 'Stephane', 'Robbe', 0, 1),
+(10, 4, 'mjacob', 'b64ecd6691e25eabfc2655af357aca7d', 'tSdZEg==', 'Marine', 'Jacob', 0, 2),
+(11, 1, 'acampos', 'e4e93f2bd100898440326cda26afd0ea', 'cVvBzw==', 'Alex', 'Campos', 0, 2),
+(12, 2, 'ecabret', '2b738f22b45285382ef6111a5058d4fe', 'Y2M/MQ==', 'Eric', 'Cabret', 0, 1);
 
 -- --------------------------------------------------------
 
