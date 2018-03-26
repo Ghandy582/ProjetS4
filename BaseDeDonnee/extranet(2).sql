@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 26 mars 2018 à 09:12
+-- Généré le :  lun. 26 mars 2018 à 11:18
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -33,9 +33,16 @@ CREATE TABLE IF NOT EXISTS `cours` (
   `ID_Cours` int(11) NOT NULL AUTO_INCREMENT,
   `Libelle_Cours` varchar(250) NOT NULL,
   `Coefficient_Cours` int(11) NOT NULL,
-  `Couleur_Cours` varchar(25) NOT NULL,
+  `Couleur_Cours` int(25) NOT NULL,
   PRIMARY KEY (`ID_Cours`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cours`
+--
+
+INSERT INTO `cours` (`ID_Cours`, `Libelle_Cours`, `Coefficient_Cours`, `Couleur_Cours`) VALUES
+(1, 'C#', 5, -16776961);
 
 -- --------------------------------------------------------
 
@@ -63,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `emploi` (
 ,`Date_Seance` varchar(25)
 ,`Debut_Seance` tinyint(1)
 ,`Libelle_Cours` varchar(250)
-,`Couleur_Cours` varchar(25)
+,`Couleur_Cours` int(25)
 );
 
 -- --------------------------------------------------------
@@ -129,6 +136,13 @@ CREATE TABLE IF NOT EXISTS `groupe_seance` (
   KEY `FK_Groupe_Seance_ID_Groupe` (`ID_Groupe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `groupe_seance`
+--
+
+INSERT INTO `groupe_seance` (`ID_Seance`, `ID_Groupe`) VALUES
+(1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -144,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `Salt_Membre` varchar(25) NOT NULL,
   `Prenom_Membre` varchar(25) NOT NULL,
   `Nom_Membre` varchar(25) NOT NULL,
-  `PremiereCo_Membre` tinyint(1) NOT NULL,
+  `PremiereCo_Membre` tinyint(1) NOT NULL DEFAULT '0',
   `ID_Groupe` int(11) NOT NULL,
   PRIMARY KEY (`ID_membre`),
   KEY `FK_Membre_ID_Groupe` (`ID_Groupe`)
@@ -156,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
 
 INSERT INTO `membre` (`ID_membre`, `Role_Membre`, `User_Membre`, `MotdePasse_Membre`, `Salt_Membre`, `Prenom_Membre`, `Nom_Membre`, `PremiereCo_Membre`, `ID_Groupe`) VALUES
 (2, 4, 'user2', 'f133d09e1ab9ac0bca7f48432314317f', 'NM16DQ==', 'Jean', 'Bonbeur', 1, 2),
-(7, 4, 'cgengoo', '2dd939790934c0a9c5666e6812a7b4c4', 'wpBcpA==', 'Christopher', 'Gengoo', 0, 2),
+(7, 4, 'cgengoo', '2dd939790934c0a9c5666e6812a7b4c4', 'wpBcpA==', 'Christopher', 'Gengoo', 1, 2),
 (9, 5, 'srobbe', 'c4a27dad5b71986c63d9cb25c279ff24', 'hqdj+w==', 'Stephane', 'Robbe', 0, 1),
 (10, 4, 'mjacob', 'b64ecd6691e25eabfc2655af357aca7d', 'tSdZEg==', 'Marine', 'Jacob', 0, 2),
 (11, 1, 'acampos', 'e4e93f2bd100898440326cda26afd0ea', 'cVvBzw==', 'Alex', 'Campos', 0, 2),
@@ -196,7 +210,14 @@ CREATE TABLE IF NOT EXISTS `seance` (
   `ID_Cours` int(11) NOT NULL,
   PRIMARY KEY (`ID_Seance`),
   KEY `FK_Seance_ID_Cours` (`ID_Cours`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `seance`
+--
+
+INSERT INTO `seance` (`ID_Seance`, `Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES
+(1, '26/03/2018', 1, '', '', 1);
 
 -- --------------------------------------------------------
 
