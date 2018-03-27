@@ -69,3 +69,5 @@ rafraichissement du datagridview quand on ajoute une nouvelle tache
 rafraichissement datagridview quand on déplace une tache dans réalisées depuis acces rapide 
 __ 21 mars __ 
 création de la méthode de suppression des vielles taches réalisées
+__ 26 mars ___
+créations des fonctions pour afficher les séances de la semaine en cours et les dates correspondantes

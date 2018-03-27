@@ -51,6 +51,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.form_eleve_date_lundi = new System.Windows.Forms.Label();
+            this.form_eleve_date_mardi = new System.Windows.Forms.Label();
+            this.form_eleve_date_mercredi = new System.Windows.Forms.Label();
+            this.form_eleve_date_jeudi = new System.Windows.Forms.Label();
+            this.form_eleve_date_vendredi = new System.Windows.Forms.Label();
             this.eleve_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,7 +115,7 @@
             // form_eleve_lundi_matin_btn
             // 
             this.form_eleve_lundi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_lundi_matin_btn.Location = new System.Drawing.Point(224, 102);
+            this.form_eleve_lundi_matin_btn.Location = new System.Drawing.Point(224, 141);
             this.form_eleve_lundi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_lundi_matin_btn.Name = "form_eleve_lundi_matin_btn";
             this.form_eleve_lundi_matin_btn.Size = new System.Drawing.Size(238, 148);
@@ -121,7 +126,7 @@
             // form_eleve_lundi_aprem_btn
             // 
             this.form_eleve_lundi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_lundi_aprem_btn.Location = new System.Drawing.Point(224, 272);
+            this.form_eleve_lundi_aprem_btn.Location = new System.Drawing.Point(224, 323);
             this.form_eleve_lundi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_lundi_aprem_btn.Name = "form_eleve_lundi_aprem_btn";
             this.form_eleve_lundi_aprem_btn.Size = new System.Drawing.Size(238, 148);
@@ -132,7 +137,7 @@
             // form_eleve_mardi_matin_btn
             // 
             this.form_eleve_mardi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_mardi_matin_btn.Location = new System.Drawing.Point(488, 102);
+            this.form_eleve_mardi_matin_btn.Location = new System.Drawing.Point(488, 141);
             this.form_eleve_mardi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_mardi_matin_btn.Name = "form_eleve_mardi_matin_btn";
             this.form_eleve_mardi_matin_btn.Size = new System.Drawing.Size(238, 148);
@@ -143,7 +148,7 @@
             // form_eleve_mardi_aprem_btn
             // 
             this.form_eleve_mardi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_mardi_aprem_btn.Location = new System.Drawing.Point(488, 272);
+            this.form_eleve_mardi_aprem_btn.Location = new System.Drawing.Point(488, 323);
             this.form_eleve_mardi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_mardi_aprem_btn.Name = "form_eleve_mardi_aprem_btn";
             this.form_eleve_mardi_aprem_btn.Size = new System.Drawing.Size(238, 148);
@@ -154,7 +159,7 @@
             // form_eleve_mercredi_matin_btn
             // 
             this.form_eleve_mercredi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_mercredi_matin_btn.Location = new System.Drawing.Point(754, 102);
+            this.form_eleve_mercredi_matin_btn.Location = new System.Drawing.Point(754, 141);
             this.form_eleve_mercredi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_mercredi_matin_btn.Name = "form_eleve_mercredi_matin_btn";
             this.form_eleve_mercredi_matin_btn.Size = new System.Drawing.Size(238, 148);
@@ -165,7 +170,7 @@
             // form_eleve_mercredi_aprem_btn
             // 
             this.form_eleve_mercredi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_mercredi_aprem_btn.Location = new System.Drawing.Point(754, 272);
+            this.form_eleve_mercredi_aprem_btn.Location = new System.Drawing.Point(754, 323);
             this.form_eleve_mercredi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_mercredi_aprem_btn.Name = "form_eleve_mercredi_aprem_btn";
             this.form_eleve_mercredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
@@ -176,7 +181,7 @@
             // form_eleve_jeudi_matin_btn
             // 
             this.form_eleve_jeudi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_jeudi_matin_btn.Location = new System.Drawing.Point(1016, 102);
+            this.form_eleve_jeudi_matin_btn.Location = new System.Drawing.Point(1016, 141);
             this.form_eleve_jeudi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_jeudi_matin_btn.Name = "form_eleve_jeudi_matin_btn";
             this.form_eleve_jeudi_matin_btn.Size = new System.Drawing.Size(238, 148);
@@ -187,7 +192,7 @@
             // form_eleve_jeudi_aprem_btn
             // 
             this.form_eleve_jeudi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_jeudi_aprem_btn.Location = new System.Drawing.Point(1016, 272);
+            this.form_eleve_jeudi_aprem_btn.Location = new System.Drawing.Point(1016, 323);
             this.form_eleve_jeudi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_jeudi_aprem_btn.Name = "form_eleve_jeudi_aprem_btn";
             this.form_eleve_jeudi_aprem_btn.Size = new System.Drawing.Size(238, 148);
@@ -198,7 +203,7 @@
             // form_eleve_vendredi_matin_btn
             // 
             this.form_eleve_vendredi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_vendredi_matin_btn.Location = new System.Drawing.Point(1277, 102);
+            this.form_eleve_vendredi_matin_btn.Location = new System.Drawing.Point(1277, 141);
             this.form_eleve_vendredi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_vendredi_matin_btn.Name = "form_eleve_vendredi_matin_btn";
             this.form_eleve_vendredi_matin_btn.Size = new System.Drawing.Size(238, 148);
@@ -209,7 +214,7 @@
             // form_eleve_vendredi_aprem_btn
             // 
             this.form_eleve_vendredi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_eleve_vendredi_aprem_btn.Location = new System.Drawing.Point(1277, 272);
+            this.form_eleve_vendredi_aprem_btn.Location = new System.Drawing.Point(1277, 323);
             this.form_eleve_vendredi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_eleve_vendredi_aprem_btn.Name = "form_eleve_vendredi_aprem_btn";
             this.form_eleve_vendredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
@@ -221,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 153);
+            this.label1.Location = new System.Drawing.Point(40, 194);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 37);
@@ -232,7 +237,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 323);
+            this.label2.Location = new System.Drawing.Point(13, 376);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(179, 37);
@@ -294,11 +299,74 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Vendredi";
             // 
+            // form_eleve_date_lundi
+            // 
+            this.form_eleve_date_lundi.AutoSize = true;
+            this.form_eleve_date_lundi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_date_lundi.Location = new System.Drawing.Point(279, 100);
+            this.form_eleve_date_lundi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form_eleve_date_lundi.Name = "form_eleve_date_lundi";
+            this.form_eleve_date_lundi.Size = new System.Drawing.Size(141, 29);
+            this.form_eleve_date_lundi.TabIndex = 18;
+            this.form_eleve_date_lundi.Text = "00/00/0000";
+            // 
+            // form_eleve_date_mardi
+            // 
+            this.form_eleve_date_mardi.AutoSize = true;
+            this.form_eleve_date_mardi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_date_mardi.Location = new System.Drawing.Point(543, 100);
+            this.form_eleve_date_mardi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form_eleve_date_mardi.Name = "form_eleve_date_mardi";
+            this.form_eleve_date_mardi.Size = new System.Drawing.Size(141, 29);
+            this.form_eleve_date_mardi.TabIndex = 19;
+            this.form_eleve_date_mardi.Text = "00/00/0000";
+            this.form_eleve_date_mardi.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // form_eleve_date_mercredi
+            // 
+            this.form_eleve_date_mercredi.AutoSize = true;
+            this.form_eleve_date_mercredi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_date_mercredi.Location = new System.Drawing.Point(801, 100);
+            this.form_eleve_date_mercredi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form_eleve_date_mercredi.Name = "form_eleve_date_mercredi";
+            this.form_eleve_date_mercredi.Size = new System.Drawing.Size(141, 29);
+            this.form_eleve_date_mercredi.TabIndex = 20;
+            this.form_eleve_date_mercredi.Text = "00/00/0000";
+            this.form_eleve_date_mercredi.Click += new System.EventHandler(this.form_eleve_date_mercredi_Click);
+            // 
+            // form_eleve_date_jeudi
+            // 
+            this.form_eleve_date_jeudi.AutoSize = true;
+            this.form_eleve_date_jeudi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_date_jeudi.Location = new System.Drawing.Point(1064, 100);
+            this.form_eleve_date_jeudi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form_eleve_date_jeudi.Name = "form_eleve_date_jeudi";
+            this.form_eleve_date_jeudi.Size = new System.Drawing.Size(141, 29);
+            this.form_eleve_date_jeudi.TabIndex = 21;
+            this.form_eleve_date_jeudi.Text = "00/00/0000";
+            this.form_eleve_date_jeudi.Click += new System.EventHandler(this.form_eleve_date_jeudi_Click);
+            // 
+            // form_eleve_date_vendredi
+            // 
+            this.form_eleve_date_vendredi.AutoSize = true;
+            this.form_eleve_date_vendredi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_date_vendredi.Location = new System.Drawing.Point(1335, 100);
+            this.form_eleve_date_vendredi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.form_eleve_date_vendredi.Name = "form_eleve_date_vendredi";
+            this.form_eleve_date_vendredi.Size = new System.Drawing.Size(141, 29);
+            this.form_eleve_date_vendredi.TabIndex = 22;
+            this.form_eleve_date_vendredi.Text = "00/00/0000";
+            // 
             // Form_eleve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1592, 894);
+            this.Controls.Add(this.form_eleve_date_vendredi);
+            this.Controls.Add(this.form_eleve_date_jeudi);
+            this.Controls.Add(this.form_eleve_date_mercredi);
+            this.Controls.Add(this.form_eleve_date_mardi);
+            this.Controls.Add(this.form_eleve_date_lundi);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -359,5 +427,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label form_eleve_date_lundi;
+        private System.Windows.Forms.Label form_eleve_date_mardi;
+        private System.Windows.Forms.Label form_eleve_date_mercredi;
+        private System.Windows.Forms.Label form_eleve_date_jeudi;
+        private System.Windows.Forms.Label form_eleve_date_vendredi;
     }
 }

@@ -14,239 +14,156 @@ namespace extranet_projet_s4
     class Emploi_temps
     {
         /*---------------------------- PROPRIETES ---------------------------*/
-       
-            /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
+
+        /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
         static string serveur = ConfigurationManager.AppSettings["serveur"];
         static string database = ConfigurationManager.AppSettings["database"];
         /*_____________________________________________*/
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
-        
-        
+
+
         /*---------------------------------- METHODES --------------------------------*/
-        public void Affiche_emploi_temps(int id,Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
+        public void Affiche_emploi_temps(int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
             try
             {
-                DateTime date = DateTime.Today;
-                connexion.Open();
-                MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='"+id+"' AND Date_Seance='"+DateTime.Today.ToShortDateString()+"';", connexion);
-                int jour_semaine = (int)DateTime.Today.DayOfWeek;
-                using (MySqlDataReader Reader1 = cmd1.ExecuteReader())
+                DateTime date = DateTime.Today;               
+                int jour_semaine = (int)date.DayOfWeek;
+                // On définit le premier jour de la semaine en fonction d'aujourd'hui
+                //Lundi
+                if (jour_semaine == 1)
                 {
-                    // On place d'abord la date d'aujourd'hui
-                    while (Reader1.Read())
-                    {
-                        string Libelle_Cours = Reader1.GetString("Libelle_Cours");
-                        int couleur = Reader1.GetInt32("Couleur_Cours");
-                        bool debut_seance = Reader1.GetBoolean("Debut_Seance");
-                        //Lundi
-                        if (jour_semaine == 1)
-                        {
-                            if (debut_seance == true)
-                            {
-                                btn_lundi_matin.Text = Libelle_Cours;
-                                btn_lundi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                            }
-                            else
-                            {
-                                btn_lundi_aprem.Text = Libelle_Cours;
-                                btn_lundi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                            }
-                        }
-                        //Mardi
-                        if (jour_semaine == 2)
-                        {
-                            if (debut_seance == true)
-                            {
-                                btn_mardi_matin.Text = Libelle_Cours;
-                                btn_mardi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                            }
-                            else
-                            {
-                                btn_mardi_aprem.Text = Libelle_Cours;
-                                btn_mardi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                            }
-                        }
-                        //Mercredi
-                        if (jour_semaine == 3)
-                        {
-                            if (debut_seance == true)
-                            {
-                                btn_mercredi_matin.Text = Libelle_Cours;
-                                btn_mercredi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                            }
-                            else
-                            {
-                                btn_mercredi_aprem.Text = Libelle_Cours;
-                                btn_mercredi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                            }
-                        }
-                        //Jeudi 
-                        if (jour_semaine == 4)
-                        {
-                            if (debut_seance == true)
-                            {
-                                btn_jeudi_matin.Text = Libelle_Cours;
-                                btn_jeudi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                            }
-                            else
-                            {
-                                btn_jeudi_aprem.Text = Libelle_Cours;
-                                btn_jeudi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                            }
-                        }
-                        //Vendredi
-                        if (jour_semaine == 5)
-                        {
-                            if (debut_seance == true)
-                            {
-                                btn_vendredi_matin.Text = Libelle_Cours;
-                                btn_vendredi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                            }
-                            else
-                            {
-                                btn_vendredi_aprem.Text = Libelle_Cours;
-                                btn_vendredi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                            }
-                        }
-                        //Week end 
-                        if (jour_semaine == 6 || jour_semaine == 7)
-                        {
-                            MessageBox.Show("penser à gérer quand on se connecte alors que c'est le weekend");
-                        }
-                    }
-                    Reader1.Close();
-                    //--------------------------------------------------------------------------
-                    // On place le reste en fonction du premier jour
-                    if (jour_semaine == 1)
-                    {
-                        //On ajoute ou supprime des jours par rapport à aujourd'hui
-                        date = DateTime.Today.AddDays(1);
-                         cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
-                         using (MySqlDataReader Reader2 = cmd1.ExecuteReader())
-                        {
-                            while (Reader2.Read())
-                            {
-                                string Libelle_Cours = Reader2.GetString("Libelle_Cours");
-                                int couleur = Reader2.GetInt32("Couleur_Cours");
-                                bool debut_seance = Reader2.GetBoolean("Debut_Seance");
-                                //On ajoute mardi 
-                                if (debut_seance == true)
-                                {
-                                    btn_mardi_matin.Text = Libelle_Cours;
-                                    btn_mardi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                                }
-                                else
-                                {
-                                    btn_mardi_aprem.Text = Libelle_Cours;
-                                    btn_mardi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                                }
-                            }
-                            Reader2.Close();
-                               
-                        }
-                        //------------------------------------------------------
-                        //Mercredi
-                        //On ajoute ou supprime des jours par rapport à aujourd'hui
-                        date = DateTime.Today.AddDays(2);
-                        cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
-                        using (MySqlDataReader Reader3 = cmd1.ExecuteReader())
-                        {
-                            while (Reader3.Read())
-                            {
-                                string Libelle_Cours = Reader3.GetString("Libelle_Cours");
-                                int couleur = Reader3.GetInt32("Couleur_Cours");
-                                bool debut_seance = Reader3.GetBoolean("Debut_Seance");
-                                //On ajoute mardi 
-                                if (debut_seance == true)
-                                {
-                                    btn_mercredi_matin.Text = Libelle_Cours;
-                                    btn_mercredi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                                }
-                                else
-                                {
-                                    btn_mercredi_aprem.Text = Libelle_Cours;
-                                    btn_mercredi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                                }
-                            }
-                            Reader3.Close();
-
-                        }
-                        //------------------------------------------------------
-                        //Jeudi
-                        //On ajoute ou supprime des jours par rapport à aujourd'hui
-                        date = DateTime.Today.AddDays(3);
-                        cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
-                        using (MySqlDataReader Reader4 = cmd1.ExecuteReader())
-                        {
-                            while (Reader4.Read())
-                            {
-                                string Libelle_Cours = Reader4.GetString("Libelle_Cours");
-                                int couleur = Reader4.GetInt32("Couleur_Cours");
-                                bool debut_seance = Reader4.GetBoolean("Debut_Seance");
-                                //On ajoute mardi 
-                                if (debut_seance == true)
-                                {
-                                    btn_jeudi_matin.Text = Libelle_Cours;
-                                    btn_jeudi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                                }
-                                else
-                                {
-                                    btn_jeudi_aprem.Text = Libelle_Cours;
-                                    btn_jeudi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                                }
-                            }
-                            Reader4.Close();
-
-                        }
-                        //------------------------------------------------------
-                        //Vendredi
-                        //On ajoute ou supprime des jours par rapport à aujourd'hui
-                        date = DateTime.Today.AddDays(4);
-                        cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
-                        using (MySqlDataReader Reader5 = cmd1.ExecuteReader())
-                        {
-                            while (Reader5.Read())
-                            {
-                                string Libelle_Cours = Reader5.GetString("Libelle_Cours");
-                                int couleur = Reader5.GetInt32("Couleur_Cours");
-                                bool debut_seance = Reader5.GetBoolean("Debut_Seance");
-                                //On ajoute mardi 
-                                if (debut_seance == true)
-                                {
-                                    btn_vendredi_matin.Text = Libelle_Cours;
-                                    btn_vendredi_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
-                                }
-                                else
-                                {
-                                    btn_vendredi_aprem.Text = Libelle_Cours;
-                                    btn_vendredi_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
-                                }
-                            }
-                            Reader5.Close();
-
-                        }
-                        //------------------------------------------------------
-                    }
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
                 }
-                    //Reader1.Read();
-               /* while (Reader1.Read())
+                //Mardi
+                else if (jour_semaine == 2)
                 {
-                   
-                    
-                }*/              
-               //a.Text = Libelle_Cours;
-               //a.BackColor = System.Drawing.Color.FromArgb(couleur);
+                    date = date.AddDays(-1);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+                //Mercredi
+                else if (jour_semaine == 3)
+                {
+                    date = date.AddDays(-2);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+                //Jeudi 
+                else if (jour_semaine == 4)
+                {
+                    date = date.AddDays(-3);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+                //Vendredi
+                else if (jour_semaine == 5)
+                {
+                    date = date.AddDays(-4);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+                //Samedi 
+                else if (jour_semaine == 6)
+                {
+                    date = date.AddDays(-5);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+                //Dimanche
+                else if (jour_semaine == 7)
+                {
+                    date = date.AddDays(-6);
+                    // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                }
+
                 connexion.Close();
             }
             catch (Exception ex)
@@ -255,6 +172,197 @@ namespace extranet_projet_s4
             }
         }
 
+        //______________________________________________________
+        //ajouter les informations dans le bouton
+        public void Ajouter_dans_boutons(int id, Button btn_matin, Button btn_aprem, DateTime date)
+        {
+            try
+            {
+                connexion.Open();
+                MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM emploi WHERE ID_Groupe ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
+                using (MySqlDataReader Reader1 = cmd1.ExecuteReader())
+                {
+                    while (Reader1.Read())
+                    {
+                        string Libelle_Cours = Reader1.GetString("Libelle_Cours");
+                        int couleur = Reader1.GetInt32("Couleur_Cours");
+                        bool debut_seance = Reader1.GetBoolean("Debut_Seance");
+                        if (debut_seance == true)
+                        {
+                            btn_matin.Text = Libelle_Cours;
+                            btn_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
+                        }
+                        else
+                        {
+                            btn_aprem.Text = Libelle_Cours;
+                            btn_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
+
+                        }
+                    }
+                    Reader1.Close();
+                }
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode Ajouter dans boutons pour l'emploi du temps " + ex.ToString());
+            }
+
+
+        }
+
+        //_________________________________________________________
+        //remplir un label avec une date
+        public void Ajouter_dans_label(Label jour, DateTime date)
+        {
+            jour.Text = date.ToShortDateString();
+        }
         
+        //__________________________________________________________
+        // afficher toutes les dates de la semaine
+        public void Afficher_dates_semaine(Label lundi, Label mardi, Label mercredi, Label jeudi, Label vendredi)
+        {
+            try
+            {
+                DateTime date = DateTime.Today;
+                int jour_semaine = (int)date.DayOfWeek;
+                if (jour_semaine == 1)
+                {
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Mardi
+                else if (jour_semaine == 2)
+                {
+                    date = date.AddDays(-1);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Mercredi
+                else if (jour_semaine == 3)
+                {
+                    date = date.AddDays(-2);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Jeudi 
+                else if (jour_semaine == 4)
+                {
+                    date = date.AddDays(-3);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Vendredi
+                else if (jour_semaine == 5)
+                {
+                    date = date.AddDays(-4);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Samedi 
+                else if (jour_semaine == 6)
+                {
+                    date = date.AddDays(-5);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+                //Dimanche
+                else if (jour_semaine == 7)
+                {
+                    date = date.AddDays(-6);
+                    // Lundi
+                    Ajouter_dans_label(lundi, date);
+                    // Mardi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mardi, date);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(mercredi, date);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(jeudi, date);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_label(vendredi, date);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode Afficher_dates_semaine pour l'emploi du temps " + ex.ToString());
+            }
+
+        }
     }
 }
