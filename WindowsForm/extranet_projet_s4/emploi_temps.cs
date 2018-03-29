@@ -21,14 +21,15 @@ namespace extranet_projet_s4
         /*_____________________________________________*/
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
-
+        // stocker le premier jour de la semaine
+        DateTime premier_jour_semaine;
 
         /*---------------------------------- METHODES --------------------------------*/
-        public void Affiche_emploi_temps(int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
+        public void Affiche_emploi_temps(DateTime date,int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
             try
             {
-                DateTime date = DateTime.Today;               
+               // DateTime date = DateTime.Today;               
                 int jour_semaine = (int)date.DayOfWeek;
                 // On définit le premier jour de la semaine en fonction d'aujourd'hui
                 //Lundi
@@ -36,6 +37,7 @@ namespace extranet_projet_s4
                 {
                     // Lundi
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    premier_jour_semaine = date;
                     // Mardi
                     date = date.AddDays(1); ;
                     Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
@@ -54,6 +56,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-1);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -73,6 +76,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-2);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -92,6 +96,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-3);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -111,6 +116,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-4);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -130,6 +136,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-5);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -149,6 +156,7 @@ namespace extranet_projet_s4
                 {
                     date = date.AddDays(-6);
                     // Lundi
+                    premier_jour_semaine = date;
                     Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
                     date = date.AddDays(1);
@@ -220,11 +228,10 @@ namespace extranet_projet_s4
         
         //__________________________________________________________
         // afficher toutes les dates de la semaine
-        public void Afficher_dates_semaine(Label lundi, Label mardi, Label mercredi, Label jeudi, Label vendredi)
+        public void Afficher_dates_semaine(DateTime date,Label lundi, Label mardi, Label mercredi, Label jeudi, Label vendredi)
         {
             try
             {
-                DateTime date = DateTime.Today;
                 int jour_semaine = (int)date.DayOfWeek;
                 if (jour_semaine == 1)
                 {
@@ -363,6 +370,41 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode Afficher_dates_semaine pour l'emploi du temps " + ex.ToString());
             }
 
+        }
+
+        //__________________________________________________________
+        //remettre du projet blanc partout pour l'affichage
+        public void Remetre_zero_affichage_emploi_temps(Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
+        {
+            string texte = "Projet blanc";
+
+            btn_lundi_matin.Text = texte;
+            btn_lundi_aprem.Text = texte;
+            btn_mardi_matin.Text = texte;
+            btn_mardi_aprem.Text = texte;
+            btn_mercredi_matin.Text = texte;
+            btn_mercredi_aprem.Text = texte;
+            btn_jeudi_matin.Text = texte;
+            btn_jeudi_aprem.Text = texte;
+            btn_vendredi_matin.Text = texte;
+            btn_vendredi_aprem.Text = texte;
+            btn_lundi_matin.BackColor = System.Drawing.Color.FromName("White");
+            btn_lundi_aprem.BackColor = System.Drawing.Color.FromName("White");
+            btn_mardi_matin.BackColor = System.Drawing.Color.FromName("White");
+            btn_mardi_aprem.BackColor = System.Drawing.Color.FromName("White");
+            btn_mercredi_matin.BackColor = System.Drawing.Color.FromName("White");
+            btn_mercredi_aprem.BackColor = System.Drawing.Color.FromName("White");
+            btn_jeudi_matin.BackColor = System.Drawing.Color.FromName("White");
+            btn_jeudi_aprem.BackColor = System.Drawing.Color.FromName("White");
+            btn_vendredi_matin.BackColor = System.Drawing.Color.FromName("White");
+            btn_vendredi_aprem.BackColor = System.Drawing.Color.FromName("White");
+
+        }
+        //__________________________________________________________
+        public DateTime Premier_jour_semaine
+        {
+            get { return premier_jour_semaine; }
+            set { premier_jour_semaine = value; }
         }
     }
 }

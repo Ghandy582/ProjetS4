@@ -56,6 +56,8 @@
             this.form_eleve_date_mercredi = new System.Windows.Forms.Label();
             this.form_eleve_date_jeudi = new System.Windows.Forms.Label();
             this.form_eleve_date_vendredi = new System.Windows.Forms.Label();
+            this.form_eleve_semaine_suivante_btn = new System.Windows.Forms.Button();
+            this.form_eleve_semaine_precedantee_btn = new System.Windows.Forms.Button();
             this.eleve_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +116,7 @@
             // 
             // form_eleve_lundi_matin_btn
             // 
+            this.form_eleve_lundi_matin_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_lundi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_lundi_matin_btn.Location = new System.Drawing.Point(224, 141);
             this.form_eleve_lundi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -121,10 +124,11 @@
             this.form_eleve_lundi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_lundi_matin_btn.TabIndex = 1;
             this.form_eleve_lundi_matin_btn.Text = "Projet Blanc";
-            this.form_eleve_lundi_matin_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_lundi_matin_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_lundi_aprem_btn
             // 
+            this.form_eleve_lundi_aprem_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_lundi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_lundi_aprem_btn.Location = new System.Drawing.Point(224, 323);
             this.form_eleve_lundi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -132,10 +136,11 @@
             this.form_eleve_lundi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_lundi_aprem_btn.TabIndex = 2;
             this.form_eleve_lundi_aprem_btn.Text = "Projet Blanc";
-            this.form_eleve_lundi_aprem_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_lundi_aprem_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_mardi_matin_btn
             // 
+            this.form_eleve_mardi_matin_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_mardi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_mardi_matin_btn.Location = new System.Drawing.Point(488, 141);
             this.form_eleve_mardi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -143,10 +148,11 @@
             this.form_eleve_mardi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_mardi_matin_btn.TabIndex = 3;
             this.form_eleve_mardi_matin_btn.Text = "Projet Blanc";
-            this.form_eleve_mardi_matin_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_mardi_matin_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_mardi_aprem_btn
             // 
+            this.form_eleve_mardi_aprem_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_mardi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_mardi_aprem_btn.Location = new System.Drawing.Point(488, 323);
             this.form_eleve_mardi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -154,10 +160,11 @@
             this.form_eleve_mardi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_mardi_aprem_btn.TabIndex = 4;
             this.form_eleve_mardi_aprem_btn.Text = "Projet Blanc";
-            this.form_eleve_mardi_aprem_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_mardi_aprem_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_mercredi_matin_btn
             // 
+            this.form_eleve_mercredi_matin_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_mercredi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_mercredi_matin_btn.Location = new System.Drawing.Point(754, 141);
             this.form_eleve_mercredi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -165,10 +172,11 @@
             this.form_eleve_mercredi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_mercredi_matin_btn.TabIndex = 5;
             this.form_eleve_mercredi_matin_btn.Text = "Projet Blanc";
-            this.form_eleve_mercredi_matin_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_mercredi_matin_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_mercredi_aprem_btn
             // 
+            this.form_eleve_mercredi_aprem_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_mercredi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_mercredi_aprem_btn.Location = new System.Drawing.Point(754, 323);
             this.form_eleve_mercredi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -176,10 +184,11 @@
             this.form_eleve_mercredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_mercredi_aprem_btn.TabIndex = 6;
             this.form_eleve_mercredi_aprem_btn.Text = "Projet Blanc";
-            this.form_eleve_mercredi_aprem_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_mercredi_aprem_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_jeudi_matin_btn
             // 
+            this.form_eleve_jeudi_matin_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_jeudi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_jeudi_matin_btn.Location = new System.Drawing.Point(1016, 141);
             this.form_eleve_jeudi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -187,10 +196,11 @@
             this.form_eleve_jeudi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_jeudi_matin_btn.TabIndex = 7;
             this.form_eleve_jeudi_matin_btn.Text = "Projet Blanc";
-            this.form_eleve_jeudi_matin_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_jeudi_matin_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_jeudi_aprem_btn
             // 
+            this.form_eleve_jeudi_aprem_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_jeudi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_jeudi_aprem_btn.Location = new System.Drawing.Point(1016, 323);
             this.form_eleve_jeudi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -198,10 +208,11 @@
             this.form_eleve_jeudi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_jeudi_aprem_btn.TabIndex = 8;
             this.form_eleve_jeudi_aprem_btn.Text = "Projet Blanc";
-            this.form_eleve_jeudi_aprem_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_jeudi_aprem_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_vendredi_matin_btn
             // 
+            this.form_eleve_vendredi_matin_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_vendredi_matin_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_vendredi_matin_btn.Location = new System.Drawing.Point(1277, 141);
             this.form_eleve_vendredi_matin_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -209,10 +220,11 @@
             this.form_eleve_vendredi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_vendredi_matin_btn.TabIndex = 9;
             this.form_eleve_vendredi_matin_btn.Text = "Projet Blanc";
-            this.form_eleve_vendredi_matin_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_vendredi_matin_btn.UseVisualStyleBackColor = false;
             // 
             // form_eleve_vendredi_aprem_btn
             // 
+            this.form_eleve_vendredi_aprem_btn.BackColor = System.Drawing.Color.White;
             this.form_eleve_vendredi_aprem_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_eleve_vendredi_aprem_btn.Location = new System.Drawing.Point(1277, 323);
             this.form_eleve_vendredi_aprem_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -220,7 +232,7 @@
             this.form_eleve_vendredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_eleve_vendredi_aprem_btn.TabIndex = 10;
             this.form_eleve_vendredi_aprem_btn.Text = "Projet Blanc";
-            this.form_eleve_vendredi_aprem_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_vendredi_aprem_btn.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -357,11 +369,35 @@
             this.form_eleve_date_vendredi.TabIndex = 22;
             this.form_eleve_date_vendredi.Text = "00/00/0000";
             // 
+            // form_eleve_semaine_suivante_btn
+            // 
+            this.form_eleve_semaine_suivante_btn.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_semaine_suivante_btn.Location = new System.Drawing.Point(1495, 65);
+            this.form_eleve_semaine_suivante_btn.Name = "form_eleve_semaine_suivante_btn";
+            this.form_eleve_semaine_suivante_btn.Size = new System.Drawing.Size(70, 54);
+            this.form_eleve_semaine_suivante_btn.TabIndex = 23;
+            this.form_eleve_semaine_suivante_btn.Text = ">>";
+            this.form_eleve_semaine_suivante_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_semaine_suivante_btn.Click += new System.EventHandler(this.form_eleve_semaine_suivante_btn_Click);
+            // 
+            // form_eleve_semaine_precedantee_btn
+            // 
+            this.form_eleve_semaine_precedantee_btn.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_eleve_semaine_precedantee_btn.Location = new System.Drawing.Point(174, 65);
+            this.form_eleve_semaine_precedantee_btn.Name = "form_eleve_semaine_precedantee_btn";
+            this.form_eleve_semaine_precedantee_btn.Size = new System.Drawing.Size(70, 54);
+            this.form_eleve_semaine_precedantee_btn.TabIndex = 24;
+            this.form_eleve_semaine_precedantee_btn.Text = "<<";
+            this.form_eleve_semaine_precedantee_btn.UseVisualStyleBackColor = true;
+            this.form_eleve_semaine_precedantee_btn.Click += new System.EventHandler(this.form_eleve_semaine_precedantee_btn_Click);
+            // 
             // Form_eleve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1592, 894);
+            this.Controls.Add(this.form_eleve_semaine_precedantee_btn);
+            this.Controls.Add(this.form_eleve_semaine_suivante_btn);
             this.Controls.Add(this.form_eleve_date_vendredi);
             this.Controls.Add(this.form_eleve_date_jeudi);
             this.Controls.Add(this.form_eleve_date_mercredi);
@@ -432,5 +468,7 @@
         private System.Windows.Forms.Label form_eleve_date_mercredi;
         private System.Windows.Forms.Label form_eleve_date_jeudi;
         private System.Windows.Forms.Label form_eleve_date_vendredi;
+        private System.Windows.Forms.Button form_eleve_semaine_suivante_btn;
+        private System.Windows.Forms.Button form_eleve_semaine_precedantee_btn;
     }
 }

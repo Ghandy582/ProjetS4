@@ -285,7 +285,7 @@ namespace extranet_projet_s4
                     {
                         nb_taches_perimes += 1;
                         intitule_peri = sqlite_datareader.GetString(2);
-                        date_perime = fin_tache.ToString();
+                        date_perime = fin_tache.ToShortDateString();
                     }
                     // Si il reste que nb_jours_notif jour avant date butoire
                     else if (result2 >= 0)

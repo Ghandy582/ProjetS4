@@ -44,9 +44,9 @@ namespace extranet_projet_s4
             //On supprime les taches réalisées trop vielles 
             taches.Suppression_tache_realisee(utilisateur.Id_Membre);
             //On remplie l'emploi du temps de la semaine
-            emploi_temps.Affiche_emploi_temps(utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn,form_eleve_lundi_aprem_btn,form_eleve_mardi_matin_btn,form_eleve_mardi_aprem_btn,form_eleve_mercredi_matin_btn,form_eleve_mercredi_aprem_btn,form_eleve_jeudi_matin_btn,form_eleve_jeudi_aprem_btn,form_eleve_vendredi_matin_btn,form_eleve_vendredi_aprem_btn);
+            emploi_temps.Affiche_emploi_temps( DateTime.Today, utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn,form_eleve_lundi_aprem_btn,form_eleve_mardi_matin_btn,form_eleve_mardi_aprem_btn,form_eleve_mercredi_matin_btn,form_eleve_mercredi_aprem_btn,form_eleve_jeudi_matin_btn,form_eleve_jeudi_aprem_btn,form_eleve_vendredi_matin_btn,form_eleve_vendredi_aprem_btn);
             //On affiche les dates de la semaine
-            emploi_temps.Afficher_dates_semaine(form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
+            emploi_temps.Afficher_dates_semaine(DateTime.Today,form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)
@@ -99,6 +99,30 @@ namespace extranet_projet_s4
         private void form_eleve_date_jeudi_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void form_eleve_semaine_suivante_btn_Click(object sender, EventArgs e)
+        {
+            DateTime a = emploi_temps.Premier_jour_semaine;
+            a = a.AddDays(7);
+            // On remet l'affichage sur que des projets blanc
+            emploi_temps.Remetre_zero_affichage_emploi_temps(form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            // On affiche la semaine suivante
+            emploi_temps.Affiche_emploi_temps(a, utilisateur.Id_groupe_membre, form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            //On affiche les dates de la semaine
+            emploi_temps.Afficher_dates_semaine(a, form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
+        }
+
+        private void form_eleve_semaine_precedantee_btn_Click(object sender, EventArgs e)
+        {
+            DateTime a = emploi_temps.Premier_jour_semaine;
+            a = a.AddDays(-7);
+            // On remet l'affichage sur que des projets blanc
+            emploi_temps.Remetre_zero_affichage_emploi_temps(form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            // On affiche la semaine suivante
+            emploi_temps.Affiche_emploi_temps(a, utilisateur.Id_groupe_membre, form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            //On affiche les dates de la semaine
+            emploi_temps.Afficher_dates_semaine(a, form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
         }
     }
 }

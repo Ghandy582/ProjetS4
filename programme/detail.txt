@@ -71,3 +71,5 @@ __ 21 mars __
 création de la méthode de suppression des vielles taches réalisées
 __ 26 mars ___
 créations des fonctions pour afficher les séances de la semaine en cours et les dates correspondantes
+__29 mars___
+On peut voir les semaines précédantes et suivantes 
