@@ -14,6 +14,8 @@ namespace extranet_projet_s4
     {
         form_login form_login;
         Form_eleve form_eleve;
+        bool unProf;
+        Form_professeur form_professeur;
         Utilisateur utilisateur;
         Taches taches;
         bool fermer_programme;
@@ -24,6 +26,19 @@ namespace extranet_projet_s4
             this.utilisateur = u;
             this.taches = t;
             this.form_eleve = e;
+            unProf = false;
+            fermer_programme = true;
+
+
+        }
+        public Form_gestion_tache(form_login lg, Utilisateur u, Taches t, Form_professeur e)
+        {
+            InitializeComponent();
+            this.form_login = lg;
+            this.utilisateur = u;
+            this.taches = t;
+            this.form_professeur = e;
+            unProf = true;
             fermer_programme = true;
 
 
@@ -73,9 +88,22 @@ namespace extranet_projet_s4
 
         private void gestion_tache_menu_aaccueil_Click(object sender, EventArgs e)
         {
-            form_eleve.Show();
-            fermer_programme = false;
-            this.Close();
+            if (unProf == false)
+            {
+                form_eleve.Show();
+                fermer_programme = false;
+                this.Close();
+            }
+            else if (unProf== true)
+            {
+                form_professeur.Show();
+                fermer_programme = false;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("pas de fentre d'acceuil");
+            }
         }
 
         private void gestion_tache_menu_parametres_Click(object sender, EventArgs e)

@@ -422,7 +422,7 @@
             this.Controls.Add(this.form_eleve_lundi_matin_btn);
             this.Controls.Add(this.eleve_menu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.eleve_menu;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form_eleve";

@@ -190,8 +190,10 @@ namespace extranet_projet_s4
                 // __________ POUR ADMIN + PROF (5) ___________
                 else if (count == 1 && role_tentative_co == 5)
                 {
-                    MessageBox.Show("VID Correct ! Vous etes un admin et un professeur");
-
+                    Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);
+                    form_login.Hide();
+                    Form_choix_admin_prof choix_admin_prof = new Form_choix_admin_prof(form_login, utilisateur);
+                    choix_admin_prof.Show();
                 }
                 // __________ POUR ADMIN + ELEVE (4) ___________
                 else if (count == 1 && role_tentative_co == 4)
