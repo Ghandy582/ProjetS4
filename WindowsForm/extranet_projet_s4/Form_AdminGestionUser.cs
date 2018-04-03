@@ -145,22 +145,16 @@ namespace extranet_projet_s4
             */
             try
             {
-                if (SQL_TB.Text == "")
-                {
-                    MessageBox.Show("Erreur !");
-                }
-                else
-                {
-                    MySqlCommand cmd = BDD.CreateCommand();
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = SQL_TB.Text;
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Commande Appliquée !");
-                }
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = SQL_TB.Text;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Commande Appliquée !");
+
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show("SQL ajouter : '" + ex.ToString() + "'");
+                MessageBox.Show("Erreur !");
             }
         }
 

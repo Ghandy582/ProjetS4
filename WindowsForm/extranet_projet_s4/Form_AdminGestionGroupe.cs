@@ -35,19 +35,19 @@ namespace extranet_projet_s4
 
         private void Entrer_Button_Click(object sender, EventArgs e)
         {
-            if (Libelle_Box.Text == "")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+            try
             {
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `groupe`(`Libelle_Groupe`) VALUES('" + Libelle_Box.Text + "')";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Ajouter !");
+                MessageBox.Show("Ajouté !");
                 Libelle_Box.Text = "";
                 UpdateGrid(BDD);
+            }
+            catch
+            {
+                MessageBox.Show("Erreur !");
             }
         }
         //FONCTION POUR MODIFIER DIRECTEMENT DANS LE TABLEAU
@@ -95,19 +95,19 @@ namespace extranet_projet_s4
 
         private void SQLEntrer_Button_Click(object sender, EventArgs e)
         {
-            if (SQL_Box.Text == ""|| SQL_Box.Text == "INSERT INTO `groupe`(`Libelle_Groupe`) VALUES()" || SQL_Box.Text == "DELETE FROM `groupe` WHERE ")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+            try
             {
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = SQL_Box.Text;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Commande appliqué !");
+                MessageBox.Show("Commande appliquée !");
                 SQL_Box.Text = "";
                 UpdateGrid(BDD);
+            }
+            catch
+            {
+                MessageBox.Show("Erreur !");
             }
         }
     }

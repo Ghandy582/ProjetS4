@@ -48,6 +48,7 @@
             this.Commande_TB.Name = "Commande_TB";
             this.Commande_TB.Size = new System.Drawing.Size(707, 20);
             this.Commande_TB.TabIndex = 1;
+            this.Commande_TB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Commande_TB_KeyDown);
             // 
             // Form_AdminSSH
             // 

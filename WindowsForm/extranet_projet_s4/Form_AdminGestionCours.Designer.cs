@@ -129,7 +129,6 @@
             // Gestion_GridView
             // 
             this.Gestion_GridView.AllowUserToAddRows = false;
-            this.Gestion_GridView.AllowUserToOrderColumns = true;
             this.Gestion_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Gestion_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gestion_GridView.Dock = System.Windows.Forms.DockStyle.Fill;

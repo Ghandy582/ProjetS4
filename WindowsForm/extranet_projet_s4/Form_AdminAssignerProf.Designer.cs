@@ -76,11 +76,14 @@
             // 
             // Prof_DataGrid
             // 
+            this.Prof_DataGrid.AllowUserToAddRows = false;
+            this.Prof_DataGrid.AllowUserToDeleteRows = false;
             this.Prof_DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Prof_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Prof_DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Prof_DataGrid.Location = new System.Drawing.Point(0, 0);
             this.Prof_DataGrid.Name = "Prof_DataGrid";
+            this.Prof_DataGrid.ReadOnly = true;
             this.Prof_DataGrid.Size = new System.Drawing.Size(400, 400);
             this.Prof_DataGrid.TabIndex = 0;
             // 
@@ -95,11 +98,14 @@
             // 
             // Cours_DataGrid
             // 
+            this.Cours_DataGrid.AllowUserToAddRows = false;
+            this.Cours_DataGrid.AllowUserToDeleteRows = false;
             this.Cours_DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Cours_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Cours_DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Cours_DataGrid.Location = new System.Drawing.Point(0, 0);
             this.Cours_DataGrid.Name = "Cours_DataGrid";
+            this.Cours_DataGrid.ReadOnly = true;
             this.Cours_DataGrid.Size = new System.Drawing.Size(400, 400);
             this.Cours_DataGrid.TabIndex = 0;
             // 
@@ -114,6 +120,7 @@
             // 
             // Membre_Cours_Grid
             // 
+            this.Membre_Cours_Grid.AllowUserToAddRows = false;
             this.Membre_Cours_Grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Membre_Cours_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Membre_Cours_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -298,12 +305,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClicDroit_Supprimer});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // ClicDroit_Supprimer
             // 
             this.ClicDroit_Supprimer.Name = "ClicDroit_Supprimer";
-            this.ClicDroit_Supprimer.Size = new System.Drawing.Size(129, 22);
+            this.ClicDroit_Supprimer.Size = new System.Drawing.Size(152, 22);
             this.ClicDroit_Supprimer.Text = "Supprimer";
             this.ClicDroit_Supprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 

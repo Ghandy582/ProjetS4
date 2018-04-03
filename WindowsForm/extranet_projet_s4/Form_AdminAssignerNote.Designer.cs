@@ -82,7 +82,7 @@
             // 
             // Libelle_TB
             // 
-            this.Libelle_TB.Location = new System.Drawing.Point(173, 236);
+            this.Libelle_TB.Location = new System.Drawing.Point(173, 223);
             this.Libelle_TB.Multiline = true;
             this.Libelle_TB.Name = "Libelle_TB";
             this.Libelle_TB.Size = new System.Drawing.Size(222, 20);
@@ -153,11 +153,11 @@
             // 
             // Note_Text
             // 
-            this.Note_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Note_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Note_Text.Location = new System.Drawing.Point(331, 172);
             this.Note_Text.Multiline = true;
             this.Note_Text.Name = "Note_Text";
-            this.Note_Text.Size = new System.Drawing.Size(45, 45);
+            this.Note_Text.Size = new System.Drawing.Size(64, 28);
             this.Note_Text.TabIndex = 24;
             // 
             // Form_AdminAssignerNote

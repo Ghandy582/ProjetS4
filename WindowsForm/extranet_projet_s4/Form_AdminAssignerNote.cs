@@ -78,23 +78,30 @@ namespace extranet_projet_s4
         }
         private void Entrer_BTN_Click(object sender, EventArgs e)
         {
-          
-            MySqlCommand cmd1 = new MySqlCommand("SELECT ID_Cours FROM cours WHERE Libelle_Cours ='" + Cours_CB.Text + "' ", BDD);
-            MySqlCommand cmd2 = new MySqlCommand("SELECT ID_membre FROM membre WHERE Nom_Membre = '" + User_CB.Text + "'", BDD);
-            MySqlDataReader Reader1 = cmd1.ExecuteReader();
-            Reader1.Read();
-            string IDCours = Reader1.GetString("ID_Cours");
-            Reader1.Close();
-            MySqlDataReader Reader2 = cmd2.ExecuteReader();
-            Reader2.Read();
-            string IDEleve = Reader2.GetString("ID_membre");
-            Reader2.Close();
-            MySqlCommand cmd = BDD.CreateCommand();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "INSERT INTO `note`(`Note`, `Libelle_Note`, `ID_membre`, `ID_Cours`) VALUES('"+ Note_Text.Text +"','"+ Libelle_TB.Text +"','"+IDEleve + "','"+ IDCours + "')";
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Ajouté !");
-            User_CB.Text = "";
+            try
+            {
+                MySqlCommand cmd1 = new MySqlCommand("SELECT ID_Cours FROM cours WHERE Libelle_Cours ='" + Cours_CB.Text + "' ", BDD);
+                MySqlCommand cmd2 = new MySqlCommand("SELECT ID_membre FROM membre WHERE Nom_Membre = '" + User_CB.Text + "'", BDD);
+                MySqlDataReader Reader1 = cmd1.ExecuteReader();
+                Reader1.Read();
+                string IDCours = Reader1.GetString("ID_Cours");
+                Reader1.Close();
+                MySqlDataReader Reader2 = cmd2.ExecuteReader();
+                Reader2.Read();
+                string IDEleve = Reader2.GetString("ID_membre");
+                Reader2.Close();
+                MySqlCommand cmd = BDD.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT INTO `note`(`Note`, `Libelle_Note`, `ID_membre`, `ID_Cours`) VALUES('" + Note_Text.Text + "','" + Libelle_TB.Text + "','" + IDEleve + "','" + IDCours + "')";
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Ajouté !");
+                User_CB.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Erreur !");
+            }
         }
+
     }
 }

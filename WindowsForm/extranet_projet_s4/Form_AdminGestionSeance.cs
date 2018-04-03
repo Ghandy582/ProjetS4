@@ -134,9 +134,9 @@ namespace extranet_projet_s4
                 Cours_CB.Text = "";
                 UpdateGrid(BDD);
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show("Entrer Seance '" + ex.ToString() + "'");
+                MessageBox.Show("Erreur !");
             }
             
         }
@@ -149,13 +149,13 @@ namespace extranet_projet_s4
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = SQL_TB.Text;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Commandes appliqué !");
+                MessageBox.Show("Commande appliquée !");
                 UpdateGrid(BDD);
                 SQL_TB.Text = "";
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show("Entrer SQL Seance '" + ex.ToString() + "'");
+                MessageBox.Show("Erreur !");
             }
         }
     }

@@ -74,21 +74,22 @@ namespace extranet_projet_s4
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            if (Libelle_Box.Text == "" || Coefficient_Box.Text == "")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+
+            try
             {
                 int color = col.Color.ToArgb();
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `cours`(`Libelle_Cours`, `Coefficient_Cours`, `Couleur_Cours`) VALUES ('" + Libelle_Box.Text + "','" + Coefficient_Box.Text + "','" + color + "')";
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Ajouter !");
+                MessageBox.Show("Ajouté !");
                 UpdateGrid(BDD);
                 Libelle_Box.Text = "";
                 Coefficient_Box.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Erreur !");
             }
         }
 
@@ -105,20 +106,20 @@ namespace extranet_projet_s4
 
         private void SQLentrer_Button_Click(object sender, EventArgs e)
         {
-            if (SQL_TB.Text == "" || SQL_TB.Text == "DELETE FROM `cours` WHERE `cours`.`ID_Cours` ")
-            {
-                MessageBox.Show("Erreur !");
-            }
-            else
+            try
             {
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = SQL_TB.Text;
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Commandes appliqué !");
+                MessageBox.Show("Commande appliquée !");
                 UpdateGrid(BDD);
                 Libelle_Box.Text = "";
                 Coefficient_Box.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("Erreur !");
             }
         }
 

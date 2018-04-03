@@ -16,27 +16,27 @@ namespace extranet_projet_s4
         public Form_AdminSSH()
         {
             InitializeComponent();
-            n.Connection();
-            var command = n.client.CreateCommand("uptime");
-            var result = command.Execute();
-            Shell_TB.Text = result.ToString();
-           
-        }
-        void commande()
-        {
-            try
-            {
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            n.Connection();          
         }
 
         private void Form_AdminSSH_Load(object sender, EventArgs e)
         {
             n.shellStream.Close();
+        }
+
+        private void Commande_TB_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                var command = n.client.CreateCommand(Commande_TB.Text);
+                var result = command.Execute();
+                string recup = Shell_TB.Text;
+                Shell_TB.Text = recup + result.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
