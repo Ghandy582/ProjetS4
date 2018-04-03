@@ -58,7 +58,10 @@
             this.form_eleve_date_vendredi = new System.Windows.Forms.Label();
             this.form_eleve_semaine_suivante_btn = new System.Windows.Forms.Button();
             this.form_eleve_semaine_precedantee_btn = new System.Windows.Forms.Button();
+            this.form_eleve_dernieres_notes = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
             this.eleve_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form_eleve_dernieres_notes)).BeginInit();
             this.SuspendLayout();
             // 
             // eleve_menu
@@ -391,11 +394,37 @@
             this.form_eleve_semaine_precedantee_btn.UseVisualStyleBackColor = true;
             this.form_eleve_semaine_precedantee_btn.Click += new System.EventHandler(this.form_eleve_semaine_precedantee_btn_Click);
             // 
+            // form_eleve_dernieres_notes
+            // 
+            this.form_eleve_dernieres_notes.AllowUserToAddRows = false;
+            this.form_eleve_dernieres_notes.AllowUserToDeleteRows = false;
+            this.form_eleve_dernieres_notes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.form_eleve_dernieres_notes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.form_eleve_dernieres_notes.Location = new System.Drawing.Point(896, 573);
+            this.form_eleve_dernieres_notes.Name = "form_eleve_dernieres_notes";
+            this.form_eleve_dernieres_notes.ReadOnly = true;
+            this.form_eleve_dernieres_notes.RowTemplate.Height = 28;
+            this.form_eleve_dernieres_notes.Size = new System.Drawing.Size(619, 244);
+            this.form_eleve_dernieres_notes.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(889, 521);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(276, 37);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Dernières notes :";
+            // 
             // Form_eleve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1592, 894);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.form_eleve_dernieres_notes);
             this.Controls.Add(this.form_eleve_semaine_precedantee_btn);
             this.Controls.Add(this.form_eleve_semaine_suivante_btn);
             this.Controls.Add(this.form_eleve_date_vendredi);
@@ -433,6 +462,7 @@
             this.Load += new System.EventHandler(this.Form_eleve_Load);
             this.eleve_menu.ResumeLayout(false);
             this.eleve_menu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.form_eleve_dernieres_notes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +500,7 @@
         private System.Windows.Forms.Label form_eleve_date_vendredi;
         private System.Windows.Forms.Button form_eleve_semaine_suivante_btn;
         private System.Windows.Forms.Button form_eleve_semaine_precedantee_btn;
+        private System.Windows.Forms.DataGridView form_eleve_dernieres_notes;
+        private System.Windows.Forms.Label label8;
     }
 }

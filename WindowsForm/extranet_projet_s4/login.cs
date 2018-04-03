@@ -176,7 +176,10 @@ namespace extranet_projet_s4
                 // __________ POUR PROF(2) ___________
                 else if (count == 1 && role_tentative_co == 2)
                 {
-                    MessageBox.Show("ID Correct ! Vous etes un professeur");
+                    Utilisateur utilisateur = new Utilisateur(id_user, role_tentative_co, user, prenom_membre, nom_membre, premiere_co_membre, id_groupe_membre);
+                    form_login.Hide();
+                    Form_professeur form_professeur = new Form_professeur(form_login, utilisateur);
+                    form_professeur.Show();
                 }
                 // __________ POUR ELEVE (1) ___________
                 else if (count == 1 && role_tentative_co == 1)
