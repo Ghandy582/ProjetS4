@@ -8,6 +8,8 @@ using MySql.Data.MySqlClient;
 //Pour utiliser le fichier de configuration
 using System.Configuration;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Data;
 
 namespace extranet_projet_s4
 {
@@ -23,7 +25,8 @@ namespace extranet_projet_s4
         MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
         // stocker le premier jour de la semaine
         DateTime premier_jour_semaine;
-
+        //stocker les notes et les professeurs
+        //------------------------------
         /*---------------------------------- METHODES --------------------------------*/
         public void Affiche_emploi_temps(DateTime date,int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
@@ -405,6 +408,26 @@ namespace extranet_projet_s4
         {
             get { return premier_jour_semaine; }
             set { premier_jour_semaine = value; }
+        }
+        //___________________________________________________________
+        // afficher les dernières notes 
+        public void Afficher_dernieres_notes(DataGridView view, int id)
+        {
+            try
+            {
+                connexion.Open();
+                
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter("SELECT note.Note, note.Libelle_Note, cours.Libelle_Cours FROM note INNER JOIN cours ON note.ID_Cours=cours.ID_Cours WHERE ID_Membre ='" + id + "' ORDER BY ID_Note DESC LIMIT 5;", connexion);
+                DataSet ds = new DataSet();
+                dataadapter.Fill(ds, "Info");
+                view.DataSource = ds.Tables[0];
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode d'affichage des dernières notes " + ex.ToString());
+            }
+
         }
     }
 }

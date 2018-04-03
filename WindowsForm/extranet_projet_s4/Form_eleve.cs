@@ -20,6 +20,7 @@ namespace extranet_projet_s4
         /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
         static string serveur = ConfigurationManager.AppSettings["serveur"];
         static string database = ConfigurationManager.AppSettings["database"];
+
         //On créé un objet tache pour toute la gestion des tâches
         Taches taches = new Taches();
         Emploi_temps emploi_temps = new Emploi_temps();
@@ -47,6 +48,8 @@ namespace extranet_projet_s4
             emploi_temps.Affiche_emploi_temps( DateTime.Today, utilisateur.Id_groupe_membre,form_eleve_lundi_matin_btn,form_eleve_lundi_aprem_btn,form_eleve_mardi_matin_btn,form_eleve_mardi_aprem_btn,form_eleve_mercredi_matin_btn,form_eleve_mercredi_aprem_btn,form_eleve_jeudi_matin_btn,form_eleve_jeudi_aprem_btn,form_eleve_vendredi_matin_btn,form_eleve_vendredi_aprem_btn);
             //On affiche les dates de la semaine
             emploi_temps.Afficher_dates_semaine(DateTime.Today,form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
+            //On affiche les dernières notes
+            emploi_temps.Afficher_dernieres_notes(form_eleve_dernieres_notes, utilisateur.Id_Membre);
         }
 
         private void Form_eleve_FormClosed(object sender, FormClosedEventArgs e)

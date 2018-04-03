@@ -73,3 +73,7 @@ __ 26 mars ___
 créations des fonctions pour afficher les séances de la semaine en cours et les dates correspondantes
 __29 mars___
 On peut voir les semaines précédantes et suivantes 
+__03 avril __
+affichage des 5 dernières notes pour l'élève
+création de la fenetre de choix entre admin et prof
+création de la fentre des prof + jointure
