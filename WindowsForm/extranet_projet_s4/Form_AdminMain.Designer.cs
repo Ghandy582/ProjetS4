@@ -37,13 +37,13 @@
             this.assignerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Assigner_Prof = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Assigner_Note = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Afficher_Note = new System.Windows.Forms.ToolStripMenuItem();
             this.Personalisation_DialogBox = new System.Windows.Forms.ColorDialog();
             this.Apropos_BTN = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Reglage_BTN = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.afficherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_Afficher_Note = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,16 +114,31 @@
             // Menu_Assigner_Prof
             // 
             this.Menu_Assigner_Prof.Name = "Menu_Assigner_Prof";
-            this.Menu_Assigner_Prof.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Prof.Size = new System.Drawing.Size(129, 22);
             this.Menu_Assigner_Prof.Text = "Professeur";
             this.Menu_Assigner_Prof.Click += new System.EventHandler(this.Menu_Assigner_Prof_Click);
             // 
             // Menu_Assigner_Note
             // 
             this.Menu_Assigner_Note.Name = "Menu_Assigner_Note";
-            this.Menu_Assigner_Note.Size = new System.Drawing.Size(152, 22);
+            this.Menu_Assigner_Note.Size = new System.Drawing.Size(129, 22);
             this.Menu_Assigner_Note.Text = "Note";
             this.Menu_Assigner_Note.Click += new System.EventHandler(this.Menu_Assigner_Note_Click);
+            // 
+            // afficherToolStripMenuItem
+            // 
+            this.afficherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu_Afficher_Note});
+            this.afficherToolStripMenuItem.Name = "afficherToolStripMenuItem";
+            this.afficherToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.afficherToolStripMenuItem.Text = "Afficher";
+            // 
+            // Menu_Afficher_Note
+            // 
+            this.Menu_Afficher_Note.Name = "Menu_Afficher_Note";
+            this.Menu_Afficher_Note.Size = new System.Drawing.Size(100, 22);
+            this.Menu_Afficher_Note.Text = "Note";
+            this.Menu_Afficher_Note.Click += new System.EventHandler(this.Menu_Afficher_Note_Click);
             // 
             // Apropos_BTN
             // 
@@ -159,6 +174,7 @@
             this.button1.Text = "SSH Support";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Reglage_BTN
             // 
@@ -194,21 +210,6 @@
             this.button3.Text = "Fichier";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // afficherToolStripMenuItem
-            // 
-            this.afficherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_Afficher_Note});
-            this.afficherToolStripMenuItem.Name = "afficherToolStripMenuItem";
-            this.afficherToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.afficherToolStripMenuItem.Text = "Afficher";
-            // 
-            // Menu_Afficher_Note
-            // 
-            this.Menu_Afficher_Note.Name = "Menu_Afficher_Note";
-            this.Menu_Afficher_Note.Size = new System.Drawing.Size(152, 22);
-            this.Menu_Afficher_Note.Text = "Note";
-            this.Menu_Afficher_Note.Click += new System.EventHandler(this.Menu_Afficher_Note_Click);
             // 
             // Form_AdminMain
             // 

@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SSH_Console = new System.Windows.Forms.TextBox();
+            this.Shell_TB = new System.Windows.Forms.TextBox();
+            this.Commande_TB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // SSH_Console
+            // Shell_TB
             // 
-            this.SSH_Console.Location = new System.Drawing.Point(13, 13);
-            this.SSH_Console.Multiline = true;
-            this.SSH_Console.Name = "SSH_Console";
-            this.SSH_Console.Size = new System.Drawing.Size(580, 641);
-            this.SSH_Console.TabIndex = 0;
+            this.Shell_TB.Enabled = false;
+            this.Shell_TB.Location = new System.Drawing.Point(12, 38);
+            this.Shell_TB.Multiline = true;
+            this.Shell_TB.Name = "Shell_TB";
+            this.Shell_TB.ReadOnly = true;
+            this.Shell_TB.Size = new System.Drawing.Size(707, 378);
+            this.Shell_TB.TabIndex = 0;
+            // 
+            // Commande_TB
+            // 
+            this.Commande_TB.Location = new System.Drawing.Point(12, 423);
+            this.Commande_TB.Name = "Commande_TB";
+            this.Commande_TB.Size = new System.Drawing.Size(707, 20);
+            this.Commande_TB.TabIndex = 1;
             // 
             // Form_AdminSSH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 666);
-            this.Controls.Add(this.SSH_Console);
+            this.ClientSize = new System.Drawing.Size(731, 453);
+            this.Controls.Add(this.Commande_TB);
+            this.Controls.Add(this.Shell_TB);
             this.Name = "Form_AdminSSH";
             this.Text = "Form_AdminSSH";
+            this.Load += new System.EventHandler(this.Form_AdminSSH_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -54,6 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox SSH_Console;
+        private System.Windows.Forms.TextBox Shell_TB;
+        private System.Windows.Forms.TextBox Commande_TB;
     }
 }

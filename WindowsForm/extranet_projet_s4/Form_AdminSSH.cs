@@ -7,31 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Renci.SshNet;
 
 namespace extranet_projet_s4
 {
     public partial class Form_AdminSSH : Form
     {
+        SSH n = new SSH();
         public Form_AdminSSH()
         {
             InitializeComponent();
-            Connection();
+            n.Connection();
+            var command = n.client.CreateCommand("uptime");
+            var result = command.Execute();
+            Shell_TB.Text = result.ToString();
+           
         }
-        void Connection()
+        void commande()
         {
-            SshClient client = new SshClient("10.101.0.2", "JacobGengoo", "jacobgengoo7");
-            
             try
             {
-                client.Connect();
-                MessageBox.Show("Connecté à :'" + client.ConnectionInfo.Host + "'");
+
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Connection impossible à :'" + client.ConnectionInfo.Host + "' Erreur '"+ ex.ToString() +"'");
+                MessageBox.Show(ex.ToString());
             }
-            //http://www.hankerspace.com/fr/acces-ssh-via-c/
+        }
+
+        private void Form_AdminSSH_Load(object sender, EventArgs e)
+        {
+            n.shellStream.Close();
         }
     }
 }

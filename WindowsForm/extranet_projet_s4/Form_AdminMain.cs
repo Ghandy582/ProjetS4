@@ -19,6 +19,7 @@ namespace extranet_projet_s4
     {
         form_login lg;
         Utilisateur utilisateur;
+
         /*---------------------------- PROPRIETES ---------------------------*/
 
         /*___ PROPRIETES DANS LE FIFHIER DE CONFIG______*/
@@ -125,6 +126,12 @@ namespace extranet_projet_s4
         private void Menu_Afficher_Note_Click(object sender, EventArgs e)
         {
             Form_AdminAfficherNote Gestion_Page = new Form_AdminAfficherNote(BDD);
+            Gestion_Page.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_AdminSSH Gestion_Page = new Form_AdminSSH();
             Gestion_Page.Show();
         }
     }
