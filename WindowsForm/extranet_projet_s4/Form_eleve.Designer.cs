@@ -128,6 +128,7 @@
             this.form_eleve_lundi_matin_btn.TabIndex = 1;
             this.form_eleve_lundi_matin_btn.Text = "Projet Blanc";
             this.form_eleve_lundi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_lundi_matin_btn.Click += new System.EventHandler(this.form_eleve_lundi_matin_btn_Click);
             // 
             // form_eleve_lundi_aprem_btn
             // 
@@ -140,6 +141,7 @@
             this.form_eleve_lundi_aprem_btn.TabIndex = 2;
             this.form_eleve_lundi_aprem_btn.Text = "Projet Blanc";
             this.form_eleve_lundi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_lundi_aprem_btn.Click += new System.EventHandler(this.form_eleve_lundi_aprem_btn_Click);
             // 
             // form_eleve_mardi_matin_btn
             // 
@@ -152,6 +154,7 @@
             this.form_eleve_mardi_matin_btn.TabIndex = 3;
             this.form_eleve_mardi_matin_btn.Text = "Projet Blanc";
             this.form_eleve_mardi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_mardi_matin_btn.Click += new System.EventHandler(this.form_eleve_mardi_matin_btn_Click);
             // 
             // form_eleve_mardi_aprem_btn
             // 
@@ -164,6 +167,7 @@
             this.form_eleve_mardi_aprem_btn.TabIndex = 4;
             this.form_eleve_mardi_aprem_btn.Text = "Projet Blanc";
             this.form_eleve_mardi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_mardi_aprem_btn.Click += new System.EventHandler(this.form_eleve_mardi_aprem_btn_Click);
             // 
             // form_eleve_mercredi_matin_btn
             // 
@@ -176,6 +180,7 @@
             this.form_eleve_mercredi_matin_btn.TabIndex = 5;
             this.form_eleve_mercredi_matin_btn.Text = "Projet Blanc";
             this.form_eleve_mercredi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_mercredi_matin_btn.Click += new System.EventHandler(this.form_eleve_mercredi_matin_btn_Click);
             // 
             // form_eleve_mercredi_aprem_btn
             // 
@@ -188,6 +193,7 @@
             this.form_eleve_mercredi_aprem_btn.TabIndex = 6;
             this.form_eleve_mercredi_aprem_btn.Text = "Projet Blanc";
             this.form_eleve_mercredi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_mercredi_aprem_btn.Click += new System.EventHandler(this.form_eleve_mercredi_aprem_btn_Click);
             // 
             // form_eleve_jeudi_matin_btn
             // 
@@ -200,6 +206,7 @@
             this.form_eleve_jeudi_matin_btn.TabIndex = 7;
             this.form_eleve_jeudi_matin_btn.Text = "Projet Blanc";
             this.form_eleve_jeudi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_jeudi_matin_btn.Click += new System.EventHandler(this.form_eleve_jeudi_matin_btn_Click);
             // 
             // form_eleve_jeudi_aprem_btn
             // 
@@ -212,6 +219,7 @@
             this.form_eleve_jeudi_aprem_btn.TabIndex = 8;
             this.form_eleve_jeudi_aprem_btn.Text = "Projet Blanc";
             this.form_eleve_jeudi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_jeudi_aprem_btn.Click += new System.EventHandler(this.form_eleve_jeudi_aprem_btn_Click);
             // 
             // form_eleve_vendredi_matin_btn
             // 
@@ -224,6 +232,7 @@
             this.form_eleve_vendredi_matin_btn.TabIndex = 9;
             this.form_eleve_vendredi_matin_btn.Text = "Projet Blanc";
             this.form_eleve_vendredi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_vendredi_matin_btn.Click += new System.EventHandler(this.form_eleve_vendredi_matin_btn_Click);
             // 
             // form_eleve_vendredi_aprem_btn
             // 
@@ -236,6 +245,7 @@
             this.form_eleve_vendredi_aprem_btn.TabIndex = 10;
             this.form_eleve_vendredi_aprem_btn.Text = "Projet Blanc";
             this.form_eleve_vendredi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_eleve_vendredi_aprem_btn.Click += new System.EventHandler(this.form_eleve_vendredi_aprem_btn_Click);
             // 
             // label1
             // 
