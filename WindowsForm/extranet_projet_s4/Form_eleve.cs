@@ -127,5 +127,65 @@ namespace extranet_projet_s4
             //On affiche les dates de la semaine
             emploi_temps.Afficher_dates_semaine(a, form_eleve_date_lundi, form_eleve_date_mardi, form_eleve_date_mercredi, form_eleve_date_jeudi, form_eleve_date_vendredi);
         }
+
+        private void form_eleve_lundi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 0,form_eleve_lundi_matin_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_lundi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 1, form_eleve_lundi_aprem_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_mardi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 2, form_eleve_mardi_matin_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_mardi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 3, form_eleve_mardi_aprem_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_mercredi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 4, form_eleve_mercredi_matin_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_mercredi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 5, form_eleve_mercredi_aprem_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_jeudi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 6, form_eleve_jeudi_matin_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_jeudi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 7, form_eleve_jeudi_aprem_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_vendredi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 8, form_eleve_vendredi_matin_btn);
+            form_informations_seance.Show();
+        }
+
+        private void form_eleve_vendredi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 9, form_eleve_vendredi_aprem_btn);
+            form_informations_seance.Show();
+        }
     }
 }

@@ -13,7 +13,7 @@ using System.Data;
 
 namespace extranet_projet_s4
 {
-    class Emploi_temps
+    public class Emploi_temps
     {
         /*---------------------------- PROPRIETES ---------------------------*/
 
@@ -27,9 +27,14 @@ namespace extranet_projet_s4
         DateTime premier_jour_semaine;
         //stocker les notes et les professeurs
         //------------------------------
+        string[] notes = new string[10];
+        string[] profs = new string[10];
+ 
+
         /*---------------------------------- METHODES --------------------------------*/
         public void Affiche_emploi_temps(DateTime date,int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
+            
             try
             {
                // DateTime date = DateTime.Today;               
@@ -39,140 +44,140 @@ namespace extranet_projet_s4
                 if (jour_semaine == 1)
                 {
                     // Lundi
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date,0);
                     premier_jour_semaine = date;
                     // Mardi
                     date = date.AddDays(1); ;
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date,2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date,4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date,6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date,8);
                 }
                 //Mardi
                 else if (jour_semaine == 2)
                 {
                     date = date.AddDays(-1);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
                 //Mercredi
                 else if (jour_semaine == 3)
                 {
                     date = date.AddDays(-2);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
                 //Jeudi 
                 else if (jour_semaine == 4)
                 {
                     date = date.AddDays(-3);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
                 //Vendredi
                 else if (jour_semaine == 5)
                 {
                     date = date.AddDays(-4);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
                 //Samedi 
                 else if (jour_semaine == 6)
                 {
                     date = date.AddDays(-5);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
                 //Dimanche
                 else if (jour_semaine == 7)
                 {
                     date = date.AddDays(-6);
                     // Lundi
+                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
                     premier_jour_semaine = date;
-                    Ajouter_dans_boutons(id, btn_lundi_matin, btn_lundi_aprem, date);
                     // Mardi
-                    date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date);
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
                     // Mercredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
                     // Jeudi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
                     // Vendredi
                     date = date.AddDays(1);
-                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date);
+                    Ajouter_dans_boutons(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
                 }
 
                 connexion.Close();
@@ -184,8 +189,8 @@ namespace extranet_projet_s4
         }
 
         //______________________________________________________
-        //ajouter les informations dans le bouton
-        public void Ajouter_dans_boutons(int id, Button btn_matin, Button btn_aprem, DateTime date)
+        //ajouter les informations dans le bouton + stocker les infos pour la fenetres infos supplémentaires
+        public void Ajouter_dans_boutons(int id, Button btn_matin, Button btn_aprem, DateTime date, int num_tab)
         {
             try
             {
@@ -198,16 +203,20 @@ namespace extranet_projet_s4
                         string Libelle_Cours = Reader1.GetString("Libelle_Cours");
                         int couleur = Reader1.GetInt32("Couleur_Cours");
                         bool debut_seance = Reader1.GetBoolean("Debut_Seance");
+                        
                         if (debut_seance == true)
                         {
                             btn_matin.Text = Libelle_Cours;
                             btn_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
+                            notes[num_tab] = Reader1.GetString("Note_Seance");
+                            profs[num_tab] = Reader1.GetString("Prenom") + " " + Reader1.GetString("Nom");
                         }
                         else
                         {
                             btn_aprem.Text = Libelle_Cours;
                             btn_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
-
+                            notes[num_tab + 1] = Reader1.GetString("Note_Seance");
+                            profs[num_tab + 1] = Reader1.GetString("Prenom") + " " + Reader1.GetString("Nom");
                         }
                     }
                     Reader1.Close();
@@ -428,6 +437,60 @@ namespace extranet_projet_s4
                 MessageBox.Show("Erreur pendant l'execution de la méthode d'affichage des dernières notes " + ex.ToString());
             }
 
+        }
+
+        //____________________________________________________________
+        // remplir les informations dans la fenètre d'informations
+        public void Remplir_fenetre_infos(string date, Label lb_date, Button btn_a_remplir, Button btn,int empla_tab, Label prof, TextBox note)
+        {
+            lb_date.Text = date;
+            btn_a_remplir.BackColor = btn.BackColor;
+            btn_a_remplir.Text = btn.Text;
+            switch (empla_tab)
+            {
+                case 0:
+                    prof.Text = profs[0];
+                    note.Text = notes[0];
+                    break;
+                case 1:
+                    prof.Text = profs[1];
+                    note.Text = notes[1];
+                    break;
+                case 2:
+                    prof.Text = profs[2];
+                    note.Text = notes[2];
+                    break;
+                case 3:
+                    prof.Text = profs[3];
+                    note.Text = notes[3];
+                    break;
+                case 4:
+                    prof.Text = profs[4];
+                    note.Text = notes[4];
+                    break;
+                case 5:
+                    prof.Text = profs[5];
+                    note.Text = notes[5];
+                    break;
+                case 6:
+                    prof.Text = profs[6];
+                    note.Text = notes[6];
+                    break;
+                case 7:
+                    prof.Text = profs[7];
+                    note.Text = notes[7];
+                    break;
+                case 8:
+                    prof.Text = profs[8];
+                    note.Text = notes[8];
+                    break;
+                case 9:
+                    prof.Text = profs[9];
+                    note.Text = notes[9];
+                    break;
+
+
+            }
         }
     }
 }

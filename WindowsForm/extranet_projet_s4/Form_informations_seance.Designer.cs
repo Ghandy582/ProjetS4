@@ -33,17 +33,17 @@
             this.informations_note_textbox = new System.Windows.Forms.TextBox();
             this.information_note_label = new System.Windows.Forms.Label();
             this.form_informations_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.infos_leprof_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // informations_seances_date_label
             // 
             this.informations_seances_date_label.AutoSize = true;
-            this.informations_seances_date_label.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.informations_seances_date_label.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.informations_seances_date_label.ForeColor = System.Drawing.Color.DarkRed;
-            this.informations_seances_date_label.Location = new System.Drawing.Point(195, 24);
+            this.informations_seances_date_label.Location = new System.Drawing.Point(173, 20);
             this.informations_seances_date_label.Name = "informations_seances_date_label";
-            this.informations_seances_date_label.Size = new System.Drawing.Size(133, 36);
+            this.informations_seances_date_label.Size = new System.Drawing.Size(153, 40);
             this.informations_seances_date_label.TabIndex = 0;
             this.informations_seances_date_label.Text = "Une date";
             // 
@@ -59,9 +59,11 @@
             // 
             // informations_note_textbox
             // 
+            this.informations_note_textbox.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.informations_note_textbox.Location = new System.Drawing.Point(35, 294);
             this.informations_note_textbox.Multiline = true;
             this.informations_note_textbox.Name = "informations_note_textbox";
+            this.informations_note_textbox.ReadOnly = true;
             this.informations_note_textbox.Size = new System.Drawing.Size(457, 169);
             this.informations_note_textbox.TabIndex = 3;
             this.informations_note_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -81,31 +83,31 @@
             // 
             this.form_informations_btn.BackColor = System.Drawing.Color.White;
             this.form_informations_btn.Font = new System.Drawing.Font("Trebuchet MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.form_informations_btn.Location = new System.Drawing.Point(35, 90);
+            this.form_informations_btn.Location = new System.Drawing.Point(35, 76);
             this.form_informations_btn.Margin = new System.Windows.Forms.Padding(4);
             this.form_informations_btn.Name = "form_informations_btn";
-            this.form_informations_btn.Size = new System.Drawing.Size(457, 67);
+            this.form_informations_btn.Size = new System.Drawing.Size(457, 81);
             this.form_informations_btn.TabIndex = 5;
             this.form_informations_btn.Text = "Projet Blanc";
             this.form_informations_btn.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // infos_leprof_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "un professeur";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.infos_leprof_label.AutoSize = true;
+            this.infos_leprof_label.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infos_leprof_label.Location = new System.Drawing.Point(184, 187);
+            this.infos_leprof_label.Name = "infos_leprof_label";
+            this.infos_leprof_label.Size = new System.Drawing.Size(158, 29);
+            this.infos_leprof_label.TabIndex = 6;
+            this.infos_leprof_label.Text = "un professeur";
+            this.infos_leprof_label.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // Form_informations_seance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 496);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.infos_leprof_label);
             this.Controls.Add(this.form_informations_btn);
             this.Controls.Add(this.information_note_label);
             this.Controls.Add(this.informations_note_textbox);
@@ -115,6 +117,7 @@
             this.Name = "Form_informations_seance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informations";
+            this.Load += new System.EventHandler(this.Form_informations_seance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +130,6 @@
         private System.Windows.Forms.TextBox informations_note_textbox;
         private System.Windows.Forms.Label information_note_label;
         private System.Windows.Forms.Button form_informations_btn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label infos_leprof_label;
     }
 }

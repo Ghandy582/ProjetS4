@@ -77,3 +77,5 @@ __03 avril __
 affichage des 5 dernières notes pour l'élève
 création de la fenetre de choix entre admin et prof
 création de la fentre des prof + jointure
+__05 avril___
+quand on clique sur la séance on voit les informations supplémentaires
