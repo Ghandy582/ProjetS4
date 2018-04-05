@@ -16,6 +16,7 @@ namespace extranet_projet_s4
         private MySqlDataAdapter mySqlDataAdapter;
         public MySqlConnection BDD;
         private int rowIndex = 0;
+        private int journee = 0;
         public Form_AdminGestionSeance(MySqlConnection SQL)
         {
             this.BDD = SQL;
@@ -122,13 +123,12 @@ namespace extranet_projet_s4
                 Reader2.Close();
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('" + Date_Box.Text + "','" + BoolDate_Box.Text +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + IDCours + "')";
+                cmd.CommandText = "INSERT INTO `seance`(`Date_Seance`, `Debut_Seance`, `Note_Seance`, `NotePersonnel_Seance`, `ID_Cours`) VALUES ('" + Date_Box.Text + "','" + journee +"','" + Note_Box.Text +"','" + NoteP_Box.Text +"','" + IDCours + "')";
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = "INSERT INTO `groupe_seance`(`ID_Seance`, `ID_Groupe`) VALUES ((SELECT `ID_Seance` FROM `seance` Order BY `ID_Seance` DESC LIMIT 1),'"+ IDGroupe +"')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Ajouté !");
                 Date_Box.Text = "";
-                BoolDate_Box.Text = "";
                 NoteP_Box.Text = "";
                 Note_Box.Text = "";
                 Cours_CB.Text = "";
@@ -157,6 +157,16 @@ namespace extranet_projet_s4
             {
                 MessageBox.Show("Erreur !");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            journee = 1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            journee = 0;
         }
     }
 }

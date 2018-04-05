@@ -24,16 +24,17 @@ namespace extranet_projet_s4
             n.shellStream.Close();
         }
 
-        private void Commande_TB_KeyDown(object sender, KeyEventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 var command = n.client.CreateCommand(Commande_TB.Text);
                 var result = command.Execute();
-                string recup = Shell_TB.Text;
-                Shell_TB.Text = recup + result.ToString();
+
+                Shell_TB.Text = result.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }

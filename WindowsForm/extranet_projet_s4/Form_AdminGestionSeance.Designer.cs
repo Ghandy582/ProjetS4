@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.NoteP_Box = new System.Windows.Forms.TextBox();
             this.Note_Box = new System.Windows.Forms.TextBox();
-            this.BoolDate_Box = new System.Windows.Forms.TextBox();
             this.Date_Box = new System.Windows.Forms.TextBox();
             this.Cours_Label = new System.Windows.Forms.Label();
             this.NoteP_Label = new System.Windows.Forms.Label();
@@ -47,6 +46,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Gestion_GridView = new System.Windows.Forms.DataGridView();
             this.PanelAdd = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.Groupe_text = new System.Windows.Forms.Label();
             this.Groupe_CB = new System.Windows.Forms.ComboBox();
@@ -76,13 +77,6 @@
             this.Note_Box.Name = "Note_Box";
             this.Note_Box.Size = new System.Drawing.Size(264, 79);
             this.Note_Box.TabIndex = 17;
-            // 
-            // BoolDate_Box
-            // 
-            this.BoolDate_Box.Location = new System.Drawing.Point(172, 59);
-            this.BoolDate_Box.Name = "BoolDate_Box";
-            this.BoolDate_Box.Size = new System.Drawing.Size(264, 20);
-            this.BoolDate_Box.TabIndex = 16;
             // 
             // Date_Box
             // 
@@ -123,9 +117,9 @@
             this.DateF_Label.AutoSize = true;
             this.DateF_Label.Location = new System.Drawing.Point(12, 62);
             this.DateF_Label.Name = "DateF_Label";
-            this.DateF_Label.Size = new System.Drawing.Size(95, 13);
+            this.DateF_Label.Size = new System.Drawing.Size(49, 13);
             this.DateF_Label.TabIndex = 9;
-            this.DateF_Label.Text = "Début de journée :";
+            this.DateF_Label.Text = "Période :";
             // 
             // DateD_Label
             // 
@@ -216,6 +210,8 @@
             // PanelAdd
             // 
             this.PanelAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.PanelAdd.Controls.Add(this.button2);
+            this.PanelAdd.Controls.Add(this.button1);
             this.PanelAdd.Controls.Add(this.label5);
             this.PanelAdd.Controls.Add(this.Groupe_text);
             this.PanelAdd.Controls.Add(this.Groupe_CB);
@@ -223,7 +219,6 @@
             this.PanelAdd.Controls.Add(this.Cours_CB);
             this.PanelAdd.Controls.Add(this.NoteP_Box);
             this.PanelAdd.Controls.Add(this.Note_Box);
-            this.PanelAdd.Controls.Add(this.BoolDate_Box);
             this.PanelAdd.Controls.Add(this.Date_Box);
             this.PanelAdd.Controls.Add(this.Cours_Label);
             this.PanelAdd.Controls.Add(this.NoteP_Label);
@@ -235,6 +230,26 @@
             this.PanelAdd.Name = "PanelAdd";
             this.PanelAdd.Size = new System.Drawing.Size(690, 301);
             this.PanelAdd.TabIndex = 16;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(305, 57);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Aprés-Midi";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(172, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Matin";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -336,7 +351,6 @@
         #endregion
         private System.Windows.Forms.TextBox NoteP_Box;
         private System.Windows.Forms.TextBox Note_Box;
-        private System.Windows.Forms.TextBox BoolDate_Box;
         private System.Windows.Forms.TextBox Date_Box;
         private System.Windows.Forms.Label Cours_Label;
         private System.Windows.Forms.Label NoteP_Label;
@@ -360,5 +374,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
