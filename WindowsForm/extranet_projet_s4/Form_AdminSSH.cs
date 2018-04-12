@@ -23,21 +23,24 @@ namespace extranet_projet_s4
         {
             n.shellStream.Close();
         }
-
-
-        private void button1_Click(object sender, EventArgs e)
+        void commande()
         {
             try
             {
                 var command = n.client.CreateCommand(Commande_TB.Text);
                 var result = command.Execute();
-
                 Shell_TB.Text = result.ToString();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
+
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            commande();
+        }
+
     }
 }
