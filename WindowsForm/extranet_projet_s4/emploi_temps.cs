@@ -29,6 +29,7 @@ namespace extranet_projet_s4
         //------------------------------
         string[] notes = new string[10];
         string[] profs = new string[10];
+        string[] notes_perso = new string[10];
  
 
         /*---------------------------------- METHODES --------------------------------*/
@@ -189,7 +190,7 @@ namespace extranet_projet_s4
         }
 
         //______________________________________________________
-        //ajouter les informations dans le bouton + stocker les infos pour la fenetres infos supplémentaires
+        //ajouter les informations dans le bouton + stocker les infos pour la fenetres infos supplémentaires 
         public void Ajouter_dans_boutons(int id, Button btn_matin, Button btn_aprem, DateTime date, int num_tab)
         {
             try
@@ -239,7 +240,7 @@ namespace extranet_projet_s4
         }
         
         //__________________________________________________________
-        // afficher toutes les dates de la semaine
+        // afficher toutes les dates de la semaine eleve
         public void Afficher_dates_semaine(DateTime date,Label lundi, Label mardi, Label mercredi, Label jeudi, Label vendredi)
         {
             try
@@ -386,9 +387,8 @@ namespace extranet_projet_s4
 
         //__________________________________________________________
         //remettre du projet blanc partout pour l'affichage
-        public void Remetre_zero_affichage_emploi_temps(Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
+        public void Remetre_zero_affichage_emploi_temps(string texte,Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
-            string texte = "Projet blanc";
 
             btn_lundi_matin.Text = texte;
             btn_lundi_aprem.Text = texte;
@@ -490,6 +490,205 @@ namespace extranet_projet_s4
                     break;
 
 
+            }
+        }
+        //______________________________________________________
+        //ajouter les informations dans le bouton + stocker les infos pour la fenetres infos supplémentaires 
+        public void Ajouter_dans_boutons_profs(int id, Button btn_matin, Button btn_aprem, DateTime date, int num_tab)
+        {
+            try
+            {
+                connexion.Open();
+                MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM emploi2 WHERE ID_membre ='" + id + "' AND Date_Seance='" + date.ToShortDateString() + "';", connexion);
+                using (MySqlDataReader Reader1 = cmd1.ExecuteReader())
+                {
+                    while (Reader1.Read())
+                    {
+                        string Libelle_Cours = Reader1.GetString("Libelle_Cours");
+                        int couleur = Reader1.GetInt32("Couleur_Cours");
+                        bool debut_seance = Reader1.GetBoolean("Debut_Seance");
+                        string promotion = Reader1.GetString("Libelle_Groupe");
+
+                        if (debut_seance == true)
+                        {
+                            btn_matin.Text = Libelle_Cours+"\n"+promotion;
+                            btn_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
+                            notes[num_tab] = Reader1.GetString("Note_Seance");
+                            notes_perso[num_tab] = Reader1.GetString("NotePersonnel_Seance");
+                        }
+                        else
+                        {
+                            btn_aprem.Text = Libelle_Cours + "\n" + promotion;
+                            btn_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
+                            notes[num_tab + 1] = Reader1.GetString("Note_Seance");
+                            notes_perso[num_tab + 1] = Reader1.GetString("NotePersonnel_Seance");
+                        }
+                    }
+                    Reader1.Close();
+                }
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode Ajouter dans boutons pour l'emploi du temps " + ex.ToString());
+            }
+
+
+        }
+        //_______________________________________________________
+        public void Affiche_emploi_temps_profs(DateTime date, int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
+        {
+
+            try
+            {
+                // DateTime date = DateTime.Today;               
+                int jour_semaine = (int)date.DayOfWeek;
+                // On définit le premier jour de la semaine en fonction d'aujourd'hui
+                //Lundi
+                if (jour_semaine == 1)
+                {
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Mardi
+                else if (jour_semaine == 2)
+                {
+                    date = date.AddDays(-1);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Mercredi
+                else if (jour_semaine == 3)
+                {
+                    date = date.AddDays(-2);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Jeudi 
+                else if (jour_semaine == 4)
+                {
+                    date = date.AddDays(-3);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Vendredi
+                else if (jour_semaine == 5)
+                {
+                    date = date.AddDays(-4);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Samedi 
+                else if (jour_semaine == 6)
+                {
+                    date = date.AddDays(-5);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+                //Dimanche
+                else if (jour_semaine == 7)
+                {
+                    date = date.AddDays(-6);
+                    // Lundi
+                    Ajouter_dans_boutons_profs(id, btn_lundi_matin, btn_lundi_aprem, date, 0);
+                    premier_jour_semaine = date;
+                    // Mardi
+                    date = date.AddDays(1); ;
+                    Ajouter_dans_boutons_profs(id, btn_mardi_matin, btn_mardi_aprem, date, 2);
+                    // Mercredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_mercredi_matin, btn_mercredi_aprem, date, 4);
+                    // Jeudi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_jeudi_matin, btn_jeudi_aprem, date, 6);
+                    // Vendredi
+                    date = date.AddDays(1);
+                    Ajouter_dans_boutons_profs(id, btn_vendredi_matin, btn_vendredi_aprem, date, 8);
+                }
+
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode d'affichage de l'emploi du temps " + ex.ToString());
             }
         }
     }

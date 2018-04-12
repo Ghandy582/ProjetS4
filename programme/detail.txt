@@ -79,3 +79,5 @@ création de la fenetre de choix entre admin et prof
 création de la fentre des prof + jointure
 __05 avril___
 quand on clique sur la séance on voit les informations supplémentaires
+__12 avril __
+modif et ajout pour pouvoir afficher l'emploi du temps des professeurs 

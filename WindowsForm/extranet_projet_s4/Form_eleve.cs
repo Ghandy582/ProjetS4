@@ -109,7 +109,7 @@ namespace extranet_projet_s4
             DateTime a = emploi_temps.Premier_jour_semaine;
             a = a.AddDays(7);
             // On remet l'affichage sur que des projets blanc
-            emploi_temps.Remetre_zero_affichage_emploi_temps(form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            emploi_temps.Remetre_zero_affichage_emploi_temps("Projet Blanc",form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
             // On affiche la semaine suivante
             emploi_temps.Affiche_emploi_temps(a, utilisateur.Id_groupe_membre, form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
             //On affiche les dates de la semaine
@@ -121,7 +121,7 @@ namespace extranet_projet_s4
             DateTime a = emploi_temps.Premier_jour_semaine;
             a = a.AddDays(-7);
             // On remet l'affichage sur que des projets blanc
-            emploi_temps.Remetre_zero_affichage_emploi_temps(form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
+            emploi_temps.Remetre_zero_affichage_emploi_temps("Projet Blanc",form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
             // On affiche la semaine suivante
             emploi_temps.Affiche_emploi_temps(a, utilisateur.Id_groupe_membre, form_eleve_lundi_matin_btn, form_eleve_lundi_aprem_btn, form_eleve_mardi_matin_btn, form_eleve_mardi_aprem_btn, form_eleve_mercredi_matin_btn, form_eleve_mercredi_aprem_btn, form_eleve_jeudi_matin_btn, form_eleve_jeudi_aprem_btn, form_eleve_vendredi_matin_btn, form_eleve_vendredi_aprem_btn);
             //On affiche les dates de la semaine

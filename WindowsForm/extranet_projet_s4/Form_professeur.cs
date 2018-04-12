@@ -42,6 +42,10 @@ namespace extranet_projet_s4
             taches.Verification_approche_date_butoire(utilisateur.Id_Membre);
             //On supprime les taches réalisées trop vielles 
             taches.Suppression_tache_realisee(utilisateur.Id_Membre);
+            //On affiche les dates de la semaine
+            emploi_temps.Afficher_dates_semaine(DateTime.Today, form_prof_date_lundi, form_prof_date_mardi, form_prof_date_mercredi, form_prof_date_jeudi, form_prof_date_vendredi);
+            //On remplie l'emploi du temps de la semaine
+            emploi_temps.Affiche_emploi_temps_profs(DateTime.Today, utilisateur.Id_Membre, form_prof_lundi_matin_btn, form_prof_lundi_aprem_btn, form_prof_mardi_matin_btn, form_prof_mardi_aprem_btn, form_prof_mercredi_matin_btn, form_prof_mercredi_aprem_btn, form_prof_jeudi_matin_btn, form_prof_jeudi_aprem_btn, form_prof_vendredi_matin_btn, form_prof_vendredi_aprem_btn);
         }
 
         private void Form_professeur_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,6 +76,31 @@ namespace extranet_projet_s4
         {
             Form_paramestres_taches form_parametres_taches = new Form_paramestres_taches(taches);
             form_parametres_taches.Show();
+        }
+
+        private void form_eleve_semaine_suivante_btn_Click(object sender, EventArgs e)
+        {
+            DateTime a = emploi_temps.Premier_jour_semaine;
+            a = a.AddDays(7);
+            // On remet l'affichage sur que des projets blanc
+            emploi_temps.Remetre_zero_affichage_emploi_temps("", form_prof_lundi_matin_btn, form_prof_lundi_aprem_btn, form_prof_mardi_matin_btn, form_prof_mardi_aprem_btn, form_prof_mercredi_matin_btn, form_prof_mercredi_aprem_btn, form_prof_jeudi_matin_btn, form_prof_jeudi_aprem_btn, form_prof_vendredi_matin_btn, form_prof_vendredi_aprem_btn);
+            // On affiche la semaine suivante
+            emploi_temps.Affiche_emploi_temps_profs(a, utilisateur.Id_Membre, form_prof_lundi_matin_btn, form_prof_lundi_aprem_btn, form_prof_mardi_matin_btn, form_prof_mardi_aprem_btn, form_prof_mercredi_matin_btn, form_prof_mercredi_aprem_btn, form_prof_jeudi_matin_btn, form_prof_jeudi_aprem_btn, form_prof_vendredi_matin_btn, form_prof_vendredi_aprem_btn);
+            //On affiche les dates de la semaine
+            emploi_temps.Afficher_dates_semaine(a, form_prof_date_lundi, form_prof_date_mardi, form_prof_date_mercredi, form_prof_date_jeudi, form_prof_date_vendredi);
+
+        }
+
+        private void form_eleve_semaine_precedantee_btn_Click(object sender, EventArgs e)
+        {
+            DateTime a = emploi_temps.Premier_jour_semaine;
+            a = a.AddDays(-7);
+            // On remet l'affichage sur que des projets blanc
+            emploi_temps.Remetre_zero_affichage_emploi_temps("", form_prof_lundi_matin_btn, form_prof_lundi_aprem_btn, form_prof_mardi_matin_btn, form_prof_mardi_aprem_btn, form_prof_mercredi_matin_btn, form_prof_mercredi_aprem_btn, form_prof_jeudi_matin_btn, form_prof_jeudi_aprem_btn, form_prof_vendredi_matin_btn, form_prof_vendredi_aprem_btn);
+            // On affiche la semaine suivante
+            emploi_temps.Affiche_emploi_temps_profs(a, utilisateur.Id_Membre, form_prof_lundi_matin_btn, form_prof_lundi_aprem_btn, form_prof_mardi_matin_btn, form_prof_mardi_aprem_btn, form_prof_mercredi_matin_btn, form_prof_mercredi_aprem_btn, form_prof_jeudi_matin_btn, form_prof_jeudi_aprem_btn, form_prof_vendredi_matin_btn, form_prof_vendredi_aprem_btn);
+            //On affiche les dates de la semaine
+            emploi_temps.Afficher_dates_semaine(a, form_prof_date_lundi, form_prof_date_mardi, form_prof_date_mercredi, form_prof_date_jeudi, form_prof_date_vendredi);
         }
     }
 }
