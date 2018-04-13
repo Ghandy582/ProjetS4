@@ -35,7 +35,13 @@ namespace extranet_projet_s4
 
 
 
+
         /*---------------------------------- METHODES --------------------------------*/
+        public int get_id_seance(int i)
+        {
+            return ids_seance[i];
+        }
+        //___________________________________________________
         public void Affiche_emploi_temps(DateTime date,int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
         {
             
@@ -214,6 +220,7 @@ namespace extranet_projet_s4
                             btn_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
                             notes[num_tab] = Reader1.GetString("Note_Seance");
                             profs[num_tab] = Reader1.GetString("Prenom") + " " + Reader1.GetString("Nom");
+                            ids_seance[num_tab] = Reader1.GetInt32("ID_Seance");
                         }
                         else
                         {
@@ -221,6 +228,7 @@ namespace extranet_projet_s4
                             btn_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
                             notes[num_tab + 1] = Reader1.GetString("Note_Seance");
                             profs[num_tab + 1] = Reader1.GetString("Prenom") + " " + Reader1.GetString("Nom");
+                            ids_seance[num_tab + 1] = Reader1.GetInt32("ID_Seance");
                         }
                     }
                     Reader1.Close();
@@ -413,6 +421,16 @@ namespace extranet_projet_s4
             btn_jeudi_aprem.BackColor = System.Drawing.Color.FromName("White");
             btn_vendredi_matin.BackColor = System.Drawing.Color.FromName("White");
             btn_vendredi_aprem.BackColor = System.Drawing.Color.FromName("White");
+            for (int i=0; i<10; i++)
+            {
+                notes[i] = "";
+                notes_perso[i] ="";
+                promotions[i] ="";
+                ids_seance[i] = -1;
+            }
+
+
+            
 
         }
         //__________________________________________________________
@@ -709,6 +727,9 @@ namespace extranet_projet_s4
                 lb_date.Text = date;
                 btn_a_remplir.BackColor = btn.BackColor;
                 btn_a_remplir.Text = btn.Text;
+                promo.Text = "";
+                note.Text ="";
+                note_perso.Text ="";
                 switch (empla_tab)
                 {
                     case 0:

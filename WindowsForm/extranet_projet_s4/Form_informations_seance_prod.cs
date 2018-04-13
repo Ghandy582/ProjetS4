@@ -20,7 +20,10 @@ namespace extranet_projet_s4
         {
             InitializeComponent();
             emploi_temps = t;
-            id_seance=emploi_temps.Remplir_fenetre_infos_prof(date, informations_seances_date_label, form_informations_btn, jour, p, infos_promo_label, informations_note_textbox,infos_note_persone_texbox);
+            /*informations_note_textbox.Text = "";
+            infos_note_persone_texbox.Text = "";
+            infos_promo_label.Text = ""; */
+            id_seance =emploi_temps.Remplir_fenetre_infos_prof(date, informations_seances_date_label, form_informations_btn, jour, p, infos_promo_label, informations_note_textbox,infos_note_persone_texbox);
             id_utilidateur = id;
             //savoir si séance matin ou aprem pour les updates des notes de séances
             if(p==0 || p == 2 || p == 4 || p == 6 || p == 8)
@@ -40,7 +43,7 @@ namespace extranet_projet_s4
 
         private void Form_informations_seance_prod_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void infos_prof_modifier_notes_seance_btn_Click(object sender, EventArgs e)
