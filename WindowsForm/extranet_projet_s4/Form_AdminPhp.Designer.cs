@@ -39,7 +39,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1109, 641);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("http://localhost/phpmyadmin/", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("http://10.101.0.2/phpmyadmin/", System.UriKind.Absolute);
             // 
             // Form_AdminPhp
             // 

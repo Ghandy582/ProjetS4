@@ -134,5 +134,11 @@ namespace extranet_projet_s4
             Form_AdminSSH Gestion_Page = new Form_AdminSSH();
             Gestion_Page.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form_FTP Gestion_Page = new Form_FTP();
+            Gestion_Page.Show();
+        }
     }
 }
