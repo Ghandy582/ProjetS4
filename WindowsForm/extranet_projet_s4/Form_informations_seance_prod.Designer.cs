@@ -132,6 +132,7 @@
             this.infos_prof_modifier_notes_seance_btn.TabIndex = 14;
             this.infos_prof_modifier_notes_seance_btn.Text = "Modifier";
             this.infos_prof_modifier_notes_seance_btn.UseVisualStyleBackColor = true;
+            this.infos_prof_modifier_notes_seance_btn.Click += new System.EventHandler(this.infos_prof_modifier_notes_seance_btn_Click);
             // 
             // infos_prof_modifier_note_perso_btn
             // 
@@ -141,6 +142,7 @@
             this.infos_prof_modifier_note_perso_btn.TabIndex = 15;
             this.infos_prof_modifier_note_perso_btn.Text = "Modifier";
             this.infos_prof_modifier_note_perso_btn.UseVisualStyleBackColor = true;
+            this.infos_prof_modifier_note_perso_btn.Click += new System.EventHandler(this.infos_prof_modifier_note_perso_btn_Click);
             // 
             // Form_informations_seance_prod
             // 
@@ -161,6 +163,7 @@
             this.Name = "Form_informations_seance_prod";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informations";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_informations_seance_prod_FormClosed);
             this.Load += new System.EventHandler(this.Form_informations_seance_prod_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

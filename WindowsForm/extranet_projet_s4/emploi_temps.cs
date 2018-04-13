@@ -31,6 +31,7 @@ namespace extranet_projet_s4
         string[] profs = new string[10];
         string[] notes_perso = new string[10];
         string[] promotions = new string[10];
+        int[] ids_seance = new int[10];
 
 
 
@@ -518,6 +519,7 @@ namespace extranet_projet_s4
                             notes[num_tab] = Reader1.GetString("Note_Seance");
                             notes_perso[num_tab] = Reader1.GetString("NotePersonnel_Seance");
                             promotions[num_tab] = promotion;
+                            ids_seance[num_tab] = Reader1.GetInt32("ID_Seance");
                         }
                         else
                         {
@@ -526,6 +528,7 @@ namespace extranet_projet_s4
                             notes[num_tab + 1] = Reader1.GetString("Note_Seance");
                             notes_perso[num_tab + 1] = Reader1.GetString("NotePersonnel_Seance");
                             promotions[num_tab + 1] = promotion;
+                            ids_seance[num_tab + 1] = Reader1.GetInt32("ID_Seance");
                         }
                     }
                     Reader1.Close();
@@ -697,66 +700,113 @@ namespace extranet_projet_s4
         }
         //____________________________________________________________
         // remplir les informations dans la fenètre d'informations
-        public void Remplir_fenetre_infos_prof(string date, Label lb_date, Button btn_a_remplir, Button btn, int empla_tab, Label promo, TextBox note, TextBox note_perso)
+        public int Remplir_fenetre_infos_prof(string date, Label lb_date, Button btn_a_remplir, Button btn, int empla_tab, Label promo, TextBox note, TextBox note_perso)
         {
-            lb_date.Text = date;
-            btn_a_remplir.BackColor = btn.BackColor;
-            btn_a_remplir.Text = btn.Text;
-            switch (empla_tab)
+            
+            try
             {
-                case 0:
-                    promo.Text = promotions[0];
-                    note.Text = notes[0];
-                    note_perso.Text = notes_perso[0];
-                    break;
-                case 1:
-                    promo.Text = promotions[1];
-                    note.Text = notes[1];
-                    note_perso.Text = notes_perso[1];
-                    break;
-                case 2:
-                    promo.Text = promotions[2];
-                    note.Text = notes[2];
-                    note_perso.Text = notes_perso[2];
-                    break;
-                case 3:
-                    promo.Text = promotions[3];
-                    note.Text = notes[3];
-                    note_perso.Text = notes_perso[3];
-                    break;
-                case 4:
-                    promo.Text = promotions[4];
-                    note.Text = notes[4];
-                    note_perso.Text = notes_perso[4];
-                    break;
-                case 5:
-                    promo.Text = promotions[5];
-                    note.Text = notes[5];
-                    note_perso.Text = notes_perso[5];
-                    break;
-                case 6:
-                    promo.Text = promotions[6];
-                    note.Text = notes[6];
-                    note_perso.Text = notes_perso[6];
-                    break;
-                case 7:
-                    promo.Text = promotions[7];
-                    note.Text = notes[7];
-                    note_perso.Text = notes_perso[7];
-                    break;
-                case 8:
-                    promo.Text = promotions[8];
-                    note.Text = notes[8];
-                    note_perso.Text = notes_perso[8];
-                    break;
-                case 9:
-                    promo.Text = promotions[9];
-                    note.Text = notes[9];
-                    note_perso.Text = notes_perso[9];
-                    break;
+                int id_seance_ =-10;
+                lb_date.Text = date;
+                btn_a_remplir.BackColor = btn.BackColor;
+                btn_a_remplir.Text = btn.Text;
+                switch (empla_tab)
+                {
+                    case 0:
+                        promo.Text = promotions[0];
+                        note.Text = notes[0];
+                        note_perso.Text = notes_perso[0];
+                        id_seance_ = ids_seance[0];
+                        break;
+                    case 1:
+                        promo.Text = promotions[1];
+                        note.Text = notes[1];
+                        note_perso.Text = notes_perso[1];
+                        id_seance_ = ids_seance[1];
+                        break;
+                    case 2:
+                        promo.Text = promotions[2];
+                        note.Text = notes[2];
+                        note_perso.Text = notes_perso[2];
+                        id_seance_ = ids_seance[2];
+                        break;
+                    case 3:
+                        promo.Text = promotions[3];
+                        note.Text = notes[3];
+                        note_perso.Text = notes_perso[3];
+                        id_seance_ = ids_seance[3];
+                        break;
+                    case 4:
+                        promo.Text = promotions[4];
+                        note.Text = notes[4];
+                        note_perso.Text = notes_perso[4];
+                        id_seance_ = ids_seance[4];
+                        break;
+                    case 5:
+                        promo.Text = promotions[5];
+                        note.Text = notes[5];
+                        note_perso.Text = notes_perso[5];
+                        id_seance_ = ids_seance[5];
+                        break;
+                    case 6:
+                        promo.Text = promotions[6];
+                        note.Text = notes[6];
+                        note_perso.Text = notes_perso[6];
+                        id_seance_ = ids_seance[6];
+                        break;
+                    case 7:
+                        promo.Text = promotions[7];
+                        note.Text = notes[7];
+                        note_perso.Text = notes_perso[7];
+                        id_seance_ = ids_seance[7];
+                        break;
+                    case 8:
+                        promo.Text = promotions[8];
+                        note.Text = notes[8];
+                        note_perso.Text = notes_perso[8];
+                        id_seance_ = ids_seance[8];
+                        break;
+                    case 9:
+                        promo.Text = promotions[9];
+                        note.Text = notes[9];
+                        note_perso.Text = notes_perso[9];
+                        id_seance_ = ids_seance[9];
+                        break;
 
 
+                }
+                return id_seance_;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode pour remplir les informations de la séance pour les professeurs " + ex.ToString());
+                return -10;
+            }
+
+        }
+        //_________________________________________________________
+        // Modifier les notes des sécances
+        public void Modification_note_seance(string date, string texte_nouveau, bool note_perso, int id_seance_)
+        {
+            try
+            {
+                connexion.Open();
+                if (note_perso == false)
+                {
+                    MySqlCommand cmd1 = new MySqlCommand("UPDATE seance SET Note_seance='" + texte_nouveau + "' WHERE ID_Seance ='" + id_seance_ + "';", connexion);
+                    cmd1.ExecuteNonQuery();
+                }
+                else
+                {
+                    MySqlCommand cmd1 = new MySqlCommand("UPDATE seance SET NotePersonnel_Seance='" + texte_nouveau + "'  WHERE ID_Seance ='" + id_seance_ + "';", connexion);
+                    cmd1.ExecuteNonQuery();
+                }
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur pendant l'execution de la méthode de modification des notes de séances" + ex.ToString());
+            }
+
         }
     }
 }

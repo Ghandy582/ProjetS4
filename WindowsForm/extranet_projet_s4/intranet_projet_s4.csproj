@@ -196,6 +196,12 @@
     <Compile Include="Form_AdminGestionUser.designer.cs">
       <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_modifier_notes_cours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_modifier_notes_cours.Designer.cs">
+      <DependentUpon>Form_modifier_notes_cours.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_nouvelle_tache.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AdminGestionUser.resx">
       <DependentUpon>Form_AdminGestionUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_modifier_notes_cours.resx">
+      <DependentUpon>Form_modifier_notes_cours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_nouvelle_tache.resx">
       <DependentUpon>Form_nouvelle_tache.cs</DependentUpon>
