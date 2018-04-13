@@ -113,11 +113,11 @@ namespace extranet_projet_s4
                 Reader1.Read();
                 string IDCours = Reader1.GetString("ID_Cours");
                 Reader1.Close();
-                MySqlCommand cmd2 = new MySqlCommand("SELECT ID_Membre FROM membre WHERE Nom_Membre = '" + Prof_CB.Text + "'", BDD);
-                MySqlDataReader Reader2 = cmd1.ExecuteReader();
+                MySqlCommand cmd2 = new MySqlCommand("SELECT * FROM membre WHERE Nom_Membre = '" + Prof_CB.Text + "'", BDD);
+                MySqlDataReader Reader2 = cmd2.ExecuteReader();
                 Reader2.Read();
-                string IDMembre = Reader1.GetString("ID_Membre");
-                Reader1.Close();
+                string IDMembre = Reader2.GetString("ID_membre");
+                Reader2.Close();
                 MySqlCommand cmd = BDD.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.CommandText = "INSERT INTO `cours_membre`(`ID_Cours`, `ID_membre`) VALUES ('" + IDCours + "','" + IDMembre + "')";
@@ -127,9 +127,9 @@ namespace extranet_projet_s4
                 Prof_CB.Text = "";
                 UpdateGrid(BDD);
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Erreur !");
+                MessageBox.Show("Erreur !'" +ex.ToString()+"'");
             }
         }
 
