@@ -160,6 +160,12 @@
     <Compile Include="Form_informations_seance.Designer.cs">
       <DependentUpon>Form_informations_seance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_informations_seance_prod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_informations_seance_prod.Designer.cs">
+      <DependentUpon>Form_informations_seance_prod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_informations_seance.resx">
       <DependentUpon>Form_informations_seance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_informations_seance_prod.resx">
+      <DependentUpon>Form_informations_seance_prod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>

@@ -221,6 +221,7 @@
             this.form_prof_vendredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_vendredi_aprem_btn.TabIndex = 38;
             this.form_prof_vendredi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_prof_vendredi_aprem_btn.Click += new System.EventHandler(this.form_prof_vendredi_aprem_btn_Click);
             // 
             // form_prof_vendredi_matin_btn
             // 
@@ -232,6 +233,7 @@
             this.form_prof_vendredi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_vendredi_matin_btn.TabIndex = 37;
             this.form_prof_vendredi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_prof_vendredi_matin_btn.Click += new System.EventHandler(this.form_prof_vendredi_matin_btn_Click);
             // 
             // form_prof_jeudi_aprem_btn
             // 
@@ -243,6 +245,7 @@
             this.form_prof_jeudi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_jeudi_aprem_btn.TabIndex = 36;
             this.form_prof_jeudi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_prof_jeudi_aprem_btn.Click += new System.EventHandler(this.form_prof_jeudi_aprem_btn_Click);
             // 
             // form_prof_jeudi_matin_btn
             // 
@@ -254,6 +257,7 @@
             this.form_prof_jeudi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_jeudi_matin_btn.TabIndex = 35;
             this.form_prof_jeudi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_prof_jeudi_matin_btn.Click += new System.EventHandler(this.form_prof_jeudi_matin_btn_Click);
             // 
             // form_prof_mercredi_aprem_btn
             // 
@@ -265,6 +269,7 @@
             this.form_prof_mercredi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_mercredi_aprem_btn.TabIndex = 34;
             this.form_prof_mercredi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_prof_mercredi_aprem_btn.Click += new System.EventHandler(this.form_prof_mercredi_aprem_btn_Click);
             // 
             // form_prof_mercredi_matin_btn
             // 
@@ -276,6 +281,7 @@
             this.form_prof_mercredi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_mercredi_matin_btn.TabIndex = 33;
             this.form_prof_mercredi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_prof_mercredi_matin_btn.Click += new System.EventHandler(this.form_prof_mercredi_matin_btn_Click);
             // 
             // form_prof_mardi_aprem_btn
             // 
@@ -287,6 +293,7 @@
             this.form_prof_mardi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_mardi_aprem_btn.TabIndex = 32;
             this.form_prof_mardi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_prof_mardi_aprem_btn.Click += new System.EventHandler(this.form_prof_mardi_aprem_btn_Click);
             // 
             // form_prof_mardi_matin_btn
             // 
@@ -298,6 +305,7 @@
             this.form_prof_mardi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_mardi_matin_btn.TabIndex = 31;
             this.form_prof_mardi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_prof_mardi_matin_btn.Click += new System.EventHandler(this.form_prof_mardi_matin_btn_Click);
             // 
             // form_prof_lundi_aprem_btn
             // 
@@ -309,6 +317,7 @@
             this.form_prof_lundi_aprem_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_lundi_aprem_btn.TabIndex = 30;
             this.form_prof_lundi_aprem_btn.UseVisualStyleBackColor = false;
+            this.form_prof_lundi_aprem_btn.Click += new System.EventHandler(this.form_prof_lundi_aprem_btn_Click);
             // 
             // form_prof_lundi_matin_btn
             // 
@@ -320,6 +329,7 @@
             this.form_prof_lundi_matin_btn.Size = new System.Drawing.Size(238, 148);
             this.form_prof_lundi_matin_btn.TabIndex = 29;
             this.form_prof_lundi_matin_btn.UseVisualStyleBackColor = false;
+            this.form_prof_lundi_matin_btn.Click += new System.EventHandler(this.form_prof_lundi_matin_btn_Click);
             // 
             // form_prof_date_vendredi
             // 
@@ -378,8 +388,8 @@
             // 
             // Form_professeur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1596, 898);
             this.Controls.Add(this.form_prof_date_vendredi);
             this.Controls.Add(this.form_prof_date_jeudi);

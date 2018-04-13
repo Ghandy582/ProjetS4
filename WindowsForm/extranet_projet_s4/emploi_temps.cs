@@ -30,7 +30,9 @@ namespace extranet_projet_s4
         string[] notes = new string[10];
         string[] profs = new string[10];
         string[] notes_perso = new string[10];
- 
+        string[] promotions = new string[10];
+
+
 
         /*---------------------------------- METHODES --------------------------------*/
         public void Affiche_emploi_temps(DateTime date,int id, Button btn_lundi_matin, Button btn_lundi_aprem, Button btn_mardi_matin, Button btn_mardi_aprem, Button btn_mercredi_matin, Button btn_mercredi_aprem, Button btn_jeudi_matin, Button btn_jeudi_aprem, Button btn_vendredi_matin, Button btn_vendredi_aprem)
@@ -515,6 +517,7 @@ namespace extranet_projet_s4
                             btn_matin.BackColor = System.Drawing.Color.FromArgb(couleur);
                             notes[num_tab] = Reader1.GetString("Note_Seance");
                             notes_perso[num_tab] = Reader1.GetString("NotePersonnel_Seance");
+                            promotions[num_tab] = promotion;
                         }
                         else
                         {
@@ -522,6 +525,7 @@ namespace extranet_projet_s4
                             btn_aprem.BackColor = System.Drawing.Color.FromArgb(couleur);
                             notes[num_tab + 1] = Reader1.GetString("Note_Seance");
                             notes_perso[num_tab + 1] = Reader1.GetString("NotePersonnel_Seance");
+                            promotions[num_tab + 1] = promotion;
                         }
                     }
                     Reader1.Close();
@@ -689,6 +693,69 @@ namespace extranet_projet_s4
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur pendant l'execution de la méthode d'affichage de l'emploi du temps " + ex.ToString());
+            }
+        }
+        //____________________________________________________________
+        // remplir les informations dans la fenètre d'informations
+        public void Remplir_fenetre_infos_prof(string date, Label lb_date, Button btn_a_remplir, Button btn, int empla_tab, Label promo, TextBox note, TextBox note_perso)
+        {
+            lb_date.Text = date;
+            btn_a_remplir.BackColor = btn.BackColor;
+            btn_a_remplir.Text = btn.Text;
+            switch (empla_tab)
+            {
+                case 0:
+                    promo.Text = promotions[0];
+                    note.Text = notes[0];
+                    note_perso.Text = notes_perso[0];
+                    break;
+                case 1:
+                    promo.Text = promotions[1];
+                    note.Text = notes[1];
+                    note_perso.Text = notes_perso[1];
+                    break;
+                case 2:
+                    promo.Text = promotions[2];
+                    note.Text = notes[2];
+                    note_perso.Text = notes_perso[2];
+                    break;
+                case 3:
+                    promo.Text = promotions[3];
+                    note.Text = notes[3];
+                    note_perso.Text = notes_perso[3];
+                    break;
+                case 4:
+                    promo.Text = promotions[4];
+                    note.Text = notes[4];
+                    note_perso.Text = notes_perso[4];
+                    break;
+                case 5:
+                    promo.Text = promotions[5];
+                    note.Text = notes[5];
+                    note_perso.Text = notes_perso[5];
+                    break;
+                case 6:
+                    promo.Text = promotions[6];
+                    note.Text = notes[6];
+                    note_perso.Text = notes_perso[6];
+                    break;
+                case 7:
+                    promo.Text = promotions[7];
+                    note.Text = notes[7];
+                    note_perso.Text = notes_perso[7];
+                    break;
+                case 8:
+                    promo.Text = promotions[8];
+                    note.Text = notes[8];
+                    note_perso.Text = notes_perso[8];
+                    break;
+                case 9:
+                    promo.Text = promotions[9];
+                    note.Text = notes[9];
+                    note_perso.Text = notes_perso[9];
+                    break;
+
+
             }
         }
     }
