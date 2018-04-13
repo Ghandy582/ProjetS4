@@ -102,5 +102,65 @@ namespace extranet_projet_s4
             //On affiche les dates de la semaine
             emploi_temps.Afficher_dates_semaine(a, form_prof_date_lundi, form_prof_date_mardi, form_prof_date_mercredi, form_prof_date_jeudi, form_prof_date_vendredi);
         }
+
+        private void form_prof_lundi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_lundi.Text, emploi_temps, 0, form_prof_lundi_matin_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_lundi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_lundi.Text, emploi_temps, 1, form_prof_lundi_aprem_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_mardi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_mardi.Text, emploi_temps, 3, form_prof_mardi_matin_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_mardi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_mardi.Text, emploi_temps, 4, form_prof_mardi_aprem_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_mercredi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_mercredi.Text, emploi_temps, 5, form_prof_mercredi_matin_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_mercredi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_mercredi.Text, emploi_temps, 6, form_prof_mercredi_aprem_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_jeudi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_jeudi.Text, emploi_temps, 7, form_prof_jeudi_matin_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_jeudi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_jeudi.Text, emploi_temps, 8, form_prof_jeudi_aprem_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_vendredi_matin_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_vendredi.Text, emploi_temps, 9, form_prof_vendredi_matin_btn);
+            form_informations_seance_prof.Show();
+        }
+
+        private void form_prof_vendredi_aprem_btn_Click(object sender, EventArgs e)
+        {
+            Form_informations_seance_prod form_informations_seance_prof = new Form_informations_seance_prod(form_prof_date_vendredi.Text, emploi_temps, 10, form_prof_vendredi_aprem_btn);
+            form_informations_seance_prof.Show();
+        }
     }
 }
