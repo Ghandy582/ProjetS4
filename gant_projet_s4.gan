@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-03-13" view-index="0" gantt-divider-location="627" resource-divider-location="300" version="2.8.6" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="extranet_projet_s4" company="" webLink="http://" view-date="2018-01-15" view-index="0" gantt-divider-location="627" resource-divider-location="300" version="2.8.6" locale="fr">
     <description/>
-    <view zooming-state="default:0" id="gantt-chart">
+    <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Nom" width="414" order="0"/>
         <field id="tpd4" name="Date de début" width="102" order="1"/>
         <field id="tpd5" name="Date de fin" width="107" order="2"/>
-        <option id="color.recent"><![CDATA[#ff99ff #f4f4f4 #ccffff #ff9999 #cc0033]]></option>
+        <option id="color.recent"><![CDATA[#66ff66 #ff99ff #f4f4f4 #ccffff #ff9999 #cc0033]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="210" order="0"/>
@@ -50,34 +50,41 @@
             <task id="39" name="Mockup page acceuil professeur" color="#ccffff" meeting="false" start="2018-02-09" duration="3" complete="0" thirdDate="2018-01-08" thirdDate-constraint="0" expand="true"/>
             <task id="42" name="Modelisation base de donnée" color="#ccffff" meeting="false" start="2018-01-31" duration="19" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="45" name="Programmation" color="#ff99ff" meeting="false" start="2018-01-24" duration="58" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+        <task id="45" name="Programmation" color="#ff99ff" meeting="false" start="2018-01-24" duration="53" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
             <task id="49" name="système d'authentification" color="#ff99ff" meeting="false" start="2018-01-24" duration="8" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
                 <task id="53" name="Salage et Hashage des mots de passes" color="#ff99ff" meeting="false" start="2018-01-24" duration="3" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
                 <task id="54" name="Stocker et récupérer les données d'autentification" color="#ff99ff" meeting="false" start="2018-01-29" duration="5" complete="0" thirdDate="2018-01-29" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="61" name="Système de tâches" color="#ff99ff" meeting="false" start="2018-02-05" duration="18" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
+            <task id="61" name="Système de tâches" color="#ff99ff" meeting="false" start="2018-02-05" duration="33" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true">
                 <task id="64" name="Créer un fichier sql lite" color="#ff99ff" meeting="false" start="2018-02-05" duration="5" complete="0" thirdDate="2018-02-05" thirdDate-constraint="0" expand="true"/>
                 <task id="67" name="Ajouter de nouvelles tâches" color="#ff99ff" meeting="false" start="2018-02-05" duration="7" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
-                <task id="76" name="Accès rapide" color="#ff99ff" meeting="false" start="2018-02-16" duration="9" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
-                <task id="81" name="Gestionnaire des tâches" color="#ff99ff" meeting="false" start="2018-02-28" duration="1" complete="0" thirdDate="2018-02-28" thirdDate-constraint="0" expand="true"/>
+                <task id="76" name="Accès rapide" color="#ff99ff" meeting="false" start="2018-02-16" duration="18" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="81" name="Gestionnaire des tâches" color="#ff99ff" meeting="false" start="2018-02-28" duration="12" complete="0" thirdDate="2018-02-28" thirdDate-constraint="0" expand="true"/>
+                <task id="151" name="systeme de notification" color="#ff99ff" meeting="false" start="2018-03-15" duration="2" complete="0" thirdDate="2018-01-22" thirdDate-constraint="0" expand="true"/>
+                <task id="155" name="suprimer mes anciennes taches réalisées" color="#ff99ff" meeting="false" start="2018-03-21" duration="1" complete="0" thirdDate="2018-01-04" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="95" name="Interface Eleve" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true">
-                <task id="96" name="Page d'acceuil" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
-                <task id="97" name="Menu" color="#ff99ff" meeting="false" start="2018-02-26" duration="1" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true"/>
+            <task id="95" name="Interface Eleve" color="#ff99ff" meeting="false" start="2018-02-26" duration="27" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true">
+                <task id="96" name="Page d'acceuil" color="#ff99ff" meeting="false" start="2018-02-26" duration="5" complete="0" thirdDate="2018-01-15" thirdDate-constraint="0" expand="true"/>
+                <task id="97" name="Menu" color="#ff99ff" meeting="false" start="2018-02-27" duration="4" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true"/>
+                <task id="156" name="Affichage emploi du temps" color="#ff99ff" meeting="false" start="2018-03-26" duration="4" complete="0" thirdDate="2018-01-22" thirdDate-constraint="0" expand="true"/>
+                <task id="165" name="voir dernières notes" color="#ff99ff" meeting="false" start="2018-04-03" duration="1" complete="0" thirdDate="2018-01-16" thirdDate-constraint="0" expand="true"/>
             </task>
             <task id="102" name="Interface Administrateur" color="#ff99ff" meeting="false" start="2018-02-26" duration="30" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true">
                 <task id="103" name="Gestion des Utilisateurs" color="#ff99ff" meeting="false" start="2018-02-26" duration="10" complete="0" thirdDate="2018-02-26" thirdDate-constraint="0" expand="true"/>
-                <task id="108" name="Gestion des groupes" color="#8cb6ce" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
-                <task id="112" name="Gestion des Cours" color="#8cb6ce" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
-                <task id="114" name="Gestion des Séances" color="#8cb6ce" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
-                <task id="116" name="Assigner Professeur" color="#8cb6ce" meeting="false" start="2018-03-15" duration="2" complete="0" thirdDate="2018-03-15" thirdDate-constraint="0" expand="true"/>
-                <task id="125" name="Assigner Note" color="#8cb6ce" meeting="false" start="2018-03-16" duration="2" complete="0" thirdDate="2018-03-19" thirdDate-constraint="0" expand="true"/>
-                <task id="128" name="Affichage Note" color="#8cb6ce" meeting="false" start="2018-03-19" duration="5" complete="0" thirdDate="2018-03-19" thirdDate-constraint="0" expand="true"/>
-                <task id="132" name="SSH" color="#8cb6ce" meeting="false" start="2018-03-26" duration="5" complete="0" thirdDate="2018-03-06" thirdDate-constraint="0" expand="true"/>
-                <task id="136" name="FTP" color="#8cb6ce" meeting="false" start="2018-04-02" duration="5" complete="0" thirdDate="2018-03-02" thirdDate-constraint="0" expand="true"/>
+                <task id="108" name="Gestion des groupes" color="#ff99ff" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
+                <task id="112" name="Gestion des Cours" color="#ff99ff" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
+                <task id="114" name="Gestion des Séances" color="#ff99ff" meeting="false" start="2018-03-01" duration="6" complete="0" thirdDate="2018-03-01" thirdDate-constraint="0" expand="true"/>
+                <task id="116" name="Assigner Professeur" color="#ff99ff" meeting="false" start="2018-03-15" duration="2" complete="0" thirdDate="2018-03-15" thirdDate-constraint="0" expand="true"/>
+                <task id="125" name="Assigner Note" color="#ff99ff" meeting="false" start="2018-03-16" duration="2" complete="0" thirdDate="2018-03-16" thirdDate-constraint="0" expand="true"/>
+                <task id="128" name="Affichage Note" color="#ff99ff" meeting="false" start="2018-03-19" duration="5" complete="0" thirdDate="2018-03-19" thirdDate-constraint="0" expand="true"/>
+                <task id="132" name="SSH" color="#ff99ff" meeting="false" start="2018-03-26" duration="5" complete="0" thirdDate="2018-03-26" thirdDate-constraint="0" expand="true"/>
+                <task id="136" name="FTP" color="#ff99ff" meeting="false" start="2018-04-02" duration="5" complete="0" thirdDate="2018-04-02" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="134" name="Fix" color="#8cb6ce" meeting="false" start="2018-04-09" duration="5" complete="0" thirdDate="2018-03-06" thirdDate-constraint="0" expand="true"/>
         </task>
+        <task id="157" name="Interface Professeur" color="#ff99ff" meeting="false" start="2018-04-03" duration="9" complete="0" thirdDate="2018-01-16" thirdDate-constraint="0" expand="true">
+            <task id="161" name="emploi du temps" color="#ff99ff" meeting="false" start="2018-04-03" duration="9" complete="0" thirdDate="2018-04-03" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="166" name="Vérifications des bugs" color="#66ff66" meeting="false" start="2018-04-09" duration="5" complete="0" thirdDate="2018-01-22" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
