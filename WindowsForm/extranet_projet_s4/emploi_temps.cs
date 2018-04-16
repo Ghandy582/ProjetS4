@@ -22,7 +22,7 @@ namespace extranet_projet_s4
         static string database = ConfigurationManager.AppSettings["database"];
         /*_____________________________________________*/
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
-        MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
+        MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=application;" + "PASSWORD=application7;");
         // stocker le premier jour de la semaine
         DateTime premier_jour_semaine;
         //stocker les notes et les professeurs

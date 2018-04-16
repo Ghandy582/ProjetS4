@@ -117,6 +117,7 @@
             this.ClicDroitSupprimer.Name = "ClicDroitSupprimer";
             this.ClicDroitSupprimer.Size = new System.Drawing.Size(129, 22);
             this.ClicDroitSupprimer.Text = "Supprimer";
+            this.ClicDroitSupprimer.Click += new System.EventHandler(this.ClicDroitSupprimer_Click);
             // 
             // contextMenuStrip1
             // 

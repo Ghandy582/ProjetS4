@@ -28,7 +28,7 @@ namespace extranet_projet_s4
         /*_____________________________________________*/
 
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
-        MySqlConnection BDD = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
+        MySqlConnection BDD = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=application;" + "PASSWORD=application7;");
         public Form_AdminMain(form_login lg, Utilisateur utilisateur)
         {
             InitializeComponent();

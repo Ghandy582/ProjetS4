@@ -151,7 +151,7 @@ namespace extranet_projet_s4
         private void form_eleve_mardi_matin_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(2) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 2, form_eleve_mardi_matin_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_mardi.Text, emploi_temps, 2, form_eleve_mardi_matin_btn);
                 form_informations_seance.Show();
             }
             
@@ -160,7 +160,7 @@ namespace extranet_projet_s4
         private void form_eleve_mardi_aprem_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(3) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 3, form_eleve_mardi_aprem_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_mardi.Text, emploi_temps, 3, form_eleve_mardi_aprem_btn);
                 form_informations_seance.Show();
             }
             
@@ -169,7 +169,7 @@ namespace extranet_projet_s4
         private void form_eleve_mercredi_matin_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(4) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 4, form_eleve_mercredi_matin_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_mercredi.Text, emploi_temps, 4, form_eleve_mercredi_matin_btn);
                 form_informations_seance.Show();
             }
             
@@ -178,7 +178,7 @@ namespace extranet_projet_s4
         private void form_eleve_mercredi_aprem_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(5) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 5, form_eleve_mercredi_aprem_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_mercredi.Text, emploi_temps, 5, form_eleve_mercredi_aprem_btn);
                 form_informations_seance.Show();
             }
             
@@ -187,7 +187,7 @@ namespace extranet_projet_s4
         private void form_eleve_jeudi_matin_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(6) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 6, form_eleve_jeudi_matin_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_jeudi.Text, emploi_temps, 6, form_eleve_jeudi_matin_btn);
                 form_informations_seance.Show();
             }
             
@@ -196,7 +196,7 @@ namespace extranet_projet_s4
         private void form_eleve_jeudi_aprem_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(7) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 7, form_eleve_jeudi_aprem_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_jeudi.Text, emploi_temps, 7, form_eleve_jeudi_aprem_btn);
                 form_informations_seance.Show();
             }
             
@@ -205,7 +205,7 @@ namespace extranet_projet_s4
         private void form_eleve_vendredi_matin_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(8) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 8, form_eleve_vendredi_matin_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_vendredi.Text, emploi_temps, 8, form_eleve_vendredi_matin_btn);
                 form_informations_seance.Show();
             }
             
@@ -214,7 +214,7 @@ namespace extranet_projet_s4
         private void form_eleve_vendredi_aprem_btn_Click(object sender, EventArgs e)
         {
             if (emploi_temps.get_id_seance(9) != -1) {
-                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_lundi.Text, emploi_temps, 9, form_eleve_vendredi_aprem_btn);
+                Form_informations_seance form_informations_seance = new Form_informations_seance(form_eleve_date_vendredi.Text, emploi_temps, 9, form_eleve_vendredi_aprem_btn);
                 form_informations_seance.Show();
             }
             

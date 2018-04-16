@@ -27,7 +27,7 @@ namespace extranet_projet_s4
         /*_____________________________________________*/
 
         // On créé la chaine de connextion avec les valeurs dans le fichier de conf
-        MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=root;" + "PASSWORD=;");
+        MySqlConnection connexion = new MySqlConnection("SERVER=" + serveur + ";" + "DATABASE=" + database + ";" + "UID=application;" + "PASSWORD=application7;");
 
         /*---------------------------------- METHODES -------------------------------*/
         public void Creation_fichier()
